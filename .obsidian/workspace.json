@@ -1,0 +1,211 @@
+{
+  "main": {
+    "id": "0c059e677fa76097",
+    "type": "split",
+    "children": [
+      {
+        "id": "5d37d9ab79f5b69d",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "001ac747d3ccd8ad",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Routing/Dynamic Routing.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "a26cd50a3edbbf53",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Routing/Static Routing.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "994903e59da72f50",
+    "type": "split",
+    "children": [
+      {
+        "id": "b1d7eee70df1fa06",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "8195630a8994eb6e",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "123dbb9080a12199",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "99246dbc1bf8fe3c",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "right": {
+    "id": "25fa439111d25ab5",
+    "type": "split",
+    "children": [
+      {
+        "id": "5bf5ce14b8e5c253",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "47d25306f3655e84",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Routing/Dynamic Routing.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "fcf649c5421f4ec8",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Routing/Dynamic Routing.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "767d7802570076a4",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "0da54148244bf2c6",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Routing/Dynamic Routing.md"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "001ac747d3ccd8ad",
+  "lastOpenFiles": [
+    "Pasted image 20240822150240.png",
+    "Pasted image 20240822150205.png",
+    "Pasted image 20240822145634.png",
+    "Ethernet LAN Switching.md",
+    "Routing/Dynamic Routing.md",
+    "Routing/Static Routing.md",
+    "CLI Commands/Switch CLI Commands.md",
+    "STP/PVST+ (Per-VLAN Spanning Tree Plus).md",
+    "Routing/Routing Fundamentals.md",
+    "Routing",
+    "Images/Pasted image 20240822141109.png",
+    "Images/Pasted image 20240822135341.png",
+    "Images/Pasted image 20240822134608.png",
+    "Images/Pasted image 20240822132505.png",
+    "Images/Pasted image 20240822135633.png",
+    "Images/Pasted image 20240822112051.png",
+    "Images/Pasted image 20240822130209.png",
+    "Images/Pasted image 20240822134910.png",
+    "EtherChannel.md",
+    "DTP, VTP.md",
+    "VLANs.md",
+    "STP/Classic STP (Spanning Tree Protocol), IEEE 802.1D.md",
+    "STP/STP Toolkit (Optional Features).md",
+    "STP/STP (Spanning Tree Protocol) Fundamentals.md",
+    "STP/RSTP (Rapid Spanning Tree Protocol), IEEE 802.1w.md",
+    "STP",
+    "Other/Lab",
+    "Other/Flashcards",
+    "Other/Angel/Basic Networking and Cisco Packet Tracer.pdf",
+    "Other/Angel",
+    "Other",
+    "CLI Commands/Router CLI Commands.md",
+    "CLI Commands",
+    "Subnetting.md",
+    "Hubs, Full & Half Duplex.md",
+    "Life of a Packet.md",
+    "MAC address.md",
+    "Add Later.md",
+    "IPv4 Header.md",
+    "Speed, Duplex Autonegotiation.md",
+    "Images",
+    "OSI Model.md",
+    "IPv4 Addressing.md",
+    "Untitled.canvas",
+    "2024-08-12.md",
+    "CLI Commands.md"
+  ]
+}
