@@ -1,5 +1,5 @@
 Configure a dynamic routing protocol on the router, and let the router take care of finding the bets routs to destination networks.
-- E.g., Routers will automatically inform each other how t o reach a new destination network.
+- E.g., Routers will automatically inform each other how to reach a new destination network.
 ## Example Topology
 ![[Pasted image 20240822145634.png]]
 Routes that are automatically added without configuration:
@@ -67,9 +67,12 @@ A **lower AD is preferred**, and indicates the routing protocol is considered mo
 Remember AD is considered only to determine which route is placed in the routing table when multiple routes to a destinations are known. 
 ![[Pasted image 20240822161133.png]]
 "If the administrative distance is 255, the router does not believe the source of that route and does not install the route in the routing table."
+#### Routing Table Demonstration
+![[Pasted image 20240823113116.png]]
 - Connected and local routes have AD of 0, but is not displayed in the route table
-- Static routes have an AD of 1 ![[Pasted image 20240822163538.png]]
-- OSPF has an AD of 110 ![[Pasted image 20240822161647.png]]
+- Static routes have an AD of 1
+![[Pasted image 20240822161647.png]]
+- OSPF has an AD of 110 
 - The numbers on the right (0, 2, 3) show the metrics
 ### Floating Static Route
 AD of a static route can be configured to change the preferred routing protocol. (Refer to [[CLI Commands/Router CLI Commands#Dynamic Route Configuration|Router CLI Commands]])

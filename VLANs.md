@@ -89,6 +89,7 @@ Used to route between multiple VLANs using a single physical interface on the ro
 - The connected switch just needs to be configured like a regular trunk 
 ### Layer 3 (Multilayer) Switch
 Capable of both switch AND routing, it is 'Layer 3 aware'.
+- Remember to use the command `ip routing` to enable Layer 3 routing!!
 - **SVIs (Switch Virtual Interfaces)** are virtual interfaces you can assign IP addresses to in a multilayer switch.
 	- Not physical interfaces, but virtual interfaces in the software that can be used to route traffic at Layer 3.
 	- Configure each PC to use the SVI (Not the router) as their gateway address. 

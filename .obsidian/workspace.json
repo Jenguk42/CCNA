@@ -8,36 +8,12 @@
         "type": "tabs",
         "children": [
           {
-            "id": "001ac747d3ccd8ad",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "EtherChannel.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "dd87e6d047880ef1",
+            "id": "3219b3fbcbc9060c",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
                 "file": "CLI Commands/Router CLI Commands.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "a26cd50a3edbbf53",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Routing/Static Routing.md",
                 "mode": "source",
                 "source": false
               }
@@ -72,7 +48,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "etherc",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -109,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "EtherChannel.md",
+                "file": "CLI Commands/Router CLI Commands.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -126,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "EtherChannel.md",
+                "file": "CLI Commands/Router CLI Commands.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -149,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "EtherChannel.md"
+                "file": "CLI Commands/Router CLI Commands.md"
               }
             }
           }
@@ -170,8 +146,20 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "001ac747d3ccd8ad",
+  "active": "8195630a8994eb6e",
   "lastOpenFiles": [
+    "CLI Commands/Troubleshooting Commands.md",
+    "Images/Pasted image 20240823121206.png",
+    "Images/Pasted image 20240823121015.png",
+    "CLI Commands/Router CLI Commands.md",
+    "Routing/Dynamic Routing.md",
+    "Images/Pasted image 20240823113116.png",
+    "CLI Commands/Switch CLI Commands.md",
+    "VLANs.md",
+    "DTP, VTP.md",
+    "EtherChannel.md",
+    "IPv4 Header.md",
+    "Routing/Static Routing.md",
     "Images/Pasted image 20240822153341.png",
     "Images/Pasted image 20240822150240.png",
     "Images/Pasted image 20240822150205.png",
@@ -179,13 +167,6 @@
     "Images/Pasted image 20240822153640.png",
     "Images/Pasted image 20240822163538.png",
     "Images/Pasted image 20240822161647.png",
-    "Images/Pasted image 20240822161133.png",
-    "Images/Pasted image 20240822160240.png",
-    "Images/Pasted image 20240822163744.png",
-    "Images/Pasted image 20240822163957.png",
-    "Routing/Dynamic Routing.md",
-    "CLI Commands/Router CLI Commands.md",
-    "Routing/Static Routing.md",
     "CCNA/Life of a Packet.md",
     "CCNA/MAC address.md",
     "CCNA/OSI Model.md",
@@ -202,13 +183,7 @@
     "CCNA/IPv4 Header.md",
     "CCNA/STP/PVST+ (Per-VLAN Spanning Tree Plus).md",
     "CCNA/STP/STP (Spanning Tree Protocol) Fundamentals.md",
-    "CCNA/STP/STP Toolkit (Optional Features).md",
-    "CCNA/STP/RSTP (Rapid Spanning Tree Protocol), IEEE 802.1w.md",
-    "CCNA/STP/Classic STP (Spanning Tree Protocol), IEEE 802.1D.md",
     "CCNA/STP",
-    "CCNA/Routing/Static Routing.md",
-    "CCNA/Routing/Routing Fundamentals.md",
-    "CCNA/Routing/Dynamic Routing.md",
     "CCNA/Routing",
     "CCNA/Other/Angel/Basic Networking and Cisco Packet Tracer.pdf",
     "CCNA/Other/Angel",

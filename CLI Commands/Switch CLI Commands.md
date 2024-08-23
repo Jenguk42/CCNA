@@ -103,7 +103,7 @@ For detailed explanation of the concept refer to [[VLANs]].
 	- Allows to change the native VLAN to the given ID
 ### Inter-VLAN Routing via SVI
 ![[Pasted image 20240819143252.png]]
-- `ip routing` (DO NOT FORGET!!)
+- `ip routing` **(DO NOT FORGET!!)**
 	- Enables Layer 3 routing on the switch, and lets it build its own routing table
 - `no switchport`
 	- Configures the interface from a Layer 2 switchport to a Layer 3 router port
@@ -179,6 +179,7 @@ Refer to [[STP (Spanning Tree Protocol) Fundamentals]] for explanation
 ## EtherChannel
 ![[Pasted image 20240822141109.png]]
 ### Layer 2 EtherChannel
+#### Show Commands
 - `show etherchannel summary`: Shows a list of the port-channel interfaces
 	![[Pasted image 20240822135341.png]]
 	- EtherChannel 1 is in use (U). It is in layer 2 (S), and it is properly bundled in the port-channel (P).
@@ -190,7 +191,7 @@ Refer to [[STP (Spanning Tree Protocol) Fundamentals]] for explanation
 	- Keyword for SHOWING: `etherchannel`
 	- Frames that encapsulate IP packets (IPv4 and 6) will be load-balanced based on source & destination IP addresses.
 	- If the IP packet is not encapsulated in ethernet frame, use MAC addresses instead.
-	
+#### Configure Commands
 - `port-channel load-balance MODE`
 	![[Pasted image 20240822130209.png]]
 	- Keyword for CONFIGURATION: `port-channel`

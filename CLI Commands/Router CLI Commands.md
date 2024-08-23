@@ -128,10 +128,13 @@ Refer to [[Static Routing]] for detailed explanation
 	- Configures the  default route
 	- `*` means that this route is the candidate to become the router's default route.
 	- Possible to have multiple candidates
-### Dynamic Route Configuration
+### Floating Static Route Configuration
 - `ip route DESTINATION_IP SUBNET_MASK AD`
 	![[Pasted image 20240822163957.png]]
-	- Used to change the administrative distance.
+	- Static route is configures as usual, but with a different administrative distance.
+	- If you want to keep the dynamic route as default and floating static route as a backup, AD should be higher than the dynamic route.
+		- E.g., OSPF has an AD of 110, so set the floating static route with AD 111.
+		- In this case, the static route will not show up in the routing table because the OSPF route is favoured and written on the table.
 ## VLAN Configuration
 ### Router on a Stick (ROAS)
 ![[Pasted image 20240818224731.png]]
