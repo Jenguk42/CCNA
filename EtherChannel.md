@@ -28,7 +28,7 @@ EtherChannel groups multiple interfaces together to act as a single interface, p
 - EtherChannel load balances based on '**flows**'.
 	- Flow: A communication between two nodes in the network
 	- Frames in the same flow will be forwarded using the same physical interface. (If not, some frames may arrive out of order, which can cause problems.)
-- EtherChannel has an algorithm that calculates which physical interface should be used.
+- EtherChannel has an algorithm that calculates **which physical interface should be used**.
 	- Calculation Inputs that can be used:
 		- Source MAC address
 		- Destination MAC address
@@ -61,7 +61,6 @@ Three main methods of EtherChannel configuration on Cisco switches. Refer to [[S
 	- Same switchport mode (access/trunk)
 	- Same allowed VLANs/native VLAN (for trunk interfaces)
 - If an interface's configurations do not match the others, it will be excluded from the EtherChannel.
-
 ## Layer 3 EtherChannel
 Layer 2 loops can still form even when using EtherChannels. For example:
 ![[Pasted image 20240822140400.png]] ![[Pasted image 20240822140303.png]]
@@ -69,4 +68,5 @@ Broadcasts can still loop around the switches and cause a broadcast storm. One i
 ![[Pasted image 20240822140003.png]]
 If all connections are made using routed ports, not Layer 2 switch ports, **there is no need to run spanning-tree at all.**
 - Layer 2 loops will not be formed because router ports don't forward Layer 2 broadcasts.
+
 Refer to [[Switch CLI Commands#Layer 3 EtherChannel]] for configuration commands.

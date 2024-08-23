@@ -128,6 +128,10 @@ Refer to [[Static Routing]] for detailed explanation
 	- Configures the  default route
 	- `*` means that this route is the candidate to become the router's default route.
 	- Possible to have multiple candidates
+### Dynamic Route Configuration
+- `ip route DESTINATION_IP SUBNET_MASK AD`
+	![[Pasted image 20240822163957.png]]
+	- Used to change the administrative distance.
 ## VLAN Configuration
 ### Router on a Stick (ROAS)
 ![[Pasted image 20240818224731.png]]
