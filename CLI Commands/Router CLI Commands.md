@@ -135,6 +135,65 @@ Refer to [[Static Routing]] for detailed explanation
 	- If you want to keep the dynamic route as default and floating static route as a backup, AD should be higher than the dynamic route.
 		- E.g., OSPF has an AD of 110, so set the floating static route with AD 111.
 		- In this case, the static route will not show up in the routing table because the OSPF route is favoured and written on the table.
+### Dynamic Routing Configuration
+### Commands used in Common
+- `show ip protocols`: Shows various stats
+	- Example: RIP ![[Pasted image 20240823143643.png]]
+- `maximum paths NUMBER`: Change the maximum paths that can be saved for the same destination. NEEDS TO BE EXECUTED IN PROTOCOL CONFIGURATION MODE
+	![[Pasted image 20240823143929.png]]
+- `distance NUMBER`: Change the administrative distance to make it favoured over other protocols. NEEDS TO BE EXECUTED IN PROTOCOL CONFIGURATION MODE ![[Pasted image 20240823144145.png]]
+- `network IP_ADDRESS`: "Activate IGP on interfaces with an IP address that falls under the given IP range." 
+	![[Pasted image 20240823134517.png]]
+	- Used in RIP, OSPF, and EIGRP
+	- Automatically converts the IP address to classful networks.
+		- E.g., command `network 10.0.12.0` will be converted to `network 10.0.0.0/8` (Class A network).
+		- No need to enter the network mask
+	- Tells the router to:
+		- Look for interfaces with an IP address that is in the specified range.
+		- Activate RIP on the interfaces that fall in the range.
+		- Form adjacencies with connected RIP neighbours.
+		- Advertise **the network prefix of the interface** (NOT the prefix in the `network` command)
+	- This command doesn't tell the router which networks to advertise, it tells the router **which interfaces to activate RIP on.**
+		- The router will advertise the network prefix of these interfaces.
+	
+- `passive-interface INTERFACE_ID`
+	- **DONE IN RIP CONFIGURATION MODE, NOT ON THE INTERFACE!**
+		- This is why the interface should be specified in the command.
+	- Tells the router to stop sending RIP advertisements out of the specified interface.
+	- The router will still advertise the network prefix of the interface to its RIP neighbours.
+	- Should be used on interfaces which don't have any RIP neighbours. 
+	- Example scenario:
+		- In the case below, R1 will continuously send RIP advertisements out of G2/0 although there is no RIP neighbours connected. 
+		- This is unnecessary traffic, so G2/0 should be configured as **passive interface**. 
+		![[Pasted image 20240823141421.png]]
+
+- `default-information originate`
+	- Share the default route with the neighbouring same-protocol-enabled routers.
+	- Example Scenario:
+		![[Pasted image 20240823143041.png]]
+		- R1 configured the default route with the command: `ip route 0.0.0.0 0.0.0.0 203.0.113.2`.
+		- After sharing the default route with `default-information originate`, R2, R3, and R4 learns the route too.
+			![[Pasted image 20240823143230.png]]
+			- This is an example of RIP enabled routers. Both routes (To R3, `10.0.34.1` via interface `F2/0`; To R2, `10.0.24.1` via interface `G0/0`) are stated since they have the same hop count. 
+			- R4 will load-balance traffic over the two routes.
+#### RIP Configuration
+![[Pasted image 20240823132552.png]]
+- `router rip`: Enter RIP configuration mode
+- `version 2`: Use RIP version 2 to allow VLSM and CIDR 
+- `no auto-summary`: Use classless networks
+	- `auto-summary` is on by default, and it automatically converts the networks (advertised by the router) to classful networks.
+	- E.g., `172.16.1.0/28` attached to R1 is converted to class B network, advertised as `172.16.0.0/16`
+#### EIGRP Configuration
+![[Pasted image 20240823145628.png]]
+- `router eigrp AS`
+	- AS (Autonomous System) number must match between routers, or they will not form an adjacency and share route information.
+- `no auto-summary`: Use classless networks.
+- A **wildcard mask** can be used with the `network` command!
+	- It will assume a classful address if you don't specify the mask. (E.g., `10.0.0.0` is assumed to be `10.0.0.0/8`)
+	- Usually the wildcard mask will have the same prefix length as the interface itself.
+- `eigrp router-id ROUTER_ID`
+	![[Pasted image 20240823153041.png]]
+	- Manual configuration of router ID (Highest priority)
 ## VLAN Configuration
 ### Router on a Stick (ROAS)
 ![[Pasted image 20240818224731.png]]

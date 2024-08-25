@@ -1,4 +1,4 @@
-Review: [[https://youtu.be/4YrYV2io3as?si=Wxza_YefH-TKPZQK|Life of a Packet by Jeremy's IT Lab]]
+INCOMPLETE! [[https://youtu.be/4YrYV2io3as?si=Wxza_YefH-TKPZQK|Life of a Packet by Jeremy's IT Lab]]
 ### PC1 Sending Packet to PC4
 
 ![[Pasted image 20240815152358.png]]

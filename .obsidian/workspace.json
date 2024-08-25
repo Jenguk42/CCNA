@@ -4,11 +4,19 @@
     "type": "split",
     "children": [
       {
-        "id": "5d37d9ab79f5b69d",
+        "id": "43ce5948918aa3f1",
         "type": "tabs",
         "children": [
           {
-            "id": "3219b3fbcbc9060c",
+            "id": "62178f057f66bb7c",
+            "type": "leaf",
+            "state": {
+              "type": "graph",
+              "state": {}
+            }
+          },
+          {
+            "id": "1baca47a2a51d5ea",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -85,7 +93,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "CLI Commands/Router CLI Commands.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +109,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "CLI Commands/Router CLI Commands.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -124,9 +130,7 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "CLI Commands/Router CLI Commands.md"
-              }
+              "state": {}
             }
           }
         ]
@@ -148,25 +152,32 @@
   },
   "active": "8195630a8994eb6e",
   "lastOpenFiles": [
-    "CLI Commands/Troubleshooting Commands.md",
-    "Images/Pasted image 20240823121206.png",
-    "Images/Pasted image 20240823121015.png",
+    "Routing/RIP & EIGRP.md",
+    "Images/Pasted image 20240823143643.png",
+    "Images/Pasted image 20240823143230.png",
+    "Images/Pasted image 20240823143041.png",
+    "Images/Pasted image 20240823143032.png",
+    "Images/Pasted image 20240823141421.png",
+    "Images/Pasted image 20240823134517.png",
+    "Images/Pasted image 20240823132552.png",
+    "Images/Pasted image 20240823132429.png",
+    "Images/Pasted image 20240823143929.png",
+    "Images/Pasted image 20240823153426.png",
     "CLI Commands/Router CLI Commands.md",
+    "Routing/Routing Fundamentals.md",
+    "IPv4 Addressing.md",
     "Routing/Dynamic Routing.md",
-    "Images/Pasted image 20240823113116.png",
     "CLI Commands/Switch CLI Commands.md",
-    "VLANs.md",
+    "Life of a Packet.md",
     "DTP, VTP.md",
-    "EtherChannel.md",
     "IPv4 Header.md",
+    "Hubs, Full & Half Duplex.md",
+    "Ethernet LAN Switching.md",
+    "EtherChannel.md",
+    "VLANs.md",
+    "README.md",
+    "CLI Commands/Troubleshooting Commands.md",
     "Routing/Static Routing.md",
-    "Images/Pasted image 20240822153341.png",
-    "Images/Pasted image 20240822150240.png",
-    "Images/Pasted image 20240822150205.png",
-    "Images/Pasted image 20240822145634.png",
-    "Images/Pasted image 20240822153640.png",
-    "Images/Pasted image 20240822163538.png",
-    "Images/Pasted image 20240822161647.png",
     "CCNA/Life of a Packet.md",
     "CCNA/MAC address.md",
     "CCNA/OSI Model.md",
@@ -176,13 +187,6 @@
     "CCNA/VLANs.md",
     "CCNA/Add Later.md",
     "CCNA/Ethernet LAN Switching.md",
-    "CCNA/DTP, VTP.md",
-    "CCNA/EtherChannel.md",
-    "CCNA/Hubs, Full & Half Duplex.md",
-    "CCNA/IPv4 Addressing.md",
-    "CCNA/IPv4 Header.md",
-    "CCNA/STP/PVST+ (Per-VLAN Spanning Tree Plus).md",
-    "CCNA/STP/STP (Spanning Tree Protocol) Fundamentals.md",
     "CCNA/STP",
     "CCNA/Routing",
     "CCNA/Other/Angel/Basic Networking and Cisco Packet Tracer.pdf",
