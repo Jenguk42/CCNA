@@ -60,3 +60,14 @@ OSPF uses **areas** to divide up the network.
 	- This is not allowed: ![[Pasted image 20240827142529.png]]
 3. OSPF interfaces in the **same subnet** must be in the **same area**.
 	- This is not allowed: ![[Pasted image 20240827142650.png]]
+
+## OSPF Cost
+OSPF's metric, automatically calculated based on the bandwidth (speed) of the interface.
+- Cost = Interface Bandwidth / **Reference Bandwidth**
+- Default reference bandwidth is 100 mbps.
+	- Reference: 100 mbps / Interface: 10 mbps (Ethernet) = cost of 10
+	- Reference: 100 mbps / Interface: 100 mbps (FastEthernet) = cost of **1**
+	- Reference: 100 mbps / Interface: 1000 mbps (Gigabit Ethernet) = cost of **1**
+	- Reference: 100 mbps / Interface: 10000 mbps (10-Gigabit Ethernet) = cost of **1**
+All values less than 1 will be converted to 1, so FastEthernet, Gigabit Ethernet, 10Gig Ethernet, etc. are equal and will have a cost of 1 by default.
+	  

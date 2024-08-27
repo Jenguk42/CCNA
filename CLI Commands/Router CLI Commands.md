@@ -195,8 +195,8 @@ Refer to [[Static Routing]] for detailed explanation
 	- After configuration, both paths are added in the routing table. However, `G0/0` will carry more traffic because it's a faster path with a lower metric. ![[Pasted image 20240827133000.png]]
 #### OSPF Configuration
 - `router ospf PROCESS_ID`
-	- The OSPF process ID is locally significant, so they don't have to match between OSPF neighbours.
-	- A router can run multiple OSPF processes at once, and this ID is used to identify between them.
+	- Enables OSPF protocol with the given process ID.
+	- The OSPF process ID is locally significant, so they don't have to match between OSPF neighbours. A router can run multiple OSPF processes at once, and this ID is used to identify between them.
 	- Unrelated to the area!
 - `network IP_ADDRESS WILDCARD AREA_NO`
 	- Same as the [[#Network Command]] explained above, but only activates OSPF on the interface in the specified `area`.
@@ -206,6 +206,14 @@ Refer to [[Static Routing]] for detailed explanation
 	- Manual configuration of router ID (Highest priority)
 	- Note that you don't need to specify `ospf` unlike in EIGRP.
 	- `clear ip ospf processes` is used to clear the current ID when changing the router IDs.
+##### Show Commands
+Example Network Topology Used: ![[Pasted image 20240828093505.png]]
+- `show ip ospf database`
+	- ![[Pasted image 20240828093403.png]]
+- `show ip ospf neighbor`
+	- ![[Pasted image 20240828093447.png]]
+- `show ip ospf interface`
+	- You can specify the interface you want to check. ![[Pasted image 20240828093628.png]]
 ## VLAN Configuration
 ### Router on a Stick (ROAS)
 ![[Pasted image 20240818224731.png]]

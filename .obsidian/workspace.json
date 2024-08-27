@@ -55,8 +55,7 @@
               }
             }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "vertical"
@@ -85,7 +84,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "wild",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -102,12 +101,12 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "25fa439111d25ab5",
@@ -123,7 +122,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Routing/OSPF.md",
+                "file": "CLI Commands/Router CLI Commands.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -140,7 +139,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Routing/OSPF.md",
+                "file": "CLI Commands/Router CLI Commands.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -163,7 +162,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Routing/OSPF.md"
+                "file": "CLI Commands/Router CLI Commands.md"
               }
             }
           }
@@ -184,23 +183,23 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "6d0604efdfd5664b",
+  "active": "1baca47a2a51d5ea",
   "lastOpenFiles": [
-    "CLI Commands/Router CLI Commands.md",
     "Routing/OSPF.md",
-    "Pasted image 20240827161701.png",
-    "Pasted image 20240827161432.png",
+    "CLI Commands/Router CLI Commands.md",
+    "Pasted image 20240828093628.png",
+    "Pasted image 20240828093505.png",
+    "Pasted image 20240828093447.png",
+    "Pasted image 20240828093403.png",
     "Routing/RIP & EIGRP.md",
     "Routing/Dynamic Routing.md",
+    "Pasted image 20240827161701.png",
+    "Pasted image 20240827161432.png",
     "2024-08-27.md",
     "Images/Screenshot 2024-08-27 141812.png",
     "Images/Pasted image 20240827142650.png",
     "Images/Pasted image 20240827142553.png",
     "Images/Pasted image 20240827142529.png",
-    "Images/Pasted image 20240827142427.png",
-    "Images/Pasted image 20240827142354.png",
-    "Images/Pasted image 20240827140032.png",
-    "Pasted image 20240827142650.png",
     "Routing/Static Routing.md",
     "Routing/Routing Fundamentals.md",
     "IPv4 Addressing.md",
