@@ -8,14 +8,6 @@
         "type": "tabs",
         "children": [
           {
-            "id": "62178f057f66bb7c",
-            "type": "leaf",
-            "state": {
-              "type": "graph",
-              "state": {}
-            }
-          },
-          {
             "id": "1baca47a2a51d5ea",
             "type": "leaf",
             "state": {
@@ -26,8 +18,45 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "62178f057f66bb7c",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Routing/Dynamic Routing.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "7501f82d624e053d",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Routing/Static Routing.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "b6723c9537e6b2ac",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Routing/RIP & EIGRP.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -56,7 +85,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "\"default route\"",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -93,6 +122,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "Routing/RIP & EIGRP.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -109,6 +139,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "Routing/RIP & EIGRP.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -130,7 +161,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "Routing/RIP & EIGRP.md"
+              }
             }
           }
         ]
@@ -150,23 +183,25 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "8195630a8994eb6e",
+  "active": "b6723c9537e6b2ac",
   "lastOpenFiles": [
-    "Routing/RIP & EIGRP.md",
-    "Images/Pasted image 20240823143643.png",
-    "Images/Pasted image 20240823143230.png",
-    "Images/Pasted image 20240823143041.png",
-    "Images/Pasted image 20240823143032.png",
-    "Images/Pasted image 20240823141421.png",
-    "Images/Pasted image 20240823134517.png",
-    "Images/Pasted image 20240823132552.png",
-    "Images/Pasted image 20240823132429.png",
-    "Images/Pasted image 20240823143929.png",
-    "Images/Pasted image 20240823153426.png",
+    "Pasted image 20240827121144.png",
+    "Images/Pasted image 20240827115435.png",
+    "Images/Pasted image 20240827115302.png",
+    "Images/Pasted image 20240827114933.png",
+    "Images/Pasted image 20240827114930.png",
+    "Images/Pasted image 20240827114920.png",
+    "Images/Pasted image 20240827114354.png",
+    "Images/Pasted image 20240827114351.png",
+    "Images/Pasted image 20240827102319.png",
+    "Images/Screenshot 2024-08-27 120810.png",
+    "Screenshot 2024-08-27 120810.png",
     "CLI Commands/Router CLI Commands.md",
+    "Routing/RIP & EIGRP.md",
+    "Routing/Dynamic Routing.md",
+    "Routing/Static Routing.md",
     "Routing/Routing Fundamentals.md",
     "IPv4 Addressing.md",
-    "Routing/Dynamic Routing.md",
     "CLI Commands/Switch CLI Commands.md",
     "Life of a Packet.md",
     "DTP, VTP.md",
@@ -177,7 +212,6 @@
     "VLANs.md",
     "README.md",
     "CLI Commands/Troubleshooting Commands.md",
-    "Routing/Static Routing.md",
     "CCNA/Life of a Packet.md",
     "CCNA/MAC address.md",
     "CCNA/OSI Model.md",

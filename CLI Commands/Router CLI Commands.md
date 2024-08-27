@@ -136,37 +136,32 @@ Refer to [[Static Routing]] for detailed explanation
 		- E.g., OSPF has an AD of 110, so set the floating static route with AD 111.
 		- In this case, the static route will not show up in the routing table because the OSPF route is favoured and written on the table.
 ### Dynamic Routing Configuration
-### Commands used in Common
+#### Commands used in Common
+- `show ip route ...`
+	- `IGP_NAME`: Filters routes by IGP protocols. (EIGRP, OSPF, etc.)
+	- `CONNECTION_TYPE`: Filter routes by connection types (static, connected, etc.)
+- `show ip IGP_NAME neighbors`: Shows the neighbours of the router in the given protocol, as well as the interface they are connected to.
+	- Example: EIGRP
+		![[Pasted image 20240827114933.png]]
+- `show ip IGP_NAME topology`: Detailed information about the EIGRP routes the router has received (not just the routing table)
+	- Example: There are two routes to `192.168.4.0/24`, but only one with the lower metric value is entered in the routing table. ![[Pasted image 20240827115435.png]]
 - `show ip protocols`: Shows various stats
 	- Example: RIP ![[Pasted image 20240823143643.png]]
-- `maximum paths NUMBER`: Change the maximum paths that can be saved for the same destination. NEEDS TO BE EXECUTED IN PROTOCOL CONFIGURATION MODE
+- `maximum paths NUMBER`: Change the maximum paths that can be saved for the same destination. NEEDS TO BE EXECUTED IN PROTOCOL CONFIGURATION MODE!
 	![[Pasted image 20240823143929.png]]
-- `distance NUMBER`: Change the administrative distance to make it favoured over other protocols. NEEDS TO BE EXECUTED IN PROTOCOL CONFIGURATION MODE ![[Pasted image 20240823144145.png]]
-- `network IP_ADDRESS`: "Activate IGP on interfaces with an IP address that falls under the given IP range." 
-	![[Pasted image 20240823134517.png]]
-	- Used in RIP, OSPF, and EIGRP
-	- Automatically converts the IP address to classful networks.
-		- E.g., command `network 10.0.12.0` will be converted to `network 10.0.0.0/8` (Class A network).
-		- No need to enter the network mask
-	- Tells the router to:
-		- Look for interfaces with an IP address that is in the specified range.
-		- Activate RIP on the interfaces that fall in the range.
-		- Form adjacencies with connected RIP neighbours.
-		- Advertise **the network prefix of the interface** (NOT the prefix in the `network` command)
-	- This command doesn't tell the router which networks to advertise, it tells the router **which interfaces to activate RIP on.**
-		- The router will advertise the network prefix of these interfaces.
-	
+- `distance NUMBER`: Change the administrative distance to make it favoured over other protocols. NEEDS TO BE EXECUTED IN PROTOCOL CONFIGURATION MODE! ![[Pasted image 20240823144145.png]]
+- `network IP_ADDRESS`: "Activate IGP on interfaces with an IP address that falls under the given IP range."
+	- `network 0.0.0.0 255.255.255.255` can activate the IGP on all interfaces (all intefraces have IP addresses in the `0.0.0.0/0` range).
+		- Not recommended in real life, but handy in labs
+#### Passive Interface Configuration
 - `passive-interface INTERFACE_ID`
-	- **DONE IN RIP CONFIGURATION MODE, NOT ON THE INTERFACE!**
-		- This is why the interface should be specified in the command.
-	- Tells the router to stop sending RIP advertisements out of the specified interface.
-	- The router will still advertise the network prefix of the interface to its RIP neighbours.
-	- Should be used on interfaces which don't have any RIP neighbours. 
-	- Example scenario:
-		- In the case below, R1 will continuously send RIP advertisements out of G2/0 although there is no RIP neighbours connected. 
-		- This is unnecessary traffic, so G2/0 should be configured as **passive interface**. 
-		![[Pasted image 20240823141421.png]]
-
+	- **DONE IN IGP CONFIGURATION MODE, NOT ON THE INTERFACE!** (This is why the interface should be specified in the command.)
+#### Loopback Interface Configuration
+- `interface loopback LOOPBACK_INT_NO`: Enables a loopback interface on a router
+	![[Pasted image 20240827102319.png]]
+	- Done in the global config mode.
+	- Configure an IP address, common to use `/32` mask (E.g., `ip add 1.1.1.1 255.255.255.255`)
+#### Default Route Configuration
 - `default-information originate`
 	- Share the default route with the neighbouring same-protocol-enabled routers.
 	- Example Scenario:
@@ -185,7 +180,7 @@ Refer to [[Static Routing]] for detailed explanation
 	- E.g., `172.16.1.0/28` attached to R1 is converted to class B network, advertised as `172.16.0.0/16`
 #### EIGRP Configuration
 ![[Pasted image 20240823145628.png]]
-- `router eigrp AS`
+- `router eigrp AS`: Enter EIGRP configuration mode
 	- AS (Autonomous System) number must match between routers, or they will not form an adjacency and share route information.
 - `no auto-summary`: Use classless networks.
 - A **wildcard mask** can be used with the `network` command!
@@ -194,6 +189,7 @@ Refer to [[Static Routing]] for detailed explanation
 - `eigrp router-id ROUTER_ID`
 	![[Pasted image 20240823153041.png]]
 	- Manual configuration of router ID (Highest priority)
+	- 
 ## VLAN Configuration
 ### Router on a Stick (ROAS)
 ![[Pasted image 20240818224731.png]]

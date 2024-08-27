@@ -19,8 +19,22 @@ Routers can use dynamic routing protocols to advertise information about their c
 ![[Pasted image 20240822153341.png]]
 - **IGP (Interior Gateway Protocol)**: Used to share routes within a single *autonomous* system (AS), which is a single organisation (E.g., a company)
 - **EGP (Exterior Gateway Protocol)**: Used to share routes *between* different autonomous systems.
-- Can be broken down to algorithm type (process used to share route information and choose the best route to the destination)
-	![[Pasted image 20240822153640.png]]
+- Can be broken down to algorithm type (process used to share route information and choose the best route to the destination) ![[Pasted image 20240822153640.png]]
+### Network Command
+The map is shared by the `network` command (Refer to [[Router CLI Commands]])
+- `network IP_ADDRESS`: "Activate IGP on interfaces with an IP address that falls under the given IP range."
+![[Pasted image 20240823134517.png]]
+- Used in RIP, OSPF, and EIGRP
+- Automatically converts the IP address to classful networks.
+	- E.g., command `network 10.0.12.0` will be converted to `network 10.0.0.0/8` (Class A network).
+	- No need to enter the network mask
+- Tells the router to:
+	- Look for interfaces with an IP address that is in the specified range.
+	- Activate RIP on the interfaces that fall in the range.
+	- Form adjacencies with connected RIP neighbours.
+	- Advertise **the network prefix of the interface** (NOT the prefix in the `network` command)
+- This command doesn't tell the router which networks to advertise, it tells the router **which interfaces to activate RIP on.**
+	- The router will advertise the network prefix of these interfaces.
 ## Dynamic Routing Algorithms
 ### Distance Vector Algorithm
 ![[Pasted image 20240822150240.png]]
@@ -63,6 +77,12 @@ Used to determine which routing protocol is preferred.
 - AD should be used before comparing metrics to select the best route.
 A **lower AD is preferred**, and indicates the routing protocol is considered more 'trustworthy' (more likely to select good routes).
 - E.g., RIP only takes hop count into consideration, not bandwidth. So it has a higher AD than OSPF.
+### Floating Static Route
+AD of a static route can be configured to change the preferred routing protocol. (Refer to [[CLI Commands/Router CLI Commands#Dynamic Route Configuration|Router CLI Commands]])
+- This can make static routes less preferred than routes learned by a dynamic routing protocol to the same destination.
+	- Make sure the static route's AD is higher than the dynamic route's AD!
+- This makes the route inactive unless the route learned by the dynamic routing protocol is removed.
+	- E.g., If the remote router stops advertising it, an interface failure causes an adjacency with a neighbour to be lost, etc.
 ### Cisco Ranks of Administrative Distance: 
 Remember AD is considered only to determine which route is placed in the routing table when multiple routes to a destinations are known. 
 ![[Pasted image 20240822161133.png]]
@@ -74,9 +94,14 @@ Remember AD is considered only to determine which route is placed in the routing
 ![[Pasted image 20240822161647.png]]
 - OSPF has an AD of 110 
 - The numbers on the right (0, 2, 3) show the metrics
-### Floating Static Route
-AD of a static route can be configured to change the preferred routing protocol. (Refer to [[CLI Commands/Router CLI Commands#Dynamic Route Configuration|Router CLI Commands]])
-- This can make static routes less preferred than routes learned by a dynamic routing protocol to the same destination.
-	- Make sure the static route's AD is higher than the dynamic route's AD!
-- This makes the route inactive unless the route learned by the dynamic routing protocol is removed.
-	- E.g., If the remote router stops advertising it, an interface failure causes an adjacency with a neighbour to be lost, etc.
+## Passive Interface
+In the case below, R1 will continuously send RIP advertisements out of G2/0 although there is no RIP neighbours connected. This is unnecessary traffic, so G2/0 should be configured as **passive interface**. 
+- Example scenario: ![[Pasted image 20240823141421.png]]
+- Should be used on interfaces which don't have any RIP neighbours. 
+- Tells the router to stop sending RIP advertisements out of the specified interface.
+- The router will still advertise the network prefix of the interface to its RIP neighbours.
+- Configuration: [[Router CLI Commands#Passive Interface Configuration]]
+## Loopback Interface
+A virtual interface in the router
+- Always up, unless manually disabled with the `shutdown` command
+- Recommended to make them as passive interfaces. (Waste of resources to send IGP messages, because they are not connected to any other device.)

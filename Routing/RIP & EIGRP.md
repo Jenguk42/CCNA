@@ -22,25 +22,41 @@ Supports VLSM, CIDR and includes subnet mask information in advertisements (resp
 - Messages are ==**multicast** to `224.0.0.9`==.
 	- Multicast messages are delivered only to devices that have joined that specific *multicast group*.
 ## EIGRP (Enhanced Interior Gateway Routing Protocol)
-Cisco proprietary, but published openly. Still mostly limited to Cisco devices so OSPF is used more commonly.
+Cisco proprietary, but published openly. Still mostly limited to Cisco devices so OSPF is used more commonly. (Refer to [[Router CLI Commands#EIGRP Configuration]] for configuration commands.)
 - Considered an 'advanced'/'hybrid' distance vector routing protocol, much faster than RIP in reacting to changes in network.
 - No 15 'hop-count' limit
 - Messages are ==multicast to `224.0.0.10`==.
-- The only IGP that can perform **unequal**-cost load balancing.
+- **NOTE: EIGRP is the only IGP that can perform unequal-cost load balancing!**
 	- By default, it performs ECMP (Equal Cost Multi-Path) load-balancing over 4 paths like RIP.
 	- Can be configured to load-balance over multiple paths that have different cost, or in proportion to the bandwidth.
-- Refer to [[Router CLI Commands#EIGRP Configuration]] for configuration commands.
-
-![[Pasted image 20240823152249.png]]
-- `Routing Protocol is "eigrp 1"
-	- 1 is the AS number that is configured.
-- Metric weight: K1 and K3 by default
-	- `K1`: Interface bandwidth
-	- `K3`: Delay
-	- Metric is calculated by bandwidth of the slowest link in the path + sum of delay values of all the link in the path
-- Two separate AD values (Distance):
-	- Internal routes: 90
-	- External routes: 170 (routes from outside EIGRP that are inserted to EIGRP.)
+- Example: ![[Pasted image 20240827114354.png]]
+	- `Routing Protocol is "eigrp 100"
+		- 100 is the AS number that is configured.
+	- Two separate AD values (Distance):
+		- Internal routes: 90
+		- External routes: 170 (routes from outside EIGRP that are inserted to EIGRP.)
+### EIGRP Metric
+By default, EIGRP uses **bandwidth** and **delay** to calculate metric.
+- Formula: (\[K1 \* bandwidth + (K2 \* bandwidth) / (256 - load) + K3 \* delay] \* \[K5 / (reliability + K4)]) * 256*
+- Default K values
+	- K1 = 1 (Multiplied by interface bandwidth)
+	- K2 = 0
+	- K3 = 1 (Multiplied by delay)
+	- K4 = 0
+	- K5 = 0
+- Metric = bandwidth + delay 
+	- Bandwidth of the **slowest** link in the path + **sum** of delay values of all the link in the path
+- Important terminologies
+	- E.g., R1 is trying to reach the `192.168.4.0/24` network.	![[Screenshot 2024-08-27 120810.png]]
+	- Different distances shown for different routes (Through R2 and through R3) ![[Pasted image 20240827121144.png]]
+	- **Feasible Distance** = This router's metric value to the route's destination 
+		- E.g., R1's metric to the destination (R1 to R2, R2 to R4, and R4 to send traffic out of its own interface), shown in red
+	- **Reported Distance (Advertised Distance)** = The neighbour's metric value to the route's destination.
+		- E.g., R1's neighbour R2's metric to the destination, shown in blue
+	- **Successor**: The route with the lowest metric to the destination (the best route)
+		- E.g., R2 is the successor of R1, since the route via R2 has a lower metric.
+	- **Feasible Successor**: An alternate route to the destination (not the best route) which meets the feasibility condition.
+		- A route is considered a feasible successor if its reported distance is lower than successor route's feasible distance.
 ### Router ID
 A 32-bit number formatted like a dotted-decimal IP address, but can be changed. 
 - Order of priority:
