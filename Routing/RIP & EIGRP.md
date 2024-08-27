@@ -35,6 +35,9 @@ Cisco proprietary, but published openly. Still mostly limited to Cisco devices s
 	- Two separate AD values (Distance):
 		- Internal routes: 90
 		- External routes: 170 (routes from outside EIGRP that are inserted to EIGRP.)
+	- `EIGRP maximum metric vairance 1`
+		- Variance 1 = Only ECMP load-balancing will be preformed.
+		- This can be configured to allow **unequal-cost load-balancing**: Refer to [[Router CLI Commands#Unequal-Cost Load-Balancing]]
 ### EIGRP Metric
 By default, EIGRP uses **bandwidth** and **delay** to calculate metric.
 - Formula: (\[K1 \* bandwidth + (K2 \* bandwidth) / (256 - load) + K3 \* delay] \* \[K5 / (reliability + K4)]) * 256*
@@ -49,14 +52,22 @@ By default, EIGRP uses **bandwidth** and **delay** to calculate metric.
 - Important terminologies
 	- E.g., R1 is trying to reach the `192.168.4.0/24` network.	![[Screenshot 2024-08-27 120810.png]]
 	- Different distances shown for different routes (Through R2 and through R3) ![[Pasted image 20240827121144.png]]
-	- **Feasible Distance** = This router's metric value to the route's destination 
+		- FD through R2: 28672 (RD from R2: 28416)
+		- FD through R3: 30976 (RD from R3: 28416)
+	- ==**Feasible Distance**== = The router's best metric along a path to a destination 
 		- E.g., R1's metric to the destination (R1 to R2, R2 to R4, and R4 to send traffic out of its own interface), shown in red
-	- **Reported Distance (Advertised Distance)** = The neighbour's metric value to the route's destination.
+	- ==**Reported Distance (Advertised Distance)**== = The next hop/neighbour's metric to the route's destination.
 		- E.g., R1's neighbour R2's metric to the destination, shown in blue
-	- **Successor**: The route with the lowest metric to the destination (the best route)
+	- ==**Successor**==: The route with the lowest metric to the destination *(the best route)*
 		- E.g., R2 is the successor of R1, since the route via R2 has a lower metric.
-	- **Feasible Successor**: An alternate route to the destination (not the best route) which meets the feasibility condition.
-		- A route is considered a feasible successor if its reported distance is lower than successor route's feasible distance.
+		- There can be multiple successors if they have the same metric. EIGRP will do ECMP load balancing.
+	- ==**Feasible Successor**==: An alternate route to the destination *(not the best route)* which meets the feasibility condition, guaranteed to be loop-free.
+	- **==Feasibility condition==**: A route is considered a feasible successor if its **reported distance** is lower than **successor route's feasible distance**.
+		- E.g., R3's reported route is 28416. The successor route via R2's feasible distance is 28672. 28416 is less than 28672, so the route via R3 is a feasible successor. ![[Pasted image 20240827133326.png]]
+		- **Loop prevention mechanism** - if a route meets the feasibility requirement, it is guaranteed not to be a looped route.
+	- EIGRP will only perform unequal-cost load-balancing over **feasible successor routes.** If a route does not meet the feasibility requirement, it will NEVER be selected for load-balancing, regardless of the variance.
+### Unequal-Cost Load-Balancing
+Other routing protocols only support ECMP (Equal Cost Multi-Path).
 ### Router ID
 A 32-bit number formatted like a dotted-decimal IP address, but can be changed. 
 - Order of priority:

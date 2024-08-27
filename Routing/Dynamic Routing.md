@@ -54,7 +54,7 @@ Works by getting a whole picture of the network.
 	- Open Shortest Path First (OSPF), Intermediate System to Intermediate System (IS-IS) 
 - Routers create a **'connectivity map'** of the network, then calculate the best routes independently.
 	- Each router advertises info about its interfaces (connected networks) to its neighbours.
-	- These advertisements are passed along to other routers, until all routers in the network develop the same map.
+	- These advertisements are passed along to other routers, until **all routers in the network develop the same complete map.**
 - Uses more resources (CPU) on the router, because more information is shared.
 - However, tends to be faster in reacting to changes in the network than distance vector protocols.
 ## Dynamic Routing Protocol Metrics
@@ -95,12 +95,21 @@ Remember AD is considered only to determine which route is placed in the routing
 - OSPF has an AD of 110 
 - The numbers on the right (0, 2, 3) show the metrics
 ## Passive Interface
-In the case below, R1 will continuously send RIP advertisements out of G2/0 although there is no RIP neighbours connected. This is unnecessary traffic, so G2/0 should be configured as **passive interface**. 
-- Example scenario: ![[Pasted image 20240823141421.png]]
-- Should be used on interfaces which don't have any RIP neighbours. 
-- Tells the router to stop sending RIP advertisements out of the specified interface.
+Routers will continuously send advertisements out of all their interfaces even if there is no same-protocol enabled neighbours connected. This is unnecessary traffic, so these interfaces should be configured as **passive interface**. 
+- Used in RIP, EIGRP, and OSPF.
+- Example scenario with RIP: ![[Pasted image 20240823141421.png]]
+- Should be used on interfaces which don't have any same-protocol neighbours. 
+- Tells the router to stop sending advertisements out of the specified interface.
 - The router will still advertise the network prefix of the interface to its RIP neighbours.
 - Configuration: [[Router CLI Commands#Passive Interface Configuration]]
+## Default Route
+Share the default route with the neighbouring same-protocol-enabled routers.
+![[Pasted image 20240823143041.png]]
+- R1 configured the default route with the command: `ip route 0.0.0.0 0.0.0.0 203.0.113.2`.
+- After sharing the default route with `default-information originate`, R2, R3, and R4 learns the route too.
+	![[Pasted image 20240823143230.png]]
+	- This is an example of RIP enabled routers. Both routes (To R3, `10.0.34.1` via interface `F2/0`; To R2, `10.0.24.1` via interface `G0/0`) are stated since they have the same hop count. 
+	- R4 will load-balance traffic over the two routes.
 ## Loopback Interface
 A virtual interface in the router
 - Always up, unless manually disabled with the `shutdown` command

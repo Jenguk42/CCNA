@@ -151,26 +151,24 @@ Refer to [[Static Routing]] for detailed explanation
 	![[Pasted image 20240823143929.png]]
 - `distance NUMBER`: Change the administrative distance to make it favoured over other protocols. NEEDS TO BE EXECUTED IN PROTOCOL CONFIGURATION MODE! ![[Pasted image 20240823144145.png]]
 - `network IP_ADDRESS`: "Activate IGP on interfaces with an IP address that falls under the given IP range."
-	- `network 0.0.0.0 255.255.255.255` can activate the IGP on all interfaces (all intefraces have IP addresses in the `0.0.0.0/0` range).
+	- Tells the IGP to look for any interfaces with an IP address contained in the range specified in the `network` command.
+	- Activate IGP on the interface in the specified range.
+	- The router will then try to become IGP neighbours with other same-protocol-activated neighbour routers.
+	- `network 0.0.0.0 255.255.255.255` can activate the IGP on all interfaces (all interfaces have IP addresses in the `0.0.0.0/0` range).
 		- Not recommended in real life, but handy in labs
 #### Passive Interface Configuration
 - `passive-interface INTERFACE_ID`
+	- E.g., `passive-interface g2/0`
 	- **DONE IN IGP CONFIGURATION MODE, NOT ON THE INTERFACE!** (This is why the interface should be specified in the command.)
+	- Used in RIP, EIGRP, and OSPF
+#### Default Route Configuration
+- `default-information originate`
+	- Share the default route with the neighbouring same-protocol-enabled routers.
 #### Loopback Interface Configuration
 - `interface loopback LOOPBACK_INT_NO`: Enables a loopback interface on a router
 	![[Pasted image 20240827102319.png]]
 	- Done in the global config mode.
 	- Configure an IP address, common to use `/32` mask (E.g., `ip add 1.1.1.1 255.255.255.255`)
-#### Default Route Configuration
-- `default-information originate`
-	- Share the default route with the neighbouring same-protocol-enabled routers.
-	- Example Scenario:
-		![[Pasted image 20240823143041.png]]
-		- R1 configured the default route with the command: `ip route 0.0.0.0 0.0.0.0 203.0.113.2`.
-		- After sharing the default route with `default-information originate`, R2, R3, and R4 learns the route too.
-			![[Pasted image 20240823143230.png]]
-			- This is an example of RIP enabled routers. Both routes (To R3, `10.0.34.1` via interface `F2/0`; To R2, `10.0.24.1` via interface `G0/0`) are stated since they have the same hop count. 
-			- R4 will load-balance traffic over the two routes.
 #### RIP Configuration
 ![[Pasted image 20240823132552.png]]
 - `router rip`: Enter RIP configuration mode
@@ -189,7 +187,25 @@ Refer to [[Static Routing]] for detailed explanation
 - `eigrp router-id ROUTER_ID`
 	![[Pasted image 20240823153041.png]]
 	- Manual configuration of router ID (Highest priority)
-	- 
+##### Unequal-Cost Load-Balancing
+![[Pasted image 20240827133924.png]]
+- `variance MULTIPLIER`: Configure the variance to allow unequal-cost load-balancing
+	- E.g., Variance 2 = Feasible successor routes with an FD up to 2 times the successor route's FD can be used to load-balance. 
+	- 28672 \* 2 = 57344, and 30976 is less than 57344, so the route via R3 can now be used for load-balancing. ![[Pasted image 20240827132621.png]]
+	- After configuration, both paths are added in the routing table. However, `G0/0` will carry more traffic because it's a faster path with a lower metric. ![[Pasted image 20240827133000.png]]
+#### OSPF Configuration
+- `router ospf PROCESS_ID`
+	- The OSPF process ID is locally significant, so they don't have to match between OSPF neighbours.
+	- A router can run multiple OSPF processes at once, and this ID is used to identify between them.
+	- Unrelated to the area!
+- `network IP_ADDRESS WILDCARD AREA_NO`
+	- Same as the [[#Network Command]] explained above, but only activates OSPF on the interface in the specified `area`.
+	- For single-area OSPF, the best practice is to use area 0.
+	- E.g., `network 10.0.12.0 0.0.0.3 area 0`
+- `router-id A.B.C.D`
+	- Manual configuration of router ID (Highest priority)
+	- Note that you don't need to specify `ospf` unlike in EIGRP.
+	- `clear ip ospf processes` is used to clear the current ID when changing the router IDs.
 ## VLAN Configuration
 ### Router on a Stick (ROAS)
 ![[Pasted image 20240818224731.png]]
