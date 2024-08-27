@@ -85,7 +85,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "wild",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -102,7 +102,8 @@
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -186,9 +187,11 @@
   },
   "active": "6d0604efdfd5664b",
   "lastOpenFiles": [
-    "Routing/RIP & EIGRP.md",
-    "Routing/OSPF.md",
     "CLI Commands/Router CLI Commands.md",
+    "Routing/OSPF.md",
+    "Pasted image 20240827161701.png",
+    "Pasted image 20240827161432.png",
+    "Routing/RIP & EIGRP.md",
     "Routing/Dynamic Routing.md",
     "2024-08-27.md",
     "Images/Screenshot 2024-08-27 141812.png",
@@ -199,8 +202,6 @@
     "Images/Pasted image 20240827142354.png",
     "Images/Pasted image 20240827140032.png",
     "Pasted image 20240827142650.png",
-    "Pasted image 20240827142553.png",
-    "Pasted image 20240827142529.png",
     "Routing/Static Routing.md",
     "Routing/Routing Fundamentals.md",
     "IPv4 Addressing.md",
@@ -221,7 +222,6 @@
     "CCNA/README.md",
     "CCNA/Subnetting.md",
     "CCNA/VLANs.md",
-    "CCNA/Add Later.md",
     "CCNA/STP",
     "CCNA/Routing",
     "CCNA/Other/Angel/Basic Networking and Cisco Packet Tracer.pdf",

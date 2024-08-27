@@ -5,8 +5,22 @@ Short for "**Open Shortest Path First**", uses the Shortest Path First algorithm
 	- OSPFv2 (1998): Used for IPv4
 	- OSPFv3 (2008): Used for IPv6 (Can also be used for IPv4, but usually v2 is used)
 ## Overview
-Following can be seen from the `show ip protocols` command:
-
+In the following network topology,
+	![[Pasted image 20240827161701.png]]
+Following can be seen from R1 using the `show ip protocols` command:
+	![[Pasted image 20240827161432.png]]
+- `Routing Protocol is "ospf 1"`
+	- The **OSPF process ID** is set to 1. This is locally significant, so they don't have to match between OSPF neighbours.
+	- A router can run multiple OSPF processes at once, and this ID is used to identify between them.
+	- Unrelated to the area!
+- **Router ID**: A 32-bit number formatted like a dotted-decimal IP address, but can be changed. 
+	- Order of priority:
+		1. Manual configuration
+		2. Highest IP address on a loopback interface
+		3. Highest IP address on a physical interface
+	- The loopback interface was manually configured as `1.1.1.1`, so it became the router ID.
+- `This is an autonomous system boundary router`
+	- This router is set as an **ASBR** that advertises a default route into the OSPF domain, using the command `ip route 0.0.0.0 0.0.0.0 203.0.113.2`. 
 ## OSPF Process
 Three main steps in the process of sharing LSAs and determining the best route to each destination in the network:
 1. Become neighbours with other routes connected to the same segment.
@@ -46,9 +60,3 @@ OSPF uses **areas** to divide up the network.
 	- This is not allowed: ![[Pasted image 20240827142529.png]]
 3. OSPF interfaces in the **same subnet** must be in the **same area**.
 	- This is not allowed: ![[Pasted image 20240827142650.png]]
-### Router ID
-A 32-bit number formatted like a dotted-decimal IP address, but can be changed. 
-- Order of priority:
-	1. Manual configuration
-	2. Highest IP address on a loopback interface
-	3. Highest IP address on a physical interface
