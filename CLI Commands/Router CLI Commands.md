@@ -203,7 +203,7 @@ Refer to [[Static Routing]] for detailed explanation
 	- Same as the [[#Network Command]] explained above, but only activates OSPF on the interface in the specified `area`.
 	- For single-area OSPF, the best practice is to use area 0.
 	- E.g., `network 10.0.12.0 0.0.0.3 area 0`
-- `ip ospf PROCESS_ID are AREA`
+- `ip ospf PROCESS_ID area AREA`
 	- DONE IN INTERFACE CONFIGURATION MODE! 
 	- Activates OSPF directly on an interface.
 	- E.g., `ip ospf 1 area 0` in `g0/0` configuration enables the OSPF protocol on the interface.

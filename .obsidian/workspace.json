@@ -43,8 +43,7 @@
               }
             }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "vertical"
@@ -111,7 +110,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Routing/OSPF.md",
+                "file": "CLI Commands/Router CLI Commands.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -128,7 +127,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Routing/OSPF.md",
+                "file": "CLI Commands/Router CLI Commands.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -151,7 +150,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Routing/OSPF.md"
+                "file": "CLI Commands/Router CLI Commands.md"
               }
             }
           }
@@ -172,10 +171,10 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "248a7804fd7761ba",
+  "active": "1baca47a2a51d5ea",
   "lastOpenFiles": [
-    "CLI Commands/Router CLI Commands.md",
     "Routing/OSPF.md",
+    "CLI Commands/Router CLI Commands.md",
     "Pasted image 20240828112646.png",
     "Pasted image 20240828112331.png",
     "Pasted image 20240828111931.png",
