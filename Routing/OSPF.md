@@ -26,7 +26,18 @@ Three main steps in the process of sharing LSAs and determining the best route t
 1. Become neighbours with other routes connected to the same segment.
 2. Exchange LSAs with neighbour routes (through [[#LSA Flooding]])
 3. Calculate the best route to each destination, and insert them into the routing table. (This is done independently for each router)
-## LSA Flooding
+## 1. Becoming OSPF Neighbours
+Making sure that routers **successfully become OSPF neighbours** is the main task in configuring and troubleshooting OSPF, because the routers will automatically share network information, calculate routes, etc once they become neighbours.
+### Hello Messages
+When OSPF is activated on an interface, the router starts sending OSPF **hello messages** out of the interface at regular intervals, which are used to introduce the router to potential OSPF neighbours.
+- This interval is determined by the **hello timer**, 10 sec by default on an Ethernet connection. 
+- Hello messages are multicast to `224.0.5` (multicast addresses for all OSPF routers).
+- OSPF messages are encapsulated in an IP header, with a value of 89 in the Protocol Field.
+### Neighbouring Process
+The process of Routers becoming OSPF neighbours is as follows. Assume OSPF is already enabled in R1. ![[Pasted image 20240828101626.png]]
+1. DOWN state
+	1. OS
+## 2. LSA Flooding
 Routers store information about the network in **LSAs (Link State Advertisements)**, which are organised in a structure called the **LSDB (Link State Database)**.
 - LSDBs are identical for all routers in the area - they contain LSAs for all of the different links in the network.
 - Routers will **flood** LSAs until all routers in the OSPF **area** develop the same map of the network (LSDB). ![[Pasted image 20240827140032.png]]
@@ -60,14 +71,26 @@ OSPF uses **areas** to divide up the network.
 	- This is not allowed: ![[Pasted image 20240827142529.png]]
 3. OSPF interfaces in the **same subnet** must be in the **same area**.
 	- This is not allowed: ![[Pasted image 20240827142650.png]]
-
 ## OSPF Cost
-OSPF's metric, automatically calculated based on the bandwidth (speed) of the interface.
+### Reference Bandwidth
+OSPF's metric, automatically calculated based on the bandwidth (speed) of the interface. **Reference bandwidth should be consistent across all OSPF routers** in the network to provide a consistent cost.
 - Cost = Interface Bandwidth / **Reference Bandwidth**
 - Default reference bandwidth is 100 mbps.
 	- Reference: 100 mbps / Interface: 10 mbps (Ethernet) = cost of 10
 	- Reference: 100 mbps / Interface: 100 mbps (FastEthernet) = cost of **1**
 	- Reference: 100 mbps / Interface: 1000 mbps (Gigabit Ethernet) = cost of **1**
-	- Reference: 100 mbps / Interface: 10000 mbps (10-Gigabit Ethernet) = cost of **1**
+	- Reference: 100 mbps / Interface: 10,000 mbps (10-Gigabit Ethernet) = cost of **1**
 All values less than 1 will be converted to 1, so FastEthernet, Gigabit Ethernet, 10Gig Ethernet, etc. are equal and will have a cost of 1 by default.
-	  
+- Do this by command `auto-cost reference-bandwidth MBITS_PER_SECOND`
+- Reference bandwidth should be configured greater than the fastest links in your network (to allow future upgrades).
+- E.g., Configured reference bandwidth is 100,000 mbps.
+	- Reference: 100,000 mbps / Interface: 100 mbps (FastEthernet) = cost of **1000**
+	- Reference: 100,000 mbps / Interface: 1000 mbps (Gigabit Ethernet) = cost of **100**
+Refer to [[Router CLI Commands#OSPF Configuration]]
+### Cost Calculation
+OSPF cost to a destination is the total cost of the 'outgoing/exit' interfaces.
+- Loopback interfaces have a cost of 1.
+- Example Network Topology: 
+	![[Pasted image 20240828100026.png]]
+	- R1's cost to reach `192.168.4.0/24` is: 100 (R1 `G0/0`) + 100 (R2 `G1/0`) + 100 (R4 `G1/0`) = 300
+	- R1's cost to reach `2.2.2.2`, R2's loopback interface is: 100 (R1 `G0/0`) + 1 (R2 `L0`) = 101

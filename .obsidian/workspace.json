@@ -32,19 +32,7 @@
             }
           },
           {
-            "id": "b6723c9537e6b2ac",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Routing/RIP & EIGRP.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "6d0604efdfd5664b",
+            "id": "248a7804fd7761ba",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -55,7 +43,8 @@
               }
             }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -122,7 +111,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "CLI Commands/Router CLI Commands.md",
+                "file": "Routing/OSPF.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -139,7 +128,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "CLI Commands/Router CLI Commands.md",
+                "file": "Routing/OSPF.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -162,7 +151,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "CLI Commands/Router CLI Commands.md"
+                "file": "Routing/OSPF.md"
               }
             }
           }
@@ -183,33 +172,37 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "1baca47a2a51d5ea",
+  "active": "248a7804fd7761ba",
   "lastOpenFiles": [
-    "Routing/OSPF.md",
     "CLI Commands/Router CLI Commands.md",
+    "Routing/OSPF.md",
+    "Routing/Dynamic Routing.md",
+    "DTP, VTP.md",
+    "EtherChannel.md",
+    "Ethernet LAN Switching.md",
+    "Hubs, Full & Half Duplex.md",
+    "IPv4 Addressing.md",
+    "IPv4 Header.md",
+    "OSI Model.md",
+    "MAC address.md",
+    "Life of a Packet.md",
+    "Subnetting.md",
+    "Speed, Duplex Autonegotiation.md",
+    "Routing/RIP & EIGRP.md",
+    "Pasted image 20240828101626.png",
+    "Pasted image 20240828100026.png",
     "Pasted image 20240828093628.png",
     "Pasted image 20240828093505.png",
     "Pasted image 20240828093447.png",
     "Pasted image 20240828093403.png",
-    "Routing/RIP & EIGRP.md",
-    "Routing/Dynamic Routing.md",
     "Pasted image 20240827161701.png",
     "Pasted image 20240827161432.png",
     "2024-08-27.md",
     "Images/Screenshot 2024-08-27 141812.png",
     "Images/Pasted image 20240827142650.png",
-    "Images/Pasted image 20240827142553.png",
-    "Images/Pasted image 20240827142529.png",
     "Routing/Static Routing.md",
     "Routing/Routing Fundamentals.md",
-    "IPv4 Addressing.md",
     "CLI Commands/Switch CLI Commands.md",
-    "Life of a Packet.md",
-    "DTP, VTP.md",
-    "IPv4 Header.md",
-    "Hubs, Full & Half Duplex.md",
-    "Ethernet LAN Switching.md",
-    "EtherChannel.md",
     "VLANs.md",
     "README.md",
     "CLI Commands/Troubleshooting Commands.md",
@@ -217,9 +210,6 @@
     "CCNA/MAC address.md",
     "CCNA/OSI Model.md",
     "CCNA/Speed, Duplex Autonegotiation.md",
-    "CCNA/README.md",
-    "CCNA/Subnetting.md",
-    "CCNA/VLANs.md",
     "CCNA/STP",
     "CCNA/Routing",
     "CCNA/Other/Angel/Basic Networking and Cisco Packet Tracer.pdf",

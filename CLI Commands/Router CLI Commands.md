@@ -194,6 +194,7 @@ Refer to [[Static Routing]] for detailed explanation
 	- 28672 \* 2 = 57344, and 30976 is less than 57344, so the route via R3 can now be used for load-balancing. ![[Pasted image 20240827132621.png]]
 	- After configuration, both paths are added in the routing table. However, `G0/0` will carry more traffic because it's a faster path with a lower metric. ![[Pasted image 20240827133000.png]]
 #### OSPF Configuration
+##### OSPF Enable Commands
 - `router ospf PROCESS_ID`
 	- Enables OSPF protocol with the given process ID.
 	- The OSPF process ID is locally significant, so they don't have to match between OSPF neighbours. A router can run multiple OSPF processes at once, and this ID is used to identify between them.
@@ -202,18 +203,33 @@ Refer to [[Static Routing]] for detailed explanation
 	- Same as the [[#Network Command]] explained above, but only activates OSPF on the interface in the specified `area`.
 	- For single-area OSPF, the best practice is to use area 0.
 	- E.g., `network 10.0.12.0 0.0.0.3 area 0`
-- `router-id A.B.C.D`
-	- Manual configuration of router ID (Highest priority)
-	- Note that you don't need to specify `ospf` unlike in EIGRP.
-	- `clear ip ospf processes` is used to clear the current ID when changing the router IDs.
-##### Show Commands
+##### OSPF Show Commands
 Example Network Topology Used: ![[Pasted image 20240828093505.png]]
 - `show ip ospf database`
 	- ![[Pasted image 20240828093403.png]]
 - `show ip ospf neighbor`
 	- ![[Pasted image 20240828093447.png]]
 - `show ip ospf interface`
-	- You can specify the interface you want to check. ![[Pasted image 20240828093628.png]]
+	- You can specify the interface you want to check. 
+	- Notice the cost of `G0/0` and `F1/0` are the same, because the reference bandwidth was not updated. ![[Pasted image 20240828093628.png]]
+##### OSPF Cost Configuration
+- Reference Bandwidth Configuration: `auto-cost reference-bandwidth MEGABITS_PER_SECOND`
+	- In OSPF configuration mode
+	- Crucial to allow proper cost calculation!
+- Manual Configuration: `ip ospf cost COST`
+	- Changes the cost of individual interface, in interface configuration mode
+	- RECOMMENDED OVER CHANGING BANDWIDTH!
+- Interface Bandwidth Configuration: `bandwidth KB_PER_SEC`
+	- In interface configuration mode
+	- Bandwidth matches the interface speed by default, but changing the interface bandwidth **does not change the speed at which the interface operates!**
+	- E.g., If you change the bandwidth of a Gigabit Ethernet interface to 100 mbps, it will still operate at 1 gbps. However, a bandwidth of 100 mbps will be used for OSPF's cost calculation.
+	- NOT RECOMMENDED - Bandwidth value is used in other calculations too!
+##### OSPF Other Configuration
+- `speed `
+- `router-id A.B.C.D`
+	- Manual configuration of router ID (Highest priority)
+	- Note that you don't need to specify `ospf` unlike in EIGRP.
+	- `clear ip ospf processes` is used to clear the current ID when changing the router IDs.
 ## VLAN Configuration
 ### Router on a Stick (ROAS)
 ![[Pasted image 20240818224731.png]]
