@@ -24,20 +24,54 @@ Following can be seen from R1 using the `show ip protocols` command:
 ## OSPF Process
 Three main steps in the process of sharing LSAs and determining the best route to each destination in the network:
 1. Become neighbours with other routes connected to the same segment.
+	- **Down, Init, 2-way States**
 2. Exchange LSAs with neighbour routes (through [[#LSA Flooding]])
+	- **Exstart, Exchange, and Loading States**
 3. Calculate the best route to each destination, and insert them into the routing table. (This is done independently for each router)
-## 1. Becoming OSPF Neighbours
+## OSPF Neighbours
 Making sure that routers **successfully become OSPF neighbours** is the main task in configuring and troubleshooting OSPF, because the routers will automatically share network information, calculate routes, etc once they become neighbours.
 ### Hello Messages
 When OSPF is activated on an interface, the router starts sending OSPF **hello messages** out of the interface at regular intervals, which are used to introduce the router to potential OSPF neighbours.
 - This interval is determined by the **hello timer**, 10 sec by default on an Ethernet connection. 
-- Hello messages are multicast to `224.0.5` (multicast addresses for all OSPF routers).
+- Hello messages are multicast to `224.0.0.5` (multicast addresses for all OSPF routers).
 - OSPF messages are encapsulated in an IP header, with a value of 89 in the Protocol Field.
-### Neighbouring Process
+### Neighbouring States
 The process of Routers becoming OSPF neighbours is as follows. Assume OSPF is already enabled in R1. ![[Pasted image 20240828101626.png]]
-1. DOWN state
-	1. OS
-## 2. LSA Flooding
+1. **Down State**: R1 doesn't know about any OSPF neighbours yet.
+	![[Pasted image 20240828110554.png]]
+	1. OSPF is activated on R1's G0/0 interface.
+	2. It sends an OSPF Hello message to `224.0.0.5`. (R1 doesn't know about R2, so the neighbour router ID field is `0.0.0.0`.)
+2. **Init State**: R2 receives a Hello packet from R1, but R2's RID is not in the Hello packet. 
+	![[Pasted image 20240828110817.png]]
+	1. R2 adds an entry for R1 to its OSPF neighbour table, where the relationship with R1 is now in the **Init** state.
+3. **2-way State**: R1 receives a Hello packet with its own RID in it.
+	![[Pasted image 20240828111331.png]]
+	1. R2 sends the Hello packet containing the RID of both routers.
+	2. R1 adds an entry for R2 to its OSPF neighbour table, where the relationship with R2 is now in the **2-way** state.
+	3. R1 sends another Hello message, this time containing R2's RID. R2 updates its relationship with R1.
+	4. All conditions have been met for the routers to become OSPF neighbours, and they are now ready to share LSAs to build a common LSDB.
+	5. DR (Designated Router) and BDR (Backup Designated Router) will be elected.
+4. **Exstart State**: Routers decide which one will start the exchange, to prepare for the exchange state.
+	![[Pasted image 20240828111734.png]]
+	1. The routers exchange DBD (Database Description) packets.
+	2. The router with the higher RID will become the **Master** and initiate the exchange. The router with the lower RID will become the **Slave**.
+5. **Exchange State**: The routers exchange DBDs which contain a list of the LSAs in their LSDB, to check which ones they should receive.
+	- These DBDs does not include detailed information about the LSAs, they are just basic information telling the neighbour what LSAs they have!
+	![[Pasted image 20240828111931.png]]
+	1. The routers exchange DBD (Database Description) packets. (Master router, R2 in this case, sends the DBD first.)
+	2. The routers compare the information in the DBD they received to the information in their own LSDB, then determine which LSAs they must receive from their neighbour.
+6. **Loading State**: LSR (Link State Request) messages are used to request LSU (Link State Update) messages, then LSAck messages are used to acknowledge the receival. 
+	- LSR are used to request any missing LSAs to make sure each router has the same LSAs.
+	![[Pasted image 20240828112646.png]]
+	1. R1 sends LSRs to R2 in order to request any LSAs it doesn't have.
+	2. R2 sends the LSAs in LSUs.
+	3. R1 sends LSAcks to acknowledge that it received the LSAs.   
+7. **Full State**: Routers have a full OSPF adjacency and identical LSDBs. Neighbour adjacency is maintained by sending and listening for Hello packets.
+	1. Hello packets are sent every 10 seconds by default.
+	2. Every time a Hello packet is received, the 'Dead' timer (40 sec by default) is reset.
+	3. If the Dead timer counts down to 0 and no Hello message is received, the neighbour is removed.
+	4. If the network changes, the routers continue to automatically share LSAs to make sure each router has a complete and accurate map on the network (LSDB).
+## LSA Flooding
 Routers store information about the network in **LSAs (Link State Advertisements)**, which are organised in a structure called the **LSDB (Link State Database)**.
 - LSDBs are identical for all routers in the area - they contain LSAs for all of the different links in the network.
 - Routers will **flood** LSAs until all routers in the OSPF **area** develop the same map of the network (LSDB). ![[Pasted image 20240827140032.png]]

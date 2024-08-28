@@ -196,19 +196,29 @@ Refer to [[Static Routing]] for detailed explanation
 #### OSPF Configuration
 ##### OSPF Enable Commands
 - `router ospf PROCESS_ID`
-	- Enables OSPF protocol with the given process ID.
+	- Enables OSPF protocol with the given process ID and enters OSPF configuration mode.
 	- The OSPF process ID is locally significant, so they don't have to match between OSPF neighbours. A router can run multiple OSPF processes at once, and this ID is used to identify between them.
 	- Unrelated to the area!
 - `network IP_ADDRESS WILDCARD AREA_NO`
 	- Same as the [[#Network Command]] explained above, but only activates OSPF on the interface in the specified `area`.
 	- For single-area OSPF, the best practice is to use area 0.
 	- E.g., `network 10.0.12.0 0.0.0.3 area 0`
+- `ip ospf PROCESS_ID are AREA`
+	- DONE IN INTERFACE CONFIGURATION MODE! 
+	- Activates OSPF directly on an interface.
+	- E.g., `ip ospf 1 area 0` in `g0/0` configuration enables the OSPF protocol on the interface.
+- `passive-interface default`
+	- DONE IN OSPF CONFIGURATION MODE!
+	- Configures ALL interfaces as OSPF passive interfaces.
+	- Interfaces can be configured back as active by: `no passive-interface INT_ID`
 ##### OSPF Show Commands
 Example Network Topology Used: ![[Pasted image 20240828093505.png]]
 - `show ip ospf database`
-	- ![[Pasted image 20240828093403.png]]
+	- Shows the LSDB. ![[Pasted image 20240828093403.png]]
 - `show ip ospf neighbor`
-	- ![[Pasted image 20240828093447.png]]
+	- `FULL` state: R2 and R3 are fully connected OSPF neighbours.
+	- Both R2 and R3 are `DR`s. 
+	- `Dead Time` is 40 by default, but resets as soon as R1 receives a Hello packet from the neighbour. ![[Pasted image 20240828093447.png]]
 - `show ip ospf interface`
 	- You can specify the interface you want to check. 
 	- Notice the cost of `G0/0` and `F1/0` are the same, because the reference bandwidth was not updated. ![[Pasted image 20240828093628.png]]
