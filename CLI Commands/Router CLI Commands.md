@@ -156,6 +156,9 @@ Refer to [[Static Routing]] for detailed explanation
 	- The router will then try to become IGP neighbours with other same-protocol-activated neighbour routers.
 	- `network 0.0.0.0 255.255.255.255` can activate the IGP on all interfaces (all interfaces have IP addresses in the `0.0.0.0/0` range).
 		- Not recommended in real life, but handy in labs
+- `clear ip IGP_NAME process`
+	- Reset all processes of the protocol.
+	- E.g., `clear ip ospf process` will reset the OSPF and shut all interfaces down. 
 #### Passive Interface Configuration
 - `passive-interface INTERFACE_ID`
 	- E.g., `passive-interface g2/0`
@@ -235,7 +238,9 @@ Example Network Topology Used: ![[Pasted image 20240828093505.png]]
 	- E.g., If you change the bandwidth of a Gigabit Ethernet interface to 100 mbps, it will still operate at 1 gbps. However, a bandwidth of 100 mbps will be used for OSPF's cost calculation.
 	- NOT RECOMMENDED - Bandwidth value is used in other calculations too!
 ##### OSPF Other Configuration
-- `speed `
+- `ip ospf priority PRIORITY`
+	- Manually configure the priority between 0 to 255
+	- Used when choosing DR & BDR within the subnet
 - `router-id A.B.C.D`
 	- Manual configuration of router ID (Highest priority)
 	- Note that you don't need to specify `ospf` unlike in EIGRP.

@@ -21,6 +21,34 @@ Following can be seen from R1 using the `show ip protocols` command:
 	- The loopback interface was manually configured as `1.1.1.1`, so it became the router ID.
 - `This is an autonomous system boundary router`
 	- This router is set as an **ASBR** that advertises a default route into the OSPF domain, using the command `ip route 0.0.0.0 0.0.0.0 203.0.113.2`. 
+## OSPF Network Types
+Type of connection between OSPF neighbours (Ethernet, etc.)
+Three main OSPF network types:
+- **Broadcast**
+	- Enabled by default on **Ethernet** and FDDI (Fiber Distributed Data Interfaces) interfaces
+- **Point-to-Point**
+	- Enabled by default on PPP (Point-to-Point Protocol) and HDLC (High-Level Data Link Control) interfaces
+- Non-broadcast
+	- Enabled by default on Frame Relay and X.25 interfaces
+	- Neighbours have to be manually configured.
+### Broadcast Network Type
+![[Pasted image 20240828153033.png]]
+- Enabled on Ethernet and FDDI interfaces by default.
+- Routers **dynamically discover** neighbours by sending/listening for OSPF Hello messages using multicast address `224.0.0.5`. 
+- A **DR (designated router)** and **BDR (backup designated router)** must be elected on each subnet (only DR if there are no OSPF neighbours, E.g., R1's `G1/0` interface).
+- Routers which aren't the DR or BDR become a **DROther**.
+	- DROthers will only move to the FULL state with the DR and BDR. The neighbour state with other DROthers will be 2-way.
+#### DR & BDR Election
+DR/BDR election is 'non pre-emptive'. Once the DR/BDR are selected they will keep their role until OSPF is reset, the interface fails/is shut down, etc.
+- Order of priority when choosing the DR of the subnet:
+	1. Highest OSPF Interface Priority
+		- All interfaces have the default priority of 1 by default
+		- This can be manually configured by `ip ospf priority PRIORITY`, with a range of 0 to 255
+		- If the priority is set to 0, the router cannot be the DR/BDR of the subnet.
+	2. Highest OSPF Router ID
+- 'First place' becomes the DR, and 'Second place' becomes the BDR
+- If the DR goes down, BDR instantly becomes the new DR. Then an election is held for the next BDR.
+	- E.g., If R2's priority is configured to be 255 and the OSPF processes are cleared, R4 will be the next DR because it was previously the BDR. Then R2 becomes the BDR.
 ## OSPF Process
 Three main steps in the process of sharing LSAs and determining the best route to each destination in the network:
 1. Become neighbours with other routes connected to the same segment.
@@ -30,11 +58,15 @@ Three main steps in the process of sharing LSAs and determining the best route t
 3. Calculate the best route to each destination, and insert them into the routing table. (This is done independently for each router)
 ## OSPF Neighbours
 Making sure that routers **successfully become OSPF neighbours** is the main task in configuring and troubleshooting OSPF, because the routers will automatically share network information, calculate routes, etc once they become neighbours.
+
+Different types of messages are sent to OSPF neighbours at different states:
+![[Pasted image 20240828151924.png]]
 ### Hello Messages
 When OSPF is activated on an interface, the router starts sending OSPF **hello messages** out of the interface at regular intervals, which are used to introduce the router to potential OSPF neighbours.
 - This interval is determined by the **hello timer**, 10 sec by default on an Ethernet connection. 
 - Hello messages are multicast to `224.0.0.5` (multicast addresses for all OSPF routers).
 - OSPF messages are encapsulated in an IP header, with a value of 89 in the Protocol Field.
+### Neighbour/ Adjacency Requirements
 ### Neighbouring States
 The process of Routers becoming OSPF neighbours is as follows. Assume OSPF is already enabled in R1. ![[Pasted image 20240828101626.png]]
 1. **Down State**: R1 doesn't know about any OSPF neighbours yet.

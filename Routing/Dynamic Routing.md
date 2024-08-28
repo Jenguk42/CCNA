@@ -112,5 +112,7 @@ Share the default route with the neighbouring same-protocol-enabled routers.
 	- R4 will load-balance traffic over the two routes.
 ## Loopback Interface
 A virtual interface in the router
-- Always up, unless manually disabled with the `shutdown` command
+- Status of the loopback interface is not dependent on a physical interface - not prone to network failure. 
+	- Always up/up, unless manually disabled with the `shutdown` command
+	- Provides a **consistent IP address** that can be used to **reach/identify the router**, that will never fail
 - Recommended to make them as passive interfaces. (Waste of resources to send IGP messages, because they are not connected to any other device.)
