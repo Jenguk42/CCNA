@@ -226,7 +226,11 @@ Example Network Topology Used: ![[Pasted image 20240828093505.png]]
 	- You can specify the interface you want to check. 
 	- Notice the cost of `G0/0` and `F1/0` are the same, because the reference bandwidth was not updated. ![[Pasted image 20240828093628.png]]
 - `show ip ospf interface brief`
-	- ![[Pasted image 20240829092042.png]]
+	![[Pasted image 20240829101945.png]]![[Pasted image 20240829092042.png]]
+	- `Nbrs`: `F` indicates the number of full adjacencies, and `C` indicates the total counts of neighbours
+		- R3 has a total of 3 neighbours: R2, R4 and R5.
+		- R3 has 2 full adjacencies with R2 and R4.
+	- `State`: Shows if the interface is DROther, DR, or BDR. 
 ##### OSPF Cost Configuration
 - Reference Bandwidth Configuration: `auto-cost reference-bandwidth MEGABITS_PER_SECOND`
 	- In OSPF configuration mode
@@ -239,14 +243,44 @@ Example Network Topology Used: ![[Pasted image 20240828093505.png]]
 	- Bandwidth matches the interface speed by default, but changing the interface bandwidth **does not change the speed at which the interface operates!**
 	- E.g., If you change the bandwidth of a Gigabit Ethernet interface to 100 mbps, it will still operate at 1 gbps. However, a bandwidth of 100 mbps will be used for OSPF's cost calculation.
 	- NOT RECOMMENDED - Bandwidth value is used in other calculations too!
+##### Serial Interface Configuration
+- `clock rate SPEED_IN_BPS`
+	- Used to specify the clock rate on the DCE.
+	- Remember to add an IP address and use `no shutdown`.
+	- Different from ethernet interfaces (they use `speed`!)
+- `show controllers INT_ID`
+	- Used to identify which is DCE and which is DTE. 
+- `encapsulation PPP`
+	- Manually configure the encapsulation to PPP, since the default is HDLC.
+	- Encapsulations should **match between both ends**, or the interface will go down!
 ##### OSPF Other Configuration
 - `ip ospf priority PRIORITY`
 	- Manually configure the priority between 0 to 255
 	- Used when choosing DR & BDR within the subnet
+- `ip ospf network TYPE`
+	![[Pasted image 20240829110948.png]]
+	- Manually configure the network type on an interface.
 - `router-id A.B.C.D`
 	- Manual configuration of router ID (Highest priority)
 	- Note that you don't need to specify `ospf` unlike in EIGRP.
 	- `clear ip ospf processes` is used to clear the current ID when changing the router IDs.
+		- Used when there are other neighbours that are affected.
+		- `no router-id` can be used if it has no other OSPF neighbours.
+	- Remember **router IDs MUST be unique** for the OSPF to work!
+- `shutdown`
+	- Done from OSPF configuration mode.
+	- Disables OSPF operation, without removing the OSPF configurations.
+- `ip ospf hello-interval TIME_IN_SECONDS`, `ip ospf dead-interval TIME_IN_SECONDS`
+	- Changes the hello and dead timers.
+	- `no ip ospf hello-interval` can be used to change it to the default interval. 
+- Adding authentication to OSPF
+	- `ip ospf authentication-key PASSWORD`: Creates password
+	- `ip ospf authentication`: Enables authentication
+	- Done from the interface config mode
+- `ip mtu MTU_IN_BYTES`
+	- Default is 15,000
+	- Done from the interface config mode
+	- `no ip mtu` can be used to change it to the default setting. 
 ## VLAN Configuration
 ### Router on a Stick (ROAS)
 ![[Pasted image 20240818224731.png]]

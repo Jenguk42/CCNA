@@ -4,7 +4,7 @@
     "type": "split",
     "children": [
       {
-        "id": "43ce5948918aa3f1",
+        "id": "7e136169505df4b9",
         "type": "tabs",
         "children": [
           {
@@ -14,6 +14,18 @@
               "type": "markdown",
               "state": {
                 "file": "Routing/OSPF.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "3645b3cdf39a8521",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "IPv4 Header.md",
                 "mode": "source",
                 "source": false
               }
@@ -48,7 +60,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "loopback",
+                "query": "MTU",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -65,7 +77,8 @@
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -86,7 +99,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "CLI Commands/Router CLI Commands.md",
+                "file": "Routing/OSPF.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -103,7 +116,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "CLI Commands/Router CLI Commands.md",
+                "file": "Routing/OSPF.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -126,7 +139,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "CLI Commands/Router CLI Commands.md"
+                "file": "Routing/OSPF.md"
               }
             }
           }
@@ -152,11 +165,11 @@
     "type": "floating",
     "children": [
       {
-        "id": "4c9d072cdfc2e95e",
+        "id": "a51ff27ab095d7e7",
         "type": "window",
         "children": [
           {
-            "id": "f909cc3ecc7cdaf8",
+            "id": "cff5bba6070ffe34",
             "type": "tabs",
             "children": [
               {
@@ -184,27 +197,27 @@
       }
     ]
   },
-  "active": "248a7804fd7761ba",
+  "active": "98fc7c21fba0d7d6",
   "lastOpenFiles": [
-    "Routing/OSPF.md",
     "CLI Commands/Router CLI Commands.md",
+    "Routing/OSPF.md",
+    "IPv4 Header.md",
+    "Pasted image 20240829110948.png",
+    "Pasted image 20240829110743.png",
+    "Pasted image 20240829105600.png",
+    "Pasted image 20240829103634.png",
+    "Pasted image 20240829103507.png",
+    "Pasted image 20240829101945.png",
     "Pasted image 20240829092042.png",
     "Images/Pasted image 20240828153033.png",
     "Images/Pasted image 20240828152457.png",
     "Images/Pasted image 20240828151924.png",
-    "Pasted image 20240828153033.png",
-    "Pasted image 20240828152457.png",
-    "Pasted image 20240828151924.png",
     "Routing/Dynamic Routing.md",
-    "Images/Pasted image 20240828093403.png",
-    "Images/Pasted image 20240828093505.png",
-    "Images/Pasted image 20240828093447.png",
     "DTP, VTP.md",
     "EtherChannel.md",
     "Ethernet LAN Switching.md",
     "Hubs, Full & Half Duplex.md",
     "IPv4 Addressing.md",
-    "IPv4 Header.md",
     "OSI Model.md",
     "MAC address.md",
     "Life of a Packet.md",

@@ -23,18 +23,23 @@ Following can be seen from R1 using the `show ip protocols` command:
 	- This router is set as an **ASBR** that advertises a default route into the OSPF domain, using the command `ip route 0.0.0.0 0.0.0.0 203.0.113.2`. 
 ## OSPF Network Types
 Type of connection between OSPF neighbours (Ethernet, etc.)
+![[Pasted image 20240829110743.png]]
 Three main OSPF network types:
-- **Broadcast**
+- **Broadcast** (DOMINANT!)
 	- Enabled by default on **Ethernet** and FDDI (Fiber Distributed Data Interfaces) interfaces
 - **Point-to-Point**
 	- Enabled by default on PPP (Point-to-Point Protocol) and HDLC (High-Level Data Link Control) interfaces
 - Non-broadcast
 	- Enabled by default on Frame Relay and X.25 interfaces
 	- Neighbours have to be manually configured.
+	- Hello timer of 30 secs, Dead timer of 120 secs
+- Network type can be configured using the command `ip ospf network TYPE`. 
+	- Not all network types work on all link types!
+	- E.g., a serial link cannot use the broadcast network type, because serial links don't support Layer 2 broadcast frames.
 ### Broadcast Network Type
 In the broadcast network type, **routers will only form a full OSPF adjacency with the DR and BDR of the segment.**
 ![[Pasted image 20240828153033.png]]
-- Enabled on Ethernet and FDDI interfaces by default.
+- Enabled on **Ethernet** and **FDDI** interfaces by default.
 - Routers **dynamically discover** neighbours by sending/listening for OSPF Hello messages using multicast address `224.0.0.5`. 
 	- Messages to the DR/BDR are multicast using address `224.0.0.6`.
 - A **DR (designated router)** and **BDR (backup designated router)** must be elected on each subnet.
@@ -45,6 +50,28 @@ In the broadcast network type, **routers will only form a full OSPF adjacency wi
 	- DROthers remain in the 2-way state with other DROthers, not forming full adjacencies.
 - LSAs are only shared with DR and BDR (DROthers do not exchange LSAs). 
 	- This reduces the amount of LSAs flooding the network, minimising the network traffic.
+- Example Network Topology:	![[Pasted image 20240829101945.png]]![[Pasted image 20240829092042.png]]
+	- `Nbrs`: `F` indicates the number of full adjacencies, and `C` indicates the total counts of neighbours
+		- R3 has 2 full adjacencies with R2 and R4.
+		- R3 has a total of 3 neighbours: R2, R4 and R5.
+	- `State`: Shows if the interface is DROther, DR, or BDR. 
+### Point-to-Point Network Type
+![[Pasted image 20240829103634.png]]
+- Enabled on [[#Serial Interfaces]] using the **PPP** or **HDLC** encapsulations by default.
+- Routers **dynamically discover** neighbours by sending/listening for OSPF Hello messages using multicast address `224.0.0.5`.
+- However, a **DR** and **BDR** IS **NOT ELECTED**, since these encapsulations are used for 'point-to-point' connection.
+- The two routers will form a Full adjacency with each other.
+#### Serial Interfaces
+![[Pasted image 20240829105600.png]]
+Old technology that is not used widely
+- Each side of a serial connection functions as:
+	- **DCE** (Data Communications Equipment)
+	- **DTE** (Data Terminal Equipment)
+- DCE **specifies the clock rate** (speed) of the connection, using `clock rate SPEED_IN_BPS`.
+- **Default encapsulation on a serial interface is HDLC**. (or cHDLC, Cisco HDLC)
+	- No MAC address field
+	- You can manually configure the encapsulation to PPP using the command `encapsulation PPP` on the interface.
+- Encapsulations should **match between both ends**, or the interface will go down!
 #### DR & BDR Election
 DR/BDR election is 'non pre-emptive'. Once the DR/BDR are selected they will keep their role until OSPF is reset, the interface fails/is shut down, etc.
 - Order of priority when choosing the DR of the subnet:
@@ -74,6 +101,17 @@ When OSPF is activated on an interface, the router starts sending OSPF **hello m
 - Hello messages are multicast to `224.0.0.5` (multicast addresses for all OSPF routers).
 - OSPF messages are encapsulated in an IP header, with a value of 89 in the Protocol Field.
 ### Neighbour/ Adjacency Requirements
+For two routers to become OSPF neighbours:
+1. Interfaces must be in the same **area**.
+2. Interfaces must be in the same **subnet**.
+3. OSPF process must not be `shutdown`.
+4. OSPF **Router IDs** must be unique.
+5. **Hello and Dead timers** must match.
+6. **Authentication settings** must match.
+7. IP **MTU (Maximum Transmission Unit) settings** must match. (Refer to [[IPv4 Header]]).
+8. OSPF **Network Type** must match.
+	- May seem fine because both routers are in FULL state, but the routing table is not updated correctly.
+Even if rules 7 and 8 don't match, the routers will become OSPF neighbours; however, they will not function properly. 
 ### Neighbouring States
 The process of Routers becoming OSPF neighbours is as follows. Assume OSPF is already enabled in R1. ![[Pasted image 20240828101626.png]]
 1. **Down State**: R1 doesn't know about any OSPF neighbours yet.
@@ -167,3 +205,14 @@ OSPF cost to a destination is the total cost of the 'outgoing/exit' interfaces.
 	![[Pasted image 20240828100026.png]]
 	- R1's cost to reach `192.168.4.0/24` is: 100 (R1 `G0/0`) + 100 (R2 `G1/0`) + 100 (R4 `G1/0`) = 300
 	- R1's cost to reach `2.2.2.2`, R2's loopback interface is: 100 (R1 `G0/0`) + 1 (R2 `L0`) = 101
+## OSPF LSA Types
+The OSPF LSDB is made up of LSAs. There are 11 types, and three important:
+- **Type 1 (Router LSA)**
+	- Every OSPF router generates this type of LSA.
+	- It identifies the router using its router ID.
+	- It also lists networks attached to the router's OSPF-activated interfaces.
+- **Type 2 (Network LSA)**
+	- Generated by the DR of each 'multi-access' network (i.e. Ethernet network, using the **broadcast** network type).
+	- Lists the routers which are attached to the multi-access network.
+- **Type 5 (AS-External LSA)**
+	- Generated by ASBRs to describe routes to destinations outside of the AS (OSPF domain).
