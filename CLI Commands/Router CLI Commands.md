@@ -1,5 +1,5 @@
 ## Fundamentals
-![[Pasted image 20240813131057.png]]
+![[Images/Pasted image 20240813131057.png]]
 * `?` : View help
 	* **No** space - Show all possible completions of the word
 	```
@@ -249,6 +249,7 @@ Example Network Topology Used: ![[Pasted image 20240828093505.png]]
 	- Remember to add an IP address and use `no shutdown`.
 	- Different from ethernet interfaces (they use `speed`!)
 - `show controllers INT_ID`
+	![[Pasted image 20240829140301.png]]
 	- Used to identify which is DCE and which is DTE. 
 - `encapsulation PPP`
 	- Manually configure the encapsulation to PPP, since the default is HDLC.
@@ -264,6 +265,7 @@ Example Network Topology Used: ![[Pasted image 20240828093505.png]]
 	- Manual configuration of router ID (Highest priority)
 	- Note that you don't need to specify `ospf` unlike in EIGRP.
 	- `clear ip ospf processes` is used to clear the current ID when changing the router IDs.
+		- Done in privileged EXEC mode!
 		- Used when there are other neighbours that are affected.
 		- `no router-id` can be used if it has no other OSPF neighbours.
 	- Remember **router IDs MUST be unique** for the OSPF to work!

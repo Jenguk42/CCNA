@@ -13,7 +13,19 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Routing/OSPF.md",
+                "file": "CLI Commands/Router CLI Commands.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "2f38b2abb538a5c3",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "README.md",
                 "mode": "source",
                 "source": false
               }
@@ -60,7 +72,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "MTU",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -77,13 +89,11 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "25fa439111d25ab5",
@@ -99,7 +109,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Routing/OSPF.md",
+                "file": "CLI Commands/Router CLI Commands.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -116,7 +126,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Routing/OSPF.md",
+                "file": "CLI Commands/Router CLI Commands.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -139,7 +149,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Routing/OSPF.md"
+                "file": "CLI Commands/Router CLI Commands.md"
               }
             }
           }
@@ -160,62 +170,29 @@
       "command-palette:Open command palette": false
     }
   },
-  "floating": {
-    "id": "b1949bf87b2e312a",
-    "type": "floating",
-    "children": [
-      {
-        "id": "a51ff27ab095d7e7",
-        "type": "window",
-        "children": [
-          {
-            "id": "cff5bba6070ffe34",
-            "type": "tabs",
-            "children": [
-              {
-                "id": "248a7804fd7761ba",
-                "type": "leaf",
-                "state": {
-                  "type": "markdown",
-                  "state": {
-                    "file": "CLI Commands/Router CLI Commands.md",
-                    "mode": "source",
-                    "source": false
-                  }
-                }
-              }
-            ]
-          }
-        ],
-        "direction": "vertical",
-        "x": 768,
-        "y": 0,
-        "width": 768,
-        "height": 816,
-        "maximize": false,
-        "zoom": 0
-      }
-    ]
-  },
   "active": "98fc7c21fba0d7d6",
   "lastOpenFiles": [
+    "CLI Commands/Switch CLI Commands.md",
     "CLI Commands/Router CLI Commands.md",
+    "Ethernet LAN Switching.md",
+    "Routing/Routing Fundamentals.md",
+    "Routing/RIP & EIGRP.md",
     "Routing/OSPF.md",
+    "Routing/Dynamic Routing.md",
+    "Pasted image 20240829140301.png",
+    "README.md",
+    "Images/Pasted image 20240829092042.png",
+    "Images/Pasted image 20240829110948.png",
+    "Images/Pasted image 20240829110743.png",
+    "Images/Pasted image 20240829105600.png",
+    "Images/Pasted image 20240829103634.png",
+    "Images/Pasted image 20240829101945.png",
     "IPv4 Header.md",
     "Pasted image 20240829110948.png",
     "Pasted image 20240829110743.png",
     "Pasted image 20240829105600.png",
-    "Pasted image 20240829103634.png",
-    "Pasted image 20240829103507.png",
-    "Pasted image 20240829101945.png",
-    "Pasted image 20240829092042.png",
-    "Images/Pasted image 20240828153033.png",
-    "Images/Pasted image 20240828152457.png",
-    "Images/Pasted image 20240828151924.png",
-    "Routing/Dynamic Routing.md",
     "DTP, VTP.md",
     "EtherChannel.md",
-    "Ethernet LAN Switching.md",
     "Hubs, Full & Half Duplex.md",
     "IPv4 Addressing.md",
     "OSI Model.md",
@@ -223,13 +200,9 @@
     "Life of a Packet.md",
     "Subnetting.md",
     "Speed, Duplex Autonegotiation.md",
-    "Routing/RIP & EIGRP.md",
     "2024-08-27.md",
     "Routing/Static Routing.md",
-    "Routing/Routing Fundamentals.md",
-    "CLI Commands/Switch CLI Commands.md",
     "VLANs.md",
-    "README.md",
     "CLI Commands/Troubleshooting Commands.md",
     "CCNA/Life of a Packet.md",
     "CCNA/MAC address.md",
