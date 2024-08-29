@@ -146,7 +146,8 @@ Refer to [[Static Routing]] for detailed explanation
 - `show ip IGP_NAME topology`: Detailed information about the EIGRP routes the router has received (not just the routing table)
 	- Example: There are two routes to `192.168.4.0/24`, but only one with the lower metric value is entered in the routing table. ![[Pasted image 20240827115435.png]]
 - `show ip protocols`: Shows various stats
-	- Example: RIP ![[Pasted image 20240823143643.png]]
+	- Example: RIP 
+		![[Pasted image 20240823143643.png]]
 - `maximum paths NUMBER`: Change the maximum paths that can be saved for the same destination. NEEDS TO BE EXECUTED IN PROTOCOL CONFIGURATION MODE!
 	![[Pasted image 20240823143929.png]]
 - `distance NUMBER`: Change the administrative distance to make it favoured over other protocols. NEEDS TO BE EXECUTED IN PROTOCOL CONFIGURATION MODE! ![[Pasted image 20240823144145.png]]

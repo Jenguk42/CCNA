@@ -20,6 +20,18 @@
             }
           },
           {
+            "id": "058fc6fa3d7c28bc",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Routing/OSPF.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
             "id": "2f38b2abb538a5c3",
             "type": "leaf",
             "state": {
@@ -43,7 +55,8 @@
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -109,7 +122,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "CLI Commands/Router CLI Commands.md",
+                "file": "Routing/OSPF.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -126,7 +139,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "CLI Commands/Router CLI Commands.md",
+                "file": "Routing/OSPF.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -149,7 +162,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "CLI Commands/Router CLI Commands.md"
+                "file": "Routing/OSPF.md"
               }
             }
           }
@@ -170,17 +183,18 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "98fc7c21fba0d7d6",
+  "active": "058fc6fa3d7c28bc",
   "lastOpenFiles": [
-    "CLI Commands/Switch CLI Commands.md",
+    "Pasted image 20240829152249.png",
     "CLI Commands/Router CLI Commands.md",
+    "Routing/OSPF.md",
+    "CLI Commands/Switch CLI Commands.md",
+    "README.md",
     "Ethernet LAN Switching.md",
     "Routing/Routing Fundamentals.md",
     "Routing/RIP & EIGRP.md",
-    "Routing/OSPF.md",
     "Routing/Dynamic Routing.md",
-    "Pasted image 20240829140301.png",
-    "README.md",
+    "Images/Pasted image 20240829140301.png",
     "Images/Pasted image 20240829092042.png",
     "Images/Pasted image 20240829110948.png",
     "Images/Pasted image 20240829110743.png",

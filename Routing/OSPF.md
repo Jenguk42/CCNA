@@ -207,6 +207,7 @@ OSPF cost to a destination is the total cost of the 'outgoing/exit' interfaces.
 	- R1's cost to reach `2.2.2.2`, R2's loopback interface is: 100 (R1 `G0/0`) + 1 (R2 `L0`) = 101
 ## OSPF LSA Types
 The OSPF LSDB is made up of LSAs. There are 11 types, and three important:
+![[Pasted image 20240829152249.png]]
 - **Type 1 (Router LSA)**
 	- Every OSPF router generates this type of LSA.
 	- It identifies the router using its router ID.
