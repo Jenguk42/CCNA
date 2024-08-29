@@ -225,6 +225,8 @@ Example Network Topology Used: ![[Pasted image 20240828093505.png]]
 - `show ip ospf interface`
 	- You can specify the interface you want to check. 
 	- Notice the cost of `G0/0` and `F1/0` are the same, because the reference bandwidth was not updated. ![[Pasted image 20240828093628.png]]
+- `show ip ospf interface brief`
+	- ![[Pasted image 20240829092042.png]]
 ##### OSPF Cost Configuration
 - Reference Bandwidth Configuration: `auto-cost reference-bandwidth MEGABITS_PER_SECOND`
 	- In OSPF configuration mode

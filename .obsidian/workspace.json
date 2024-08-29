@@ -8,18 +8,6 @@
         "type": "tabs",
         "children": [
           {
-            "id": "248a7804fd7761ba",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "CLI Commands/Router CLI Commands.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
             "id": "98fc7c21fba0d7d6",
             "type": "leaf",
             "state": {
@@ -31,8 +19,7 @@
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -82,7 +69,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "25fa439111d25ab5",
@@ -98,7 +86,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Routing/OSPF.md",
+                "file": "CLI Commands/Router CLI Commands.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -115,7 +103,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Routing/OSPF.md",
+                "file": "CLI Commands/Router CLI Commands.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -138,7 +126,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Routing/OSPF.md"
+                "file": "CLI Commands/Router CLI Commands.md"
               }
             }
           }
@@ -159,10 +147,48 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "98fc7c21fba0d7d6",
+  "floating": {
+    "id": "b1949bf87b2e312a",
+    "type": "floating",
+    "children": [
+      {
+        "id": "4c9d072cdfc2e95e",
+        "type": "window",
+        "children": [
+          {
+            "id": "f909cc3ecc7cdaf8",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "248a7804fd7761ba",
+                "type": "leaf",
+                "state": {
+                  "type": "markdown",
+                  "state": {
+                    "file": "CLI Commands/Router CLI Commands.md",
+                    "mode": "source",
+                    "source": false
+                  }
+                }
+              }
+            ]
+          }
+        ],
+        "direction": "vertical",
+        "x": 768,
+        "y": 0,
+        "width": 768,
+        "height": 816,
+        "maximize": false,
+        "zoom": 0
+      }
+    ]
+  },
+  "active": "248a7804fd7761ba",
   "lastOpenFiles": [
-    "CLI Commands/Router CLI Commands.md",
     "Routing/OSPF.md",
+    "CLI Commands/Router CLI Commands.md",
+    "Pasted image 20240829092042.png",
     "Images/Pasted image 20240828153033.png",
     "Images/Pasted image 20240828152457.png",
     "Images/Pasted image 20240828151924.png",
@@ -173,7 +199,6 @@
     "Images/Pasted image 20240828093403.png",
     "Images/Pasted image 20240828093505.png",
     "Images/Pasted image 20240828093447.png",
-    "Images/Pasted image 20240828112646.png",
     "DTP, VTP.md",
     "EtherChannel.md",
     "Ethernet LAN Switching.md",

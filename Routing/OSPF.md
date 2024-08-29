@@ -32,12 +32,19 @@ Three main OSPF network types:
 	- Enabled by default on Frame Relay and X.25 interfaces
 	- Neighbours have to be manually configured.
 ### Broadcast Network Type
+In the broadcast network type, **routers will only form a full OSPF adjacency with the DR and BDR of the segment.**
 ![[Pasted image 20240828153033.png]]
 - Enabled on Ethernet and FDDI interfaces by default.
 - Routers **dynamically discover** neighbours by sending/listening for OSPF Hello messages using multicast address `224.0.0.5`. 
-- A **DR (designated router)** and **BDR (backup designated router)** must be elected on each subnet (only DR if there are no OSPF neighbours, E.g., R1's `G1/0` interface).
+	- Messages to the DR/BDR are multicast using address `224.0.0.6`.
+- A **DR (designated router)** and **BDR (backup designated router)** must be elected on each subnet.
+	- DR and BDR will form a FULL adjacency with ALL routers in the subnet.
+	- Only DR needs to be elected if there are no OSPF neighbours. (E.g., R1's `G1/0` interface).
 - Routers which aren't the DR or BDR become a **DROther**.
-	- DROthers will only move to the FULL state with the DR and BDR. The neighbour state with other DROthers will be 2-way.
+	- DROthers form a FULL adjacency only with the DR/BDR.
+	- DROthers remain in the 2-way state with other DROthers, not forming full adjacencies.
+- LSAs are only shared with DR and BDR (DROthers do not exchange LSAs). 
+	- This reduces the amount of LSAs flooding the network, minimising the network traffic.
 #### DR & BDR Election
 DR/BDR election is 'non pre-emptive'. Once the DR/BDR are selected they will keep their role until OSPF is reset, the interface fails/is shut down, etc.
 - Order of priority when choosing the DR of the subnet:
@@ -47,8 +54,8 @@ DR/BDR election is 'non pre-emptive'. Once the DR/BDR are selected they will kee
 		- If the priority is set to 0, the router cannot be the DR/BDR of the subnet.
 	2. Highest OSPF Router ID
 - 'First place' becomes the DR, and 'Second place' becomes the BDR
-- If the DR goes down, BDR instantly becomes the new DR. Then an election is held for the next BDR.
-	- E.g., If R2's priority is configured to be 255 and the OSPF processes are cleared, R4 will be the next DR because it was previously the BDR. Then R2 becomes the BDR.
+- If the DR goes down, **BDR instantly becomes the new DR** even if it doesn't have the highest priority. Then an election is held for the next BDR.
+	- E.g., If R2's priority is configured to be 255 and the OSPF processes are cleared, R4 will be the next DR because it was previously the BDR. Then R2 becomes the BDR. 
 ## OSPF Process
 Three main steps in the process of sharing LSAs and determining the best route to each destination in the network:
 1. Become neighbours with other routes connected to the same segment.
@@ -82,7 +89,7 @@ The process of Routers becoming OSPF neighbours is as follows. Assume OSPF is al
 	2. R1 adds an entry for R2 to its OSPF neighbour table, where the relationship with R2 is now in the **2-way** state.
 	3. R1 sends another Hello message, this time containing R2's RID. R2 updates its relationship with R1.
 	4. All conditions have been met for the routers to become OSPF neighbours, and they are now ready to share LSAs to build a common LSDB.
-	5. DR (Designated Router) and BDR (Backup Designated Router) will be elected.
+	5. DR (Designated Router) and BDR (Backup Designated Router) will be elected. (Refer to [[#DR & BDR Election]])
 4. **Exstart State**: Routers decide which one will start the exchange, to prepare for the exchange state.
 	![[Pasted image 20240828111734.png]]
 	1. The routers exchange DBD (Database Description) packets.
