@@ -55,8 +55,7 @@
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -122,7 +121,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Routing/OSPF.md",
+                "file": "CLI Commands/Router CLI Commands.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -139,7 +138,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Routing/OSPF.md",
+                "file": "CLI Commands/Router CLI Commands.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -162,7 +161,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Routing/OSPF.md"
+                "file": "CLI Commands/Router CLI Commands.md"
               }
             }
           }
@@ -183,28 +182,28 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "058fc6fa3d7c28bc",
+  "active": "98fc7c21fba0d7d6",
   "lastOpenFiles": [
-    "Pasted image 20240829152249.png",
-    "CLI Commands/Router CLI Commands.md",
+    "First Hop Redundancy Protocols.md",
+    "Pasted image 20240829213835.png",
+    "Pasted image 20240829212526.png",
+    "Pasted image 20240829212338.png",
+    "Pasted image 20240829210913.jpg",
+    "Pasted image 20240829210022.png",
+    "Pasted image 20240829205925.png",
+    "Pasted image 20240829205645.png",
+    "Pasted image 20240829205252.png",
+    "Pasted image 20240829205217.png",
+    "Pasted image 20240829205107.png",
     "Routing/OSPF.md",
+    "CLI Commands/Router CLI Commands.md",
     "CLI Commands/Switch CLI Commands.md",
     "README.md",
     "Ethernet LAN Switching.md",
     "Routing/Routing Fundamentals.md",
     "Routing/RIP & EIGRP.md",
     "Routing/Dynamic Routing.md",
-    "Images/Pasted image 20240829140301.png",
-    "Images/Pasted image 20240829092042.png",
-    "Images/Pasted image 20240829110948.png",
-    "Images/Pasted image 20240829110743.png",
-    "Images/Pasted image 20240829105600.png",
-    "Images/Pasted image 20240829103634.png",
-    "Images/Pasted image 20240829101945.png",
     "IPv4 Header.md",
-    "Pasted image 20240829110948.png",
-    "Pasted image 20240829110743.png",
-    "Pasted image 20240829105600.png",
     "DTP, VTP.md",
     "EtherChannel.md",
     "Hubs, Full & Half Duplex.md",
