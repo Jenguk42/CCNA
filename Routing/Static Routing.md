@@ -5,8 +5,8 @@ PC1 wants to send a packet to PC4.
 * It requires **two-way reachability**, so both PCs can send packets to each other
 	* Each router in the path needs a route to `192.168.1.0/24` and a route to `192.168.4.0/24`
 * Two possible routes:
-	* 1. PC1 -> R1 -> R3 -> R4 -> PC4
-	* 2. PC1 -> R1 -> R2 -> R4 -> PC4
+	* 1. PC1 ➡️ R1 ➡️ R3 ➡️ R4 ➡️ PC4
+	* 2. PC1 ➡️ R1 ➡️ R2 ➡️ R4 ➡️ PC4
 * Choose via load balancing, main & backup path techniques (Refer to [[Add Later]])
 
 How can we configure R4 so that it knows how to send traffic to `192.168.1.10` (PC1)?

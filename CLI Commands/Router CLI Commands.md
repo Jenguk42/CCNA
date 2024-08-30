@@ -305,3 +305,25 @@ Example Network Topology Used: ![[Pasted image 20240828093505.png]]
 - Confirmation:
 	The physical interface (`G0/0`) has no IP address assigned, but each subinterface (`G0/0.10`, `G0/0.20`, `G0/0.30`) gets its own IP address.  ![[Pasted image 20240818225201.png]]
 	Connected and local routes are added too! ![[Pasted image 20240818225231.png]]
+## HSRP Configuration
+Configuring R1 and R2 to use HSRP to provide a redundant default gateway address for the `172.16.0.0/24` subnet:
+![[Pasted image 20240829212526.png]]
+HSRP is configured directly on the interface.
+- `show standby`
+	![[Pasted image 20240829213835.png]]
+- `standby GROUP_NUMBER ip IP_ADDRESS` 
+	- Range of groups available: 0 to 255 (0 to 4095 in v2)
+		- Rule of thumb: HSRP group number matches the VLAN number used for the subnet.
+		- MUST: HSRP group numbers should match between two routers!
+	- Configure the virtual IP used for the default gateway (same virtual IP is configured for both routers)
+	- E.g., `standby 1 ip 172.16.0.254`
+- `standby version 2`
+	- Changes the version number
+- `standby GROUP_NUMBER priority PRIORITY`
+	- Priority value can range from 0 to 255.
+	- Used to determine which router will be the active router.
+	- E.g., `standby 1 priority 200`
+- `standby GROUP_NUMBER preempt`
+	- Causes the router to take the role of active router, even if another router already has the role.
+	- However, the pre-empting router must have a higher priority or IP address.
+	- Only necessary on the router you want to become active.

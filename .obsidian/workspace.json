@@ -13,7 +13,31 @@
             "state": {
               "type": "markdown",
               "state": {
+                "file": "First Hop Redundancy Protocols.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "97a656805e4b1ce0",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
                 "file": "CLI Commands/Router CLI Commands.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "6a7a0f83a93ca715",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "First Hop Redundancy Protocols.md",
                 "mode": "source",
                 "source": false
               }
@@ -55,7 +79,8 @@
               }
             }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -84,7 +109,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "\"->\"",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -101,7 +126,8 @@
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -121,7 +147,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "CLI Commands/Router CLI Commands.md",
+                "file": "First Hop Redundancy Protocols.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -138,7 +164,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "CLI Commands/Router CLI Commands.md",
+                "file": "First Hop Redundancy Protocols.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -161,7 +187,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "CLI Commands/Router CLI Commands.md"
+                "file": "First Hop Redundancy Protocols.md"
               }
             }
           }
@@ -182,21 +208,29 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "98fc7c21fba0d7d6",
+  "active": "6a7a0f83a93ca715",
   "lastOpenFiles": [
-    "First Hop Redundancy Protocols.md",
-    "Pasted image 20240829213835.png",
-    "Pasted image 20240829212526.png",
-    "Pasted image 20240829212338.png",
-    "Pasted image 20240829210913.jpg",
-    "Pasted image 20240829210022.png",
-    "Pasted image 20240829205925.png",
-    "Pasted image 20240829205645.png",
-    "Pasted image 20240829205252.png",
-    "Pasted image 20240829205217.png",
-    "Pasted image 20240829205107.png",
-    "Routing/OSPF.md",
+    "Speed, Duplex Autonegotiation.md",
+    "Routing/Static Routing.md",
+    "Subnetting.md",
+    "STP/STP Toolkit (Optional Features).md",
+    "Life of a Packet.md",
+    "CLI Commands/PC Commands.md",
+    "CLI Commands/Troubleshooting Commands.md",
     "CLI Commands/Router CLI Commands.md",
+    "First Hop Redundancy Protocols.md",
+    "Pasted image 20240830095227.png",
+    "Routing/OSPF.md",
+    "Images/Pasted image 20240829212526.png",
+    "Images/Pasted image 20240829213835.png",
+    "Images/Pasted image 20240829212338.png",
+    "Images/Pasted image 20240829210913.jpg",
+    "Images/Pasted image 20240829210022.png",
+    "Images/Pasted image 20240829205925.png",
+    "Images/Pasted image 20240829205645.png",
+    "Images/Pasted image 20240829205252.png",
+    "Images/Pasted image 20240829205217.png",
+    "Documents - Shortcut.lnk",
     "CLI Commands/Switch CLI Commands.md",
     "README.md",
     "Ethernet LAN Switching.md",
@@ -210,16 +244,9 @@
     "IPv4 Addressing.md",
     "OSI Model.md",
     "MAC address.md",
-    "Life of a Packet.md",
-    "Subnetting.md",
-    "Speed, Duplex Autonegotiation.md",
     "2024-08-27.md",
-    "Routing/Static Routing.md",
     "VLANs.md",
-    "CLI Commands/Troubleshooting Commands.md",
     "CCNA/Life of a Packet.md",
-    "CCNA/MAC address.md",
-    "CCNA/OSI Model.md",
     "CCNA/STP",
     "CCNA/Routing",
     "CCNA/Other/Angel/Basic Networking and Cisco Packet Tracer.pdf",
@@ -229,7 +256,6 @@
     "CCNA/Images",
     "CCNA",
     "Routing",
-    "STP",
     "Untitled.canvas"
   ]
 }

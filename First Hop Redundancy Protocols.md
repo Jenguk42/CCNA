@@ -6,7 +6,7 @@ Redundant connections help with keeping network connectivity.
 	- This may be a slower and cheaper connection until R1’s connection is recovered. 
 ![[Pasted image 20240829195718.png]]
  - However, the PCs do not know that R1 is down, and still have their default gateway set as R1.
- - How do we cause R2 to automatically become the default gateway? -> via **First Hop Redundancy Protocols**
+ - How do we cause R2 to automatically become the default gateway? ➡️ via **First Hop Redundancy Protocols**
 ## How does FHRP Work?
 Each FHRP uses different terms and formats.
 - A **virtual IP** is configured on the two routers, and a **virtual MAC** is generated for the virtual IP. 
@@ -35,20 +35,21 @@ Each FHRP uses different terms and formats.
 	PCs will connect to the internet through R2, like this:
 	![[Pasted image 20240829210022.png]]
 - If the old active router comes back online, by default it won’t take back its role as the active router. It will become the standby router.
-	- The current active router will not automatically give up its role because FHRPs are ‘non-preemptive’.
-	- You can configure ‘preemption’, so that the old active router does take back its old role.
+	- The current active router will not automatically give up its role because FHRPs are ‘non-pre-emptive’.
+	- You can configure ‘pre-emption’, so that the old active router does take back its old role.
 
 Summary:
 1. An Active and a Standby router are set by Hello messages. 
 2. The two routers share a virtual IP addresses and a MAC addresses. Active router takes the frames forwarded by the PCs.
 3. If the Active router fails, the Standby router becomes the active router and asks the switches to update their MAC address tables through Gratuitous ARP messages.
-4. FHRPs are ‘non-preemptive’, so even if the former active router returns, the current active router will not automatically give up its role. 
+4. FHRPs are ‘non-pre-emptive’, so even if the former active router returns, the current active router will not automatically give up its role. 
 ## Three Major FHRPs
 ![[Pasted image 20240829212338.png]]
 Functionality of each is very similar!
 ### 1. HSRP (Hot Standby Router Protocol)
 - Cisco proprietary, can only be run on Cisco
 - **Active** and **Standby** router are elected.
+- Refer to [[Router CLI Commands#HSRP Configuration]] for configuration.
 - Two versions, V1 and V2:
 	- Version 2 adds IPv6 support and increases the number of groups that can be configured.
 	- Versions 1 and 2 are not compatible, so all routers using the protocol should be using the same version.
@@ -82,26 +83,3 @@ Functionality of each is very similar!
 - Virtual MAC address: `0007.b400.XXYY`
 	- `XX` = GLBP group number
 	- `YY` = AVF number
-## Basic HSRP Configuration
-Configuring R1 and R2 to use HSRP to provide a redundant default gateway address for the `172.16.0.0/24` subnet:
-![[Pasted image 20240829212526.png]]
-HSRP is configured directly on the interface.
-- `show standby`
-	![[Pasted image 20240829213835.png]]
-- `standby GROUP_NUMBER`
-	- Range of groups available: 0 to 255 (0 to 4095 in v2)
-	- Rule of thumb: HSRP group number matches the VLAN number used for the subnet.
-	- MUST: HSRP group numbers should match between two routers!
-- `standby version 2`
-	- Changes the version number
-- `standby GROUP_NUMBER ip IP_ADDRESS`
-	- Configure the virtual IP used for the default gateway (same virtual IP is configured for both routers)
-	- E.g., `standby 1 ip 172.16.0.254`
-- `standby GROUP_NUMBER priority PRIORITY`
-	- Priority value can range from 0 to 255.
-	- Used to determine which router will be the active router.
-	- E.g., `standby 1 priority 200`
-- `standby GROUP_NUMBER preempt`
-	- Causes the router to take the role of active router, even if another router already has the role.
-	- However, the preempting router must have a higher priority or IP address.
-	- Only necessary on the router you want to become active.

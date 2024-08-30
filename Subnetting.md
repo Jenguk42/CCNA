@@ -1,7 +1,7 @@
 ### Purpose of Classless IPv4 Addressing
 - The IANA (Internet Assigned Numbers Authority) assigns IPv4 addresses/networks to companies based on their size.
 	- E.g., Large companies may get a class A/B network, and small companies may get a class C network
-	- When the Internet was first created, the creators did not predict that the Internet would become as large as today -> resulted in wasted address space 
+	- When the Internet was first created, the creators did not predict that the Internet would become as large as today ➡️ resulted in wasted address space 
 - Traditional classful IPv4 addresses led to many **wasted IP addresses**
 	![[Pasted image 20240816140842.png]]
 	- Remember only Class A, B, and C addresses can be assigned to a device as an IP address.

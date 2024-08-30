@@ -7,7 +7,6 @@ Allows devices to configure speed and duplex settings without manual configurati
 * Ethernet interface can run at 10 Mbps,
 * Fast Ethernet interface can run at 10/100 Mbps,
 * Gigabit Ethernet interface can run at 10/100/1000 Gbps
-
 ### If autonegotiation is disabled?
 * SPEED: Switch will try to sense the speed that the device is operating at
 	* If it fails to sense the speed, it will use the slowest supported speed
@@ -18,5 +17,5 @@ Allows devices to configure speed and duplex settings without manual configurati
 * Autonegotiation is disabled below:
 	![[Pasted image 20240813200050.png]]
 	* Because the switch senses that the blue PC has a speed of 100 Mbps, it will set the duplex as half
-	* Duplex mismatch due to collisions -> poor network performance
+	* Duplex mismatch due to collisions ➡️ poor network performance
 	* Use autonegotiation for all devices in the network!
