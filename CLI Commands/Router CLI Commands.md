@@ -310,7 +310,7 @@ Configuring R1 and R2 to use HSRP to provide a redundant default gateway address
 ![[Pasted image 20240829212526.png]]
 HSRP is configured directly on the interface.
 - `show standby`
-	![[Pasted image 20240829213835.png]]
+	![[Pasted image 20240830102506.png]]
 - `standby GROUP_NUMBER ip IP_ADDRESS` 
 	- Range of groups available: 0 to 255 (0 to 4095 in v2)
 		- Rule of thumb: HSRP group number matches the VLAN number used for the subnet.

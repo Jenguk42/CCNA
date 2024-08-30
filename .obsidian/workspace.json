@@ -44,6 +44,18 @@
             }
           },
           {
+            "id": "69f76787deb29d4b",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "TCP & UDP.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
             "id": "058fc6fa3d7c28bc",
             "type": "leaf",
             "state": {
@@ -80,7 +92,7 @@
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -109,7 +121,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "\"->\"",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -126,12 +138,12 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "25fa439111d25ab5",
@@ -147,7 +159,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "First Hop Redundancy Protocols.md",
+                "file": "TCP & UDP.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -164,7 +176,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "First Hop Redundancy Protocols.md",
+                "file": "TCP & UDP.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -187,7 +199,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "First Hop Redundancy Protocols.md"
+                "file": "TCP & UDP.md"
               }
             }
           }
@@ -208,8 +220,14 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "6a7a0f83a93ca715",
+  "active": "69f76787deb29d4b",
   "lastOpenFiles": [
+    "Pasted image 20240830140214.png",
+    "First Hop Redundancy Protocols.md",
+    "TCP & UDP.md",
+    "CLI Commands/Switch CLI Commands.md",
+    "CLI Commands/Router CLI Commands.md",
+    "Pasted image 20240830102506.png",
     "Speed, Duplex Autonegotiation.md",
     "Routing/Static Routing.md",
     "Subnetting.md",
@@ -217,8 +235,6 @@
     "Life of a Packet.md",
     "CLI Commands/PC Commands.md",
     "CLI Commands/Troubleshooting Commands.md",
-    "CLI Commands/Router CLI Commands.md",
-    "First Hop Redundancy Protocols.md",
     "Pasted image 20240830095227.png",
     "Routing/OSPF.md",
     "Images/Pasted image 20240829212526.png",
@@ -229,9 +245,7 @@
     "Images/Pasted image 20240829205925.png",
     "Images/Pasted image 20240829205645.png",
     "Images/Pasted image 20240829205252.png",
-    "Images/Pasted image 20240829205217.png",
     "Documents - Shortcut.lnk",
-    "CLI Commands/Switch CLI Commands.md",
     "README.md",
     "Ethernet LAN Switching.md",
     "Routing/Routing Fundamentals.md",
@@ -245,8 +259,6 @@
     "OSI Model.md",
     "MAC address.md",
     "2024-08-27.md",
-    "VLANs.md",
-    "CCNA/Life of a Packet.md",
     "CCNA/STP",
     "CCNA/Routing",
     "CCNA/Other/Angel/Basic Networking and Cisco Packet Tracer.pdf",

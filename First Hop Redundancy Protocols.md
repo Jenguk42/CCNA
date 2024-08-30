@@ -1,5 +1,6 @@
 FHRP is a computer networking protocol which is designed to protect the default gateway used on a subnetwork by allowing two or more routers to provide backup for their address; in the event of failure of an active router, the backup router will take over the address, usually within a few seconds.
 - Default gateway is the “first hop” - first router in the path to whatever destination the PC is sending traffic to.
+- Troubleshooting tip: Make sure the versions match, and the terminologies/Multicast IP/Victual MAC are configured properly!
 ## Purpose of FHRPs
 Redundant connections help with keeping network connectivity.
 - E.g., If internet connection from R1 fails, PC1 can connect through R2.
