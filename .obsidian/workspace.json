@@ -56,6 +56,18 @@
             }
           },
           {
+            "id": "c33de29220112290",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Hexadecimal.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
             "id": "058fc6fa3d7c28bc",
             "type": "leaf",
             "state": {
@@ -92,7 +104,7 @@
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 4
       }
     ],
     "direction": "vertical"
@@ -142,8 +154,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "25fa439111d25ab5",
@@ -159,7 +170,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "TCP & UDP.md",
+                "file": "Hexadecimal.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -176,7 +187,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "TCP & UDP.md",
+                "file": "Hexadecimal.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -199,7 +210,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "TCP & UDP.md"
+                "file": "Hexadecimal.md"
               }
             }
           }
@@ -220,14 +231,24 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "69f76787deb29d4b",
+  "active": "c33de29220112290",
   "lastOpenFiles": [
-    "Pasted image 20240830140214.png",
-    "First Hop Redundancy Protocols.md",
+    "IPv6.md",
     "TCP & UDP.md",
+    "Images/Pasted image 20240830140214 1.png",
+    "Images/Pasted image 20240830102506 1.png",
+    "Images/Pasted image 20240830095227 1.png",
+    "Images/Pasted image 20240901141510.png",
+    "Images/Pasted image 20240901141422.png",
+    "Images/Pasted image 20240901151220.png",
+    "Images/Pasted image 20240901150945.png",
+    "Images/Pasted image 20240901144541.png",
+    "Images/Pasted image 20240901151430.png",
+    "Images/Pasted image 20240901150740.png",
+    "Hexadecimal.md",
+    "First Hop Redundancy Protocols.md",
     "CLI Commands/Switch CLI Commands.md",
     "CLI Commands/Router CLI Commands.md",
-    "Pasted image 20240830102506.png",
     "Speed, Duplex Autonegotiation.md",
     "Routing/Static Routing.md",
     "Subnetting.md",
@@ -235,16 +256,7 @@
     "Life of a Packet.md",
     "CLI Commands/PC Commands.md",
     "CLI Commands/Troubleshooting Commands.md",
-    "Pasted image 20240830095227.png",
     "Routing/OSPF.md",
-    "Images/Pasted image 20240829212526.png",
-    "Images/Pasted image 20240829213835.png",
-    "Images/Pasted image 20240829212338.png",
-    "Images/Pasted image 20240829210913.jpg",
-    "Images/Pasted image 20240829210022.png",
-    "Images/Pasted image 20240829205925.png",
-    "Images/Pasted image 20240829205645.png",
-    "Images/Pasted image 20240829205252.png",
     "Documents - Shortcut.lnk",
     "README.md",
     "Ethernet LAN Switching.md",
@@ -257,8 +269,6 @@
     "Hubs, Full & Half Duplex.md",
     "IPv4 Addressing.md",
     "OSI Model.md",
-    "MAC address.md",
-    "2024-08-27.md",
     "CCNA/STP",
     "CCNA/Routing",
     "CCNA/Other/Angel/Basic Networking and Cisco Packet Tracer.pdf",
