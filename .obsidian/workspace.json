@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "IPv6.md",
+                "file": "IPv4 Header.md",
                 "mode": "source",
                 "source": false
               }
@@ -31,8 +31,7 @@
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -82,8 +81,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "25fa439111d25ab5",
@@ -99,7 +97,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "IPv4 Addressing.md",
+                "file": "IPv4 Header.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -116,7 +114,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "IPv4 Addressing.md",
+                "file": "IPv4 Header.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -139,7 +137,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "IPv4 Addressing.md"
+                "file": "IPv4 Header.md"
               }
             }
           }
@@ -160,8 +158,16 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "5b286681ae5e3111",
+  "active": "65463c10b24fce4f",
   "lastOpenFiles": [
+    "IPv4 Addressing.md",
+    "IPv6.md",
+    "TCP & UDP.md",
+    "Subnetting.md",
+    "Speed, Duplex Autonegotiation.md",
+    "OSI Model.md",
+    "Hexadecimal.md",
+    "DTP, VTP.md",
     "cleanup_images.py",
     "cleanup",
     "Images/Pasted image 20240902100144.png",
@@ -173,21 +179,15 @@
     "Images/Pasted image 20240902110022.png",
     "Images/Pasted image 20240902101504.png",
     "Images/Pasted image 20240902100204.png",
-    "IPv6.md",
-    "IPv4 Addressing.md",
     "Pasted image 20240902111553.png",
     "IPv6 Address Types.md",
-    "TCP & UDP.md",
     "IPv4 Header.md",
     "README.md",
     "Routing/OSPF.md",
-    "Hexadecimal.md",
     "First Hop Redundancy Protocols.md",
     "CLI Commands/Switch CLI Commands.md",
     "CLI Commands/Router CLI Commands.md",
-    "Speed, Duplex Autonegotiation.md",
     "Routing/Static Routing.md",
-    "Subnetting.md",
     "STP/STP Toolkit (Optional Features).md",
     "Life of a Packet.md",
     "CLI Commands/PC Commands.md",
@@ -197,7 +197,6 @@
     "Routing/Routing Fundamentals.md",
     "Routing/RIP & EIGRP.md",
     "Routing/Dynamic Routing.md",
-    "DTP, VTP.md",
     "EtherChannel.md",
     "Hubs, Full & Half Duplex.md",
     "CCNA/STP",
@@ -207,7 +206,6 @@
     "CCNA/Other",
     "CCNA/CLI Commands",
     "CCNA/Images",
-    "CCNA",
     "Untitled.canvas"
   ]
 }
