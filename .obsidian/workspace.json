@@ -8,24 +8,12 @@
         "type": "tabs",
         "children": [
           {
-            "id": "65463c10b24fce4f",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "IPv4 Header.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
             "id": "5b286681ae5e3111",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "IPv4 Addressing.md",
+                "file": "Notes/IPv6.md",
                 "mode": "source",
                 "source": false
               }
@@ -97,7 +85,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "IPv4 Header.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -114,7 +101,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "IPv4 Header.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -137,7 +123,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "IPv4 Header.md"
+                "file": "Notes/Untitled.md"
               }
             }
           }
@@ -158,54 +144,54 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "65463c10b24fce4f",
+  "active": "8195630a8994eb6e",
   "lastOpenFiles": [
+    "Notes/IPv6.md",
+    "Notes/Untitled.md",
+    "Images/Pasted image 20240902134315.png",
+    "Images/Pasted image 20240902134309.png",
+    "Images/Pasted image 20240902134239.png",
+    "Images/Pasted image 20240902134218.png",
+    "Pasted image 20240902134109.png",
+    "Images/Pasted image 20240815134315.png",
+    "Images/Pasted image 20240815131513.png",
+    "Images/Pasted image 20240815130721.png",
+    "Images/Pasted image 20240815113421.png",
+    "Images/Pasted image 20240815134222.png",
+    "Notes/STP/STP Toolkit (Optional Features).md",
+    "Notes/STP/STP (Spanning Tree Protocol) Fundamentals.md",
+    "Notes/STP/RSTP (Rapid Spanning Tree Protocol), IEEE 802.1w.md",
+    "Notes/STP/PVST+ (Per-VLAN Spanning Tree Plus).md",
+    "Notes/STP/Classic STP (Spanning Tree Protocol), IEEE 802.1D.md",
+    "Notes/STP",
+    "Notes/CLI Commands/Switch CLI Commands.md",
+    "Notes/CLI Commands/PC Commands.md",
+    "Notes/CLI Commands/Router CLI Commands.md",
+    "Notes/CLI Commands",
+    "Notes/Routing/Static Routing.md",
+    "Notes/Routing/Dynamic Routing.md",
+    "Notes/Routing/Routing Fundamentals.md",
+    "Notes/Routing/RIP & EIGRP.md",
+    "Notes/Routing/OSPF.md",
+    "Notes/Routing",
+    "Notes/Add Later.md",
     "IPv4 Addressing.md",
-    "IPv6.md",
-    "TCP & UDP.md",
-    "Subnetting.md",
-    "Speed, Duplex Autonegotiation.md",
-    "OSI Model.md",
     "Hexadecimal.md",
-    "DTP, VTP.md",
+    "Notes/TCP & UDP.md",
+    "Notes/Subnetting.md",
+    "Notes/Speed, Duplex Autonegotiation.md",
+    "Notes/README.md",
+    "Notes/OSI Model.md",
+    "Notes/MAC address.md",
+    "Notes/Life of a Packet.md",
+    "Notes/IPv4 Header.md",
+    "Notes",
+    "New folder",
     "cleanup_images.py",
     "cleanup",
-    "Images/Pasted image 20240902100144.png",
-    "Images/Pasted image 20240902100001.png",
-    "Images/Pasted image 20240902095314.png",
-    "Images/Pasted image 20240902111553.png",
-    "Images/Pasted image 20240902111115.png",
-    "Images/Pasted image 20240902110645.png",
-    "Images/Pasted image 20240902110022.png",
-    "Images/Pasted image 20240902101504.png",
-    "Images/Pasted image 20240902100204.png",
-    "Pasted image 20240902111553.png",
-    "IPv6 Address Types.md",
-    "IPv4 Header.md",
-    "README.md",
-    "Routing/OSPF.md",
-    "First Hop Redundancy Protocols.md",
-    "CLI Commands/Switch CLI Commands.md",
-    "CLI Commands/Router CLI Commands.md",
-    "Routing/Static Routing.md",
-    "STP/STP Toolkit (Optional Features).md",
-    "Life of a Packet.md",
-    "CLI Commands/PC Commands.md",
-    "CLI Commands/Troubleshooting Commands.md",
     "Documents - Shortcut.lnk",
-    "Ethernet LAN Switching.md",
-    "Routing/Routing Fundamentals.md",
-    "Routing/RIP & EIGRP.md",
-    "Routing/Dynamic Routing.md",
-    "EtherChannel.md",
-    "Hubs, Full & Half Duplex.md",
     "CCNA/STP",
     "CCNA/Routing",
-    "CCNA/Other/Angel/Basic Networking and Cisco Packet Tracer.pdf",
-    "CCNA/Other/Angel",
-    "CCNA/Other",
-    "CCNA/CLI Commands",
-    "CCNA/Images",
     "Untitled.canvas"
   ]
 }
