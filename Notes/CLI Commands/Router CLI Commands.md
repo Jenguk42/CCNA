@@ -1,5 +1,5 @@
 ## Fundamentals
-![[Images/Pasted image 20240813131057.png]]
+![[Pasted image 20240813131057.png]]
 * `?` : View help
 	* **No** space - Show all possible completions of the word
 	```
@@ -280,6 +280,7 @@ You can check that the IPv6 address is automatically generated:
 	- 28672 \* 2 = 57344, and 30976 is less than 57344, so the route via R3 can now be used for load-balancing. ![[Pasted image 20240827132621.png]]
 	- After configuration, both paths are added in the routing table. However, `G0/0` will carry more traffic because it's a faster path with a lower metric. ![[Pasted image 20240827133000.png]]
 #### OSPF Configuration
+For an OSPF demo, refer to the first 4 minutes of [Day 34 Lab, Step 1](https://youtu.be/sJ8PXmiAkvs?si=saHY_YhU1r4k9qGD); The lab itself is about configuring ACLs, but it shows a nice quick configuration.
 ##### OSPF Enable Commands
 - `router ospf PROCESS_ID`
 	- Enables OSPF protocol with the given process ID and enters OSPF configuration mode.
@@ -412,13 +413,14 @@ HSRP is configured directly on the interface.
 ## ACL Configuration
 ### Show Commands
 - `show access-lists` Display all kinds of ACLs.
+	- Shows how many pings were blocked. ![[Pasted image 20240903161652.png]]
 - `show ip access-lists` Display the IP ACLs.
 - `show running-config | include access-list` Show lines in the commands that include "access-list". (Remark is displayed)
 	![[Pasted image 20240903140738.png]]
 	- Each entry is given a number indicating the order. The default entry number will be 10, 20, 30, etc. (Yellow box)
 ### Apply Command
 - `ip access-group NUMBER {in | out}`
-	- Apply the ACL to an interface.
+	- Configured in interface mode: apply the ACL to an interface.
 	- Remember ACLs have to be applied on interfaces after creation!!
 ### Standard Numbered ACLs
 - `access-list NUMBER {deny | permit} IP WILDCARD_MASK`

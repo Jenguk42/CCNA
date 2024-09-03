@@ -33,9 +33,9 @@ ACLs are configured globally on the router (global config mode). They are an ord
 		- Not really - this blocks hosts in `192.168.2.0/24` from communicating with all other networks outside of their local LAN!
 	- Best option: outbound on R2's G0/1 interface.
 3. A maximum of one ACL can be applied to a single interface *per direction*.
-	- Inbound: Max one ACL
-	- Outbound: Max one ACL
-4. There is an **implicit deny** at the end of all ACLs.
+	- Inbound: Max one ACL, Outbound: Max one ACL
+	- If you apply multiple ACL to the same interface in the same direction, it will replace the previous one.
+1. There is an **implicit deny** at the end of all ACLs.
 	- If a packet doesn't match any of the configured entries in an ACL, the router will **deny** the packet.
 	- This is as if there is an invisible entry at the end, "if source IP = any, then deny".
 	![[Pasted image 20240903134502.png]]

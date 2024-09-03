@@ -8,43 +8,31 @@
         "type": "tabs",
         "children": [
           {
-            "id": "d25217875c245255",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Notes/Ethernet LAN Switching.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "fdcdae0f7de1549b",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Notes/ACLs.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
             "id": "13b778c0f6b4416f",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Notes/CLI Commands/Router CLI Commands.md",
+                "file": "Notes/CLI Commands/PC Commands.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "a2319bdaa9cd0dbd",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Notes/VLANs.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -94,8 +82,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "25fa439111d25ab5",
@@ -111,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Notes/CLI Commands/Router CLI Commands.md",
+                "file": "Notes/VLANs.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -128,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Notes/CLI Commands/Router CLI Commands.md",
+                "file": "Notes/VLANs.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -151,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Notes/CLI Commands/Router CLI Commands.md"
+                "file": "Notes/VLANs.md"
               }
             }
           }
@@ -172,10 +159,29 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "13b778c0f6b4416f",
+  "active": "a2319bdaa9cd0dbd",
   "lastOpenFiles": [
-    "Notes/ACLs.md",
+    "Notes/TCP & UDP.md",
+    "Notes/Speed, Duplex Autonegotiation.md",
+    "Notes/MAC address.md",
+    "Notes/Hexadecimal.md",
+    "Notes/Hubs, Full & Half Duplex.md",
+    "Notes/EtherChannel.md",
     "Notes/CLI Commands/Router CLI Commands.md",
+    "Notes/CLI Commands/PC Commands.md",
+    "Notes/OSI Model.md",
+    "Notes/Life of a Packet.md",
+    "Notes/Routing/Static Routing.md",
+    "Notes/Routing/RIP & EIGRP.md",
+    "Notes/IPv4/IPv4 Header.md",
+    "Notes/IPv4/IPv4 Addressing.md",
+    "Notes/CLI Commands/Switch CLI Commands.md",
+    "Notes/Access Control Lists",
+    "Notes/Routing/OSPF.md",
+    "Images/Pasted image 20240903161652.png",
+    "Images/Pasted image 20240903161637.png",
+    "Notes/Ethernet LAN Switching.md",
+    "Notes/ACLs.md",
     "Images/Pasted image 20240903144725.png",
     "Images/Pasted image 20240903144617.png",
     "Images/Pasted image 20240903144424.png",
@@ -184,33 +190,15 @@
     "Images/Pasted image 20240903144257.png",
     "Images/Pasted image 20240903144102.png",
     "Images/Pasted image 20240903143800.png",
-    "Notes/Ethernet LAN Switching.md",
-    "Images/Pasted image 20240903142919.png",
-    "Images/Pasted image 20240903142343.png",
     "Notes/Access Control Lists/Standard ACLs-STAFF-LAP-15.md",
-    "Notes/Access Control Lists",
-    "Notes/EtherChannel.md",
     "Notes/DTP, VTP.md",
     "Notes/Subnetting.md",
-    "Notes/Speed, Duplex Autonegotiation.md",
-    "Notes/OSI Model.md",
-    "Notes/Routing/OSPF.md",
     "Notes/Routing/Dynamic Routing.md",
-    "Notes/Routing/RIP & EIGRP.md",
-    "Notes/Routing/Static Routing.md",
     "Notes/Routing/Routing Fundamentals.md",
     "Notes/Add Later.md",
     "Notes/VLANs.md",
     "README.md",
-    "Notes/MAC address.md",
-    "Notes/Hexadecimal.md",
-    "Notes/First Hop Redundancy Protocols.md",
     "Notes/IPv4",
-    "Notes/IPv6/NDP (Neighbour Discovery Protocol).md",
-    "Notes/IPv6/IPv6 Static Routing.md",
-    "Notes/IPv6/IPv6 Header.md",
-    "Notes/IPv6/IPv6 Addressing.md",
-    "Notes/CLI Commands/IPv6 CLI Commands.md",
     "Notes/IPv6",
     "Notes/STP",
     "Notes/CLI Commands",
