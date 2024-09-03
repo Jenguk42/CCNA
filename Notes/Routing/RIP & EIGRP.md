@@ -11,7 +11,7 @@
 	- **Request**: To ask RIP-enabled neighbour routers to send their routing table
 	- **Response**: To send the local router's routing table to neighbouring routers
 	By default, RIP-enabled routers will share their routing table every 30 secs.
-- Refer to [[Router CLI Commands#RIP Configuration]] for configuration commands.
+- Refer to [RIP Configuration](<Router CLI Commands#RIP Configuration>) for configuration commands.
 ### RIPv1
 Only advertises *classful* addresses (Class A, B, C) and does not support VLSM, CIDR
 - Subnet mask information is not included in response messages

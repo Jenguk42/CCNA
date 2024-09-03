@@ -50,7 +50,7 @@ Functionality of each is very similar!
 ### 1. HSRP (Hot Standby Router Protocol)
 - Cisco proprietary, can only be run on Cisco
 - **Active** and **Standby** router are elected.
-- Refer to [[Router CLI Commands#HSRP Configuration]] for configuration.
+- Refer to [HSRP Configuration](<Router CLI Commands#HSRP Configuration>) for configuration.
 - Two versions, V1 and V2:
 	- Version 2 adds IPv6 support and increases the number of groups that can be configured.
 	- Versions 1 and 2 are not compatible, so all routers using the protocol should be using the same version.

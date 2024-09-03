@@ -99,16 +99,18 @@
 	* **Connected route**
 		* A route to the **network** the interface is connected to
 		* has the actual netmask configured on the interface
-### Static Route Configuration
+### IPv4 Static Route Configuration
 Refer to [[Static Routing]] for detailed explanation
 ![[Pasted image 20240814153912.png]]
 - `ip route IP-ADDRESS NETMASK NEXT-HOP` (Preferred)
-	- Configures the next-hop to reach the IP address
+	- **Recursive** static route: Only the next-hop is specified, requires a recursive lookup on the routing table.
+		- Configures the next-hop to reach the IP address
 	- E.g., For R1 to reach PC4, it should hop to `G0/0` interface of R3 which has an IP address of `192.168.13.3`.
 		- `ip route 192.168.4.0 255.255.255.0 192.168.13.3`
 
-- `ip route IP-ADDRESS NETMASK EXIT-INTERFACE`
-	- Configures which interface to send the packet out of to reach the IP address
+- `ip route IP-ADDRESS NETMASK EXIT-INTERFACE
+	- **Directly attached** static route: Only the exit interface is specified.
+		- Configures which interface to send the packet out of to reach the IP address
 	- E.g., For R2 to reach PC1, it should send the packet out of the `G0/0` interface.
 		- `ip route 192.168.1.0 255.255.255.0 g0/0`
 	- Shown in the routing table as "directly connected", although it is not exactly directly connected
@@ -117,7 +119,7 @@ Refer to [[Static Routing]] for detailed explanation
 		- Stick to using the next-hop in your static routes!
 
 - `ip route IP-ADDRESS NETMASK EXIT-INTERFACE NEXT-HOP`
-		- Configures both next-hop and interface
+	- **Fully specified** static route: Configures both next-hop and interface
 	- E.g., For R2 to reach PC4, it should:
 		- Send the packet out of the `G0/1` interface and 
 		- Hop to `G0/0` interface of R4 which has an IP address of `192.168.24.4`.
@@ -128,15 +130,96 @@ Refer to [[Static Routing]] for detailed explanation
 	- Configures the  default route
 	- `*` means that this route is the candidate to become the router's default route.
 	- Possible to have multiple candidates
-### Floating Static Route Configuration
+### IPv4 Floating Static Route Configuration
 - `ip route DESTINATION_IP SUBNET_MASK AD`
 	![[Pasted image 20240822163957.png]]
 	- Static route is configures as usual, but with a different administrative distance.
-	- If you want to keep the dynamic route as default and floating static route as a backup, AD should be higher than the dynamic route.
-		- E.g., OSPF has an AD of 110, so set the floating static route with AD 111.
-		- In this case, the static route will not show up in the routing table because the OSPF route is favoured and written on the table.
-### Dynamic Routing Configuration
-#### Commands used in Common
+	- If you want to keep the dynamic route as default and floating static route as a backup, AD should be **higher than the main route**.
+		- E.g.1, OSPF has an AD of 110, so set the floating static route with AD 111.
+		- E.g.2, EIGRP has an AD of 90, so set the floating static route with AD 91.
+	- In this case, the static route will not show up in the routing table because the OSPF route is favoured and written on the table.
+## IPv6 Addressing
+### Show Commands
+- `show ipv6 neighbor`: View the neighbour table created via NDP
+	![[Pasted image 20240903104225.png]]
+	- `IPv6 Addresses`: Both global unicast address and link local address are added. The link-local address is automatically added.
+	- `Age`: How long ago was traffic received from the neighbour, in minutes?
+	- `Link-layer Addr`: Neighbour's MAC address
+	- `Interface`: Interface this entry was learned on
+- `show ipv6 interface brief`
+	- Same as the IPv4 command, just use `ipv6`.
+	- Shortened version of the address is displayed.
+	- Each interface has two IPv6 addresses.
+		- **Link-Local Addresses**: automatically configured on an interface when you configure an IPv6 address.
+### Configuration Commands
+R1 below has 3 interfaces, each connected to a different subnet. The company was assigned a /64 address block, and is using a last quartet of its prefix to make different subnets.
+![[Pasted image 20240901151059.png]]
+![[Pasted image 20240901151220.png]]
+`ipv6 unicast-routing` **IMPORTANT!!**
+- Allows the routers to perform IPv6 routing
+- If this is not done, end hosts cannot reach hosts connected to the router's other interface.
+#### Manual Configuration
+`ipv6 address IPv6_ADDRESS/PREFIX_LENGTH`
+- The address should be followed by a prefix length
+- You can use a whole, partially shortened, or shortened address when configuring IPv6 to routers.
+![[Pasted image 20240901151430.png]]
+#### EUI-64 Configuration
+`ipv6 address PREFIX/PREFIX_LENGTH eui-64`
+- Configure an IPv6 address, where: 
+	- The first 64 bits (network prefix) are configured as given, and 
+	- The remaining 64 bits (interface identifier) are automatically generated using the EUI-64 format.
+- E.g., `ipv6 address 2001:db8::/64 eui-64`
+![[Pasted image 20240902100144.png]]
+Original MAC address of `g0/0`: `0cf8 2236 8500`.
+![[Pasted image 20240902100204.png]]
+IPv6 address configured: `2001:db8::ef8:22ff:fe36:8500`.
+- Network prefix: `2001:db8::`.
+- Interface identifier generated using the EUI-64 conversion: `0ef8 22ff fe36 8500`. (Leading `0` is removed.)
+![[Pasted image 20240902101504.png]]
+Link local addresses use the same interface ID as the global unicast address that is configured, because both uses EUI-64 to generate the interface ID.
+![[Pasted image 20240902110645.png]]
+#### SLAAC Configuration
+`ipv6 address autoconfig`
+- Used in interface configuration mode.
+- Configure the address without entering the prefix.
+- The device uses NDP to learn the prefix used in the local link.
+- Refer to [SLAAC (Stateless Address Auto-configuration)](<NDP (Neighbour Discovery Protocol)#SLAAC (Stateless Address Auto-configuration)>)
+Configuration on a router
+![[Pasted image 20240903110208.png]]
+Configuration on a PC (Tick `Automatic` in the global settings tab)
+![[Pasted image 20240903120647.png]]
+You can check that the IPv6 address is automatically generated:
+![[Pasted image 20240903121003.png]]
+#### Static Route Configuration
+![[Pasted image 20240903110815.png]]
+`ipv6 route destination/prefix-length {next-hop | exit-interface [next-hop]} [ad]`
+- `{next-hop | exit-interface [next-hop]}`: Required choice, either enter a next-hop address or an exit-interface with an optional next-hop.
+- `[ad]`: Administrative distance is optional. 
+	- Used when configuring a floating static route - Increasing the administrative distance can make static backup routes.
+	- In Cisco IOS, a normal static route has an AD of 1.
+- **Directly attached** static route: `ipv6 route destination/prefix-length exit-interface`
+	- Only the exit interface is specified.
+	- In **IPv6**, you **CAN'T use** directly attached static routes if the interface is an **Ethernet interface.**
+	- E.g., This command WON'T WORK on R1: `ipv6 route 2001:db8:0:3::/64 g0/0`
+- **Recursive** static route: `ipv6 route destination/prefix-length next-hop`
+	- Only the next-hop is specified.
+	- E.g., R1 uses this command: `ipv6 route 2001:db8:0:3::/64 2001:db8:0:12::2`
+		- R3's LAN is the destination.
+		- Tells R1 to send the packet to R2.
+	- Requires a recursive lookup on the routing table; R1 has to check its routing table multiple times.
+		1. Look up destination.
+		2. Look up the next-hop to check which interface to send traffic out of.
+	- **Link-local addresses cannot be used as the next hop** of an IPv6 static route!
+		- Both the next hop address and the exit interface has to be specified. (Use the fully specified static route)
+		- The router doesn't know which interface the link-local address is connected to.
+- **Fully specified** static route: `ipv6 route destination/prefix-length exit-interface next-hop`
+	- Both the exit interface and the next-hop are specified.
+	- E.g., `ipv6 route 2001:db8:0:3::/64 g0/0 2001:db8:0:12::2`
+`ipv6 route ::/0 DEFAULT_ROUTE`
+- Configures the default route (in the recursive static route format)
+- E.g., Configuring the default route from R3 = `ipv6 route ::/0 2001:db8:0:23::1`
+## Dynamic Routing Configuration
+### Commands used in Common
 - `show ip route ...`
 	- `IGP_NAME`: Filters routes by IGP protocols. (EIGRP, OSPF, etc.)
 	- `CONNECTION_TYPE`: Filter routes by connection types (static, connected, etc.)
@@ -148,8 +231,7 @@ Refer to [[Static Routing]] for detailed explanation
 - `show ip protocols`: Shows various stats
 	- Example: RIP 
 		![[Pasted image 20240823143643.png]]
-- `maximum paths NUMBER`: Change the maximum paths that can be saved for the same destination. NEEDS TO BE EXECUTED IN PROTOCOL CONFIGURATION MODE!
-	![[Pasted image 20240823143929.png]]
+- `maximum paths NUMBER`: Change the maximum paths that can be saved for the same destination. NEEDS TO BE EXECUTED IN PROTOCOL CONFIGURATION MODE!	![[Pasted image 20240823143929.png]]
 - `distance NUMBER`: Change the administrative distance to make it favoured over other protocols. NEEDS TO BE EXECUTED IN PROTOCOL CONFIGURATION MODE! ![[Pasted image 20240823144145.png]]
 - `network IP_ADDRESS`: "Activate IGP on interfaces with an IP address that falls under the given IP range."
 	- Tells the IGP to look for any interfaces with an IP address contained in the range specified in the `network` command.

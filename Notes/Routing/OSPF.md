@@ -197,7 +197,7 @@ All values less than 1 will be converted to 1, so FastEthernet, Gigabit Ethernet
 - E.g., Configured reference bandwidth is 100,000 mbps.
 	- Reference: 100,000 mbps / Interface: 100 mbps (FastEthernet) = cost of **1000**
 	- Reference: 100,000 mbps / Interface: 1000 mbps (Gigabit Ethernet) = cost of **100**
-Refer to [[Router CLI Commands#OSPF Configuration]]
+Refer to [OSPF Configuration](<Router CLI Commands#OSPF Configuration>)
 ### Cost Calculation
 OSPF cost to a destination is the total cost of the 'outgoing/exit' interfaces.
 - Loopback interfaces have a cost of 1.

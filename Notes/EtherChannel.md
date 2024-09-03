@@ -41,7 +41,7 @@ EtherChannel groups multiple interfaces together to act as a single interface, p
 - Load-balancing configuration
 ## EtherChannel Configuration 
 ### Methods
-Three main methods of EtherChannel configuration on Cisco switches. Refer to [[Switch CLI Commands#Layer 2 EtherChannel]] for configuration commands.
+Three main methods of EtherChannel configuration on Cisco switches. Refer to [Layer 2 EtherChannel Commands](<Switch CLI Commands#Layer 2 EtherChannel>) for configuration commands.
 - Similar to trunk formation in DTP (Dynamic trunk protocol)
 - **LACP (Link Aggregation Control Protocol)** 
 	- Industry standard protocol (IEEE 802.3ad), can be used on all switches (PREFERRED!)
@@ -69,4 +69,4 @@ Broadcasts can still loop around the switches and cause a broadcast storm. One i
 If all connections are made using routed ports, not Layer 2 switch ports, **there is no need to run spanning-tree at all.**
 - Layer 2 loops will not be formed because router ports don't forward Layer 2 broadcasts.
 
-Refer to [[Switch CLI Commands#Layer 3 EtherChannel]] for configuration commands.
+Refer to [Layer 3 EtherChannel Commands](<Switch CLI Commands#Layer 3 EtherChannel>) for configuration commands.
