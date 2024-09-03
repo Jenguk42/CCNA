@@ -4,11 +4,35 @@
     "type": "split",
     "children": [
       {
-        "id": "4eda5e6ccf7158fb",
+        "id": "304818e9a4c18875",
         "type": "tabs",
         "children": [
           {
-            "id": "d81ded26d708c07c",
+            "id": "d25217875c245255",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Notes/Ethernet LAN Switching.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "fdcdae0f7de1549b",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Notes/ACLs.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "13b778c0f6b4416f",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -18,57 +42,9 @@
                 "source": false
               }
             }
-          },
-          {
-            "id": "55b98b29088d7aa5",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Notes/IPv6/NDP (Neighbour Discovery Protocol).md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "a5001b2254917b72",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Notes/IPv6/IPv6 Addressing.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "5f5b3d42f8f7055e",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Notes/IPv6/NDP (Neighbour Discovery Protocol).md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "f6fc860a41a53da0",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Notes/IPv6/IPv6 Static Routing.md",
-                "mode": "source",
-                "source": false
-              }
-            }
           }
         ],
-        "currentTab": 4
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -135,7 +111,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Notes/IPv6/IPv6 Static Routing.md",
+                "file": "Notes/CLI Commands/Router CLI Commands.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -152,7 +128,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Notes/IPv6/IPv6 Static Routing.md",
+                "file": "Notes/CLI Commands/Router CLI Commands.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -175,7 +151,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Notes/IPv6/IPv6 Static Routing.md"
+                "file": "Notes/CLI Commands/Router CLI Commands.md"
               }
             }
           }
@@ -196,46 +172,46 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "f6fc860a41a53da0",
+  "active": "13b778c0f6b4416f",
   "lastOpenFiles": [
-    "Images/Pasted image 20240903122450.png",
-    "Images/Pasted image 20240903122401.png",
-    "Images/Pasted image 20240903122257.png",
-    "Notes/IPv6/NDP (Neighbour Discovery Protocol).md",
-    "Notes/IPv6/IPv6 Addressing.md",
+    "Notes/ACLs.md",
     "Notes/CLI Commands/Router CLI Commands.md",
-    "Images/Pasted image 20240903121003.png",
-    "Images/Pasted image 20240903120647.png",
-    "Notes/IPv6/IPv6 Static Routing.md",
-    "Notes/CLI Commands/IPv6 CLI Commands.md",
-    "Images/Pasted image 20240903114443.png",
-    "Notes/IPv4 Addressing.md",
-    "Images/Pasted image 20240903110909.png",
-    "Images/Pasted image 20240903110847.png",
-    "Images/Pasted image 20240903110815.png",
-    "Images/Pasted image 20240903110208.png",
-    "Images/Pasted image 20240903105029.png",
-    "Notes/Routing/RIP & EIGRP.md",
-    "Notes/CLI Commands/PC Commands.md",
-    "Notes/Routing/OSPF.md",
-    "Notes/Life of a Packet.md",
-    "Notes/First Hop Redundancy Protocols.md",
+    "Images/Pasted image 20240903144725.png",
+    "Images/Pasted image 20240903144617.png",
+    "Images/Pasted image 20240903144424.png",
+    "Images/Pasted image 20240903144401.png",
+    "Images/Pasted image 20240903144312.png",
+    "Images/Pasted image 20240903144257.png",
+    "Images/Pasted image 20240903144102.png",
+    "Images/Pasted image 20240903143800.png",
     "Notes/Ethernet LAN Switching.md",
+    "Images/Pasted image 20240903142919.png",
+    "Images/Pasted image 20240903142343.png",
+    "Notes/Access Control Lists/Standard ACLs-STAFF-LAP-15.md",
+    "Notes/Access Control Lists",
     "Notes/EtherChannel.md",
-    "Notes/CLI Commands/Switch CLI Commands.md",
+    "Notes/DTP, VTP.md",
+    "Notes/Subnetting.md",
+    "Notes/Speed, Duplex Autonegotiation.md",
+    "Notes/OSI Model.md",
+    "Notes/Routing/OSPF.md",
     "Notes/Routing/Dynamic Routing.md",
-    "Notes/STP/Classic STP (Spanning Tree Protocol), IEEE 802.1D.md",
-    "Notes/IPv6Addressing.md",
-    "Notes/IPv6.md",
-    "Notes/IPv6 Addressing.md",
+    "Notes/Routing/RIP & EIGRP.md",
+    "Notes/Routing/Static Routing.md",
+    "Notes/Routing/Routing Fundamentals.md",
+    "Notes/Add Later.md",
+    "Notes/VLANs.md",
+    "README.md",
+    "Notes/MAC address.md",
+    "Notes/Hexadecimal.md",
+    "Notes/First Hop Redundancy Protocols.md",
+    "Notes/IPv4",
+    "Notes/IPv6/NDP (Neighbour Discovery Protocol).md",
+    "Notes/IPv6/IPv6 Static Routing.md",
     "Notes/IPv6/IPv6 Header.md",
-    "Notes/TCP & UDP.md",
+    "Notes/IPv6/IPv6 Addressing.md",
+    "Notes/CLI Commands/IPv6 CLI Commands.md",
     "Notes/IPv6",
-    "Untitled",
-    "Notes/STP/STP Toolkit (Optional Features).md",
-    "Notes/STP/STP (Spanning Tree Protocol) Fundamentals.md",
-    "Notes/STP/RSTP (Rapid Spanning Tree Protocol), IEEE 802.1w.md",
-    "Notes/STP/PVST+ (Per-VLAN Spanning Tree Plus).md",
     "Notes/STP",
     "Notes/CLI Commands",
     "Notes/Routing",
@@ -243,7 +219,6 @@
     "New folder",
     "cleanup_images.py",
     "cleanup",
-    "Documents - Shortcut.lnk",
     "Untitled.canvas"
   ]
 }

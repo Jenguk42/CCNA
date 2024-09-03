@@ -40,7 +40,7 @@
 	2. Assign the second-largest subnet after it.
 		-  Network address = broadcast address of the largest subnet + 1
 	3. Repeat the process until all subnets have been assigned.
-		- Remember to add point-to-point connections`
+		- Remember to add point-to-point connections.
 ## Practice Quizzes
 ### FLSM (Fixed-Length Subnet Masks)
 1. You have been given the `172.22.0.0/16` network. You are required to divide the network into 500 separate subnets. What prefix length should you use?
@@ -74,7 +74,6 @@
 	3. First usable address:
 	4. Last usable address:
 	5. Number of host (usable) address:
-
 ### VLSM (Variable-Length Subnet Masks)
 6. A company is assigned the `192.168.1.0/24` network, and must divide it into 5 subnets to provide IP addresses for the enterprise network.  ![[Pasted image 20240816224441.png]]
 	- Identify the following for each subnet:

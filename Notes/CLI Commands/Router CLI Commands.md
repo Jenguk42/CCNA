@@ -409,3 +409,46 @@ HSRP is configured directly on the interface.
 	- Causes the router to take the role of active router, even if another router already has the role.
 	- However, the pre-empting router must have a higher priority or IP address.
 	- Only necessary on the router you want to become active.
+## ACL Configuration
+### Show Commands
+- `show access-lists` Display all kinds of ACLs.
+- `show ip access-lists` Display the IP ACLs.
+- `show running-config | include access-list` Show lines in the commands that include "access-list". (Remark is displayed)
+	![[Pasted image 20240903140738.png]]
+	- Each entry is given a number indicating the order. The default entry number will be 10, 20, 30, etc. (Yellow box)
+### Apply Command
+- `ip access-group NUMBER {in | out}`
+	- Apply the ACL to an interface.
+	- Remember ACLs have to be applied on interfaces after creation!!
+### Standard Numbered ACLs
+- `access-list NUMBER {deny | permit} IP WILDCARD_MASK`
+	- Basic command to configure a standard numbered ACL.
+	- Wildcard mask is not required if you specify a /32 mask. 
+	- E.g., The following three commands deny a single host `1.1.1.1/32`. ![[Pasted image 20240903135710.png]]
+- `access-list 1 permit any`
+	- Used to add the entry to permit traffic. ![[Pasted image 20240903140053.png]]
+- `access-list NUMBER remark REMARK`
+	- Adds a comment that helps you remember the purpose of the ACL.
+	- E.g., `access-list 1 remark ## BLOCK BOB FROM ACCOUTING ##`
+- Example Configuration:
+	![[Pasted image 20240903144401.png]]
+	![[Pasted image 20240903144424.png]]
+	- Rule-of-thumb: Standard ACLs should be applied **as close to the destination as possible**.
+	- In the example below, the ACL should only control traffic that tries to access the `192.168.2.0/24` network.
+		![[Pasted image 20240903142343.png]]
+		![[Pasted image 20240903142919.png]]
+	- Therefore the ACE should be applied outbound on G0/2 of R1.
+### Standard Named ACLs
+- `ip access-list standard ACL_NAME`
+	- Enter standard name config mode.
+	- E.g., `ip access-list standard BLOCK_BOB`
+- `[ENTRY-NUMBER] {deny | permit} IP WILDCARD_MASK`
+	- Configure the deny and permit entries.
+	- Entry numbers can be specified to control the order.
+	- E.g., `5 deny 1.1.1.1`, `10 permit any`
+- Example Configuration: 
+	![[Pasted image 20240903144401.png]]
+	![[Pasted image 20240903144312.png]]
+	- 2 ACLs are used to follow the requirements at different interfaces, to control access to 2 servers.
+	![[Pasted image 20240903144617.png]]![[Pasted image 20240903144725.png]]
+	- The router may re-order the /32 entries that match a single specific host to improve efficiency of processing the ACL. (Does not change the overall effect of the ACL)
