@@ -25,7 +25,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Notes/VLANs.md",
+                "file": "Notes/CLI Commands/Router CLI Commands.md",
                 "mode": "source",
                 "source": false
               }
@@ -61,7 +61,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "\"refer to\"",
+                "query": "pasted",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -78,7 +78,8 @@
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -98,7 +99,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Notes/VLANs.md",
+                "file": "Notes/CLI Commands/PC Commands.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -115,7 +116,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Notes/VLANs.md",
+                "file": "Notes/CLI Commands/PC Commands.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -138,7 +139,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Notes/VLANs.md"
+                "file": "Notes/CLI Commands/PC Commands.md"
               }
             }
           }
@@ -159,45 +160,45 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "a2319bdaa9cd0dbd",
+  "active": "123dbb9080a12199",
   "lastOpenFiles": [
-    "Notes/TCP & UDP.md",
-    "Notes/Speed, Duplex Autonegotiation.md",
-    "Notes/MAC address.md",
-    "Notes/Hexadecimal.md",
-    "Notes/Hubs, Full & Half Duplex.md",
-    "Notes/EtherChannel.md",
-    "Notes/CLI Commands/Router CLI Commands.md",
+    "Other/Labs",
+    "Images/Pasted image 20240903205809.png",
+    "Images/Pasted image 20240903205739.png",
+    "Images/Pasted image 20240903204931.png",
+    "Images/Pasted image 20240903203044.png",
+    "Images/Pasted image 20240903184140.png",
+    "Images/Pasted image 20240903184039.png",
+    "Images/Pasted image 20240903182257.png",
+    "Images/Pasted image 20240903181555.png",
+    "Images/Pasted image 20240903180253.png",
+    "Images/Pasted image 20240903175723.png",
     "Notes/CLI Commands/PC Commands.md",
+    "Notes/Subnetting.md",
+    "Notes/Speed, Duplex Autonegotiation.md",
     "Notes/OSI Model.md",
+    "Notes/MAC address.md",
+    "Notes/Hubs, Full & Half Duplex.md",
     "Notes/Life of a Packet.md",
+    "Notes/Hexadecimal.md",
+    "Notes/First Hop Redundancy Protocols.md",
+    "Notes/Ethernet LAN Switching.md",
+    "Notes/EtherChannel.md",
     "Notes/Routing/Static Routing.md",
+    "Notes/Routing/Routing Fundamentals.md",
     "Notes/Routing/RIP & EIGRP.md",
+    "Notes/Routing/OSPF.md",
+    "Notes/Routing/Dynamic Routing.md",
+    "Notes/VLANs.md",
+    "Notes/TCP & UDP.md",
+    "Notes/CLI Commands/Router CLI Commands.md",
     "Notes/IPv4/IPv4 Header.md",
     "Notes/IPv4/IPv4 Addressing.md",
     "Notes/CLI Commands/Switch CLI Commands.md",
     "Notes/Access Control Lists",
-    "Notes/Routing/OSPF.md",
-    "Images/Pasted image 20240903161652.png",
-    "Images/Pasted image 20240903161637.png",
-    "Notes/Ethernet LAN Switching.md",
     "Notes/ACLs.md",
-    "Images/Pasted image 20240903144725.png",
-    "Images/Pasted image 20240903144617.png",
-    "Images/Pasted image 20240903144424.png",
-    "Images/Pasted image 20240903144401.png",
-    "Images/Pasted image 20240903144312.png",
-    "Images/Pasted image 20240903144257.png",
-    "Images/Pasted image 20240903144102.png",
-    "Images/Pasted image 20240903143800.png",
     "Notes/Access Control Lists/Standard ACLs-STAFF-LAP-15.md",
     "Notes/DTP, VTP.md",
-    "Notes/Subnetting.md",
-    "Notes/Routing/Dynamic Routing.md",
-    "Notes/Routing/Routing Fundamentals.md",
-    "Notes/Add Later.md",
-    "Notes/VLANs.md",
-    "README.md",
     "Notes/IPv4",
     "Notes/IPv6",
     "Notes/STP",

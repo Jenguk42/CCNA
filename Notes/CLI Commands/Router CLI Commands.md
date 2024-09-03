@@ -410,19 +410,34 @@ HSRP is configured directly on the interface.
 	- Causes the router to take the role of active router, even if another router already has the role.
 	- However, the pre-empting router must have a higher priority or IP address.
 	- Only necessary on the router you want to become active.
-## ACL Configuration
-### Show Commands
+## Standard ACL Configuration
+### ACL Show Commands
 - `show access-lists` Display all kinds of ACLs.
 	- Shows how many pings were blocked. ![[Pasted image 20240903161652.png]]
 - `show ip access-lists` Display the IP ACLs.
 - `show running-config | include access-list` Show lines in the commands that include "access-list". (Remark is displayed)
 	![[Pasted image 20240903140738.png]]
 	- Each entry is given a number indicating the order. The default entry number will be 10, 20, 30, etc. (Yellow box)
-### Apply Command
+### ACL Apply Command
 - `ip access-group NUMBER {in | out}`
 	- Configured in interface mode: apply the ACL to an interface.
 	- Remember ACLs have to be applied on interfaces after creation!!
-### Standard Numbered ACLs
+### ACL Edit Command
+- `ip access-list resequence ACL_ID STARTING_SEQ_NUM INCREMENT`
+	- Works in global config mode.
+	- Re-sequencing function that helps edit ACLs
+	- E.g., Entries were sequenced 1, 2, 3, 4, and 5. This is not ideal because it is impossible to insert new entries in between.
+	- `ip access-list resequence 1 10 10` ![[Pasted image 20240903180253.png]]
+		- `1`: ACL number
+		- First `10`: Change the sequence number of the first entry to 10. 
+		- Second `10`: Add 10 for every entry after that.
+### ACL Delete Command
+- `no ENTRY_NUMBER`
+	![[Pasted image 20240903174810.png]]
+	- A way to delete individual entries in the ACL.
+	- Adding `no` in front of the commands will not work as usual, as it will delete the entire ACL! ![[Pasted image 20240903175104.png]]
+### Standard Numbered ACL Configuration
+Configured directly in global config mode:
 - `access-list NUMBER {deny | permit} IP WILDCARD_MASK`
 	- Basic command to configure a standard numbered ACL.
 	- Wildcard mask is not required if you specify a /32 mask. 
@@ -440,13 +455,19 @@ HSRP is configured directly on the interface.
 		![[Pasted image 20240903142343.png]]
 		![[Pasted image 20240903142919.png]]
 	- Therefore the ACE should be applied outbound on G0/2 of R1.
-### Standard Named ACLs
+- `ip access-list standard NUMBER`
+	- Another way to configure numbered ACLs, but in the form of named ACLs. ![[Pasted image 20240903174532.png]]
+	- Easier to delete individual entries with `no ENTRY_NUMBER`
+	- WARNING - When configuring/ editing numbered ACLs from global config mode, **you can’t delete individual entries**, you can only delete entire ACL!
+### Standard Named ACL Configuration
+Configured with subcommands in a separate config mode:
 - `ip access-list standard ACL_NAME`
 	- Enter standard name config mode.
 	- E.g., `ip access-list standard BLOCK_BOB`
 - `[ENTRY-NUMBER] {deny | permit} IP WILDCARD_MASK`
 	- Configure the deny and permit entries.
 	- Entry numbers can be specified to control the order.
+		- E.g., A new entry with sequence number 30 was added, which goes between entries 20 and 40.  ![[Pasted image 20240903175723.png]]
 	- E.g., `5 deny 1.1.1.1`, `10 permit any`
 - Example Configuration: 
 	![[Pasted image 20240903144401.png]]
@@ -454,3 +475,12 @@ HSRP is configured directly on the interface.
 	- 2 ACLs are used to follow the requirements at different interfaces, to control access to 2 servers.
 	![[Pasted image 20240903144617.png]]![[Pasted image 20240903144725.png]]
 	- The router may re-order the /32 entries that match a single specific host to improve efficiency of processing the ACL. (Does not change the overall effect of the ACL)
+## Extended ACL Configuration
+### Extended Numbered ACL Configuration
+- `access-list NUMBER [permit | deny] PROTOCOL SRC_IP DEST_IP`
+	- Protocol: TCP, UDP, etc.
+	- Can be configured on global config mode using the extended named configuration.
+### Extended Named ACL Configuration
+- `ip access-list extended {NAME | NUMBER}`
+	- Extended numbered ACL can also be configured in this mode.
+- `[SEQ_NUM] [permit | deny] PROTOCOL SRC_IP DEST_IP`
