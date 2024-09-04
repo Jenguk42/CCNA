@@ -42,9 +42,33 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "ca62ebff2c3534ee",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Notes/Device Settings/NTP (Network Time Protocol).md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "a1c194c8d1994a30",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Notes/DNS.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
         ],
-        "currentTab": 2
+        "currentTab": 4
       }
     ],
     "direction": "vertical"
@@ -94,8 +118,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "25fa439111d25ab5",
@@ -111,7 +134,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Notes/Layer 2 (Data Link Layer)/CDP & LLDP.md",
+                "file": "Notes/DNS.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -128,7 +151,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Notes/Layer 2 (Data Link Layer)/CDP & LLDP.md",
+                "file": "Notes/DNS.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -151,7 +174,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Notes/Layer 2 (Data Link Layer)/CDP & LLDP.md"
+                "file": "Notes/DNS.md"
               }
             }
           }
@@ -172,41 +195,43 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "4c15d7f284f6d6ca",
+  "active": "a1c194c8d1994a30",
   "lastOpenFiles": [
-    "Images/Pasted image 20240904141811.png",
-    "Images/Pasted image 20240904141432.png",
-    "Images/Pasted image 20240904141357.png",
-    "Images/Pasted image 20240904140140.png",
-    "Images/Pasted image 20240904135707.png",
-    "Images/Pasted image 20240904135633.png",
-    "Images/Pasted image 20240904133731.png",
-    "Images/Pasted image 20240904133508.png",
-    "Images/Pasted image 20240904132542.png",
-    "Images/Pasted image 20240904132524.png",
-    "Images/Pasted image 20240904120305.png",
+    "Notes/Device Settings/NTP (Network Time Protocol).md",
+    "Notes/Layer 2 (Data Link Layer)/DTP, VTP.md",
+    "Notes/Layer 2 (Data Link Layer)/EtherChannel.md",
+    "Notes/Layer 2 (Data Link Layer)/VLANs.md",
+    "Notes/Layer 2 (Data Link Layer)/Ethernet LAN Switching.md",
+    "Notes/Layer 2 (Data Link Layer)/MAC address.md",
+    "Notes/DNS.md",
+    "Images/Pasted image 20240904160202.png",
+    "Images/Pasted image 20240904155827.png",
+    "Images/Pasted image 20240904155727.png",
+    "Images/Pasted image 20240904155558.png",
+    "Images/Pasted image 20240904155545.png",
+    "Images/Pasted image 20240904155349.png",
+    "Images/Pasted image 20240904153959.png",
+    "Images/Pasted image 20240904153218.png",
+    "Images/Pasted image 20240904152633.png",
+    "Images/Pasted image 20240904145217.png",
+    "Notes/Device Settings",
+    "Notes/Layer 2 (Data Link Layer)/CDP & LLDP.md",
     "Notes/Layer 2 (Data Link Layer)/STP/Classic STP (Spanning Tree Protocol), IEEE 802.1D.md",
     "Notes/OSI Model.md",
     "Notes/Life of a Packet.md",
     "Notes/Hexadecimal.md",
     "Notes/Add Later.md",
-    "Notes/Layer 2 (Data Link Layer)/DTP, VTP.md",
     "Notes/Layer 4 (Transport Layer)",
     "Notes/Layer 3 (Network Layer)",
-    "Notes/Layer 2 (Data Link Layer)/VLANs.md",
-    "Notes/Layer 2 (Data Link Layer)/MAC address.md",
-    "Notes/Layer 2 (Data Link Layer)/Ethernet LAN Switching.md",
-    "Notes/Layer 2 (Data Link Layer)/CDP & LLDP.md",
     "Notes/Layer 1 (Physical Layer)/Speed, Duplex Autonegotiation.md",
     "Notes/Layer 1 (Physical Layer)/Hubs, Full & Half Duplex.md",
     "Notes/Layer 1 (Physical Layer)",
     "Notes/Layer 2 (Data Link Layer)",
     "Notes/CLI Commands/Router CLI Commands.md",
     "Notes/CLI Commands/PC Commands.md",
-    "Other/Labs",
+    "Notes/Other/Labs",
     "Notes/Layer 3 (Network Layer)/Subnetting.md",
     "Notes/Layer 3 (Network Layer)/First Hop Redundancy Protocols.md",
-    "Notes/Layer 2 (Data Link Layer)/EtherChannel.md",
     "Notes/Layer 3 (Network Layer)/Routing/Static Routing.md",
     "Notes/Layer 3 (Network Layer)/Routing/Routing Fundamentals.md",
     "Notes/Layer 3 (Network Layer)/Routing/RIP & EIGRP.md",
@@ -214,12 +239,10 @@
     "Notes/Layer 3 (Network Layer)/Routing/Dynamic Routing.md",
     "Notes/Layer 4 (Transport Layer)/TCP & UDP.md",
     "Notes/Layer 3 (Network Layer)/IPv4/IPv4 Header.md",
-    "Notes/Layer 3 (Network Layer)/IPv4/IPv4 Addressing.md",
     "Notes/Access Control Lists",
     "Notes/Layer 3 (Network Layer)/IPv4",
     "Notes/Layer 3 (Network Layer)/IPv6",
     "Notes/Layer 2 (Data Link Layer)/STP",
-    "Notes/CLI Commands",
     "Untitled.canvas"
   ]
 }
