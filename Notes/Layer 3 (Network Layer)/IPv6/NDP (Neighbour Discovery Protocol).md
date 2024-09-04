@@ -15,7 +15,7 @@ R1 tries `ping 2001:db8::78:9abc`.
 - To ask for the MAC address, R1 sends a Neighbour Solicitation message.
 	- R1: "Hi, what's your MAC address?"
 	- Source IP: R1's G0/0 IP address
-	- Destination IP: R2's solicited-node multicast address (Refer to [Solicited-node multicast address](<IPv6 Addressing#Solicited-Node Multicast Address>))
+	- Destination IP: R2's solicited-node multicast address (Refer to [Solicited-node multicast address](IPv6%20Addressing.md#Solicited-Node%20Multicast%20Address Addressing#Solicited-Node Multicast Address>))
 		- R1 automatically calculates the solicited-node multicast address from the unicast address typed in the `ping` command, which is `ff02::1:ff78:9abc`.
 	- Source MAC: R1's G0/0 MAC address
 	- Destination MAC: Multicast MAC based on R2's solicited-node multicast address

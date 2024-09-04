@@ -21,7 +21,7 @@ A Layer 2 protocol STP (Spanning Tree Protocol) can be used to enable network re
 ![[Pasted image 20240821140908.png]]
 - IEEE:
 	- [[Classic STP (Spanning Tree Protocol), IEEE 802.1D]]
-	- [[RSTP (Rapid Spanning Tree Protocol), IEEE 802.1W]]
+	- [[RSTP (Rapid Spanning Tree Protocol), IEEE 802.1w]]
 	- MSTP (Multiple Spanning Tree Protocol), IEEE 802.1S: Useful when grouping large number of VLANs, industry standard for large networks
 - Cisco Versions:
 	- [[PVST+ (Per-VLAN Spanning Tree Plus)]]

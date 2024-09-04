@@ -30,9 +30,21 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "4c15d7f284f6d6ca",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Notes/Layer 2 (Data Link Layer)/CDP & LLDP.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -61,7 +73,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "pasted",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -78,12 +90,12 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "25fa439111d25ab5",
@@ -99,7 +111,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Notes/CLI Commands/PC Commands.md",
+                "file": "Notes/Layer 2 (Data Link Layer)/CDP & LLDP.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -116,7 +128,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Notes/CLI Commands/PC Commands.md",
+                "file": "Notes/Layer 2 (Data Link Layer)/CDP & LLDP.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -139,7 +151,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Notes/CLI Commands/PC Commands.md"
+                "file": "Notes/Layer 2 (Data Link Layer)/CDP & LLDP.md"
               }
             }
           }
@@ -160,8 +172,27 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "123dbb9080a12199",
+  "active": "4c15d7f284f6d6ca",
   "lastOpenFiles": [
+    "Images/Pasted image 20240904100002.png",
+    "Notes/Layer 2 (Data Link Layer)/STP/Classic STP (Spanning Tree Protocol), IEEE 802.1D.md",
+    "Notes/OSI Model.md",
+    "Notes/Life of a Packet.md",
+    "Notes/Hexadecimal.md",
+    "Notes/Add Later.md",
+    "Notes/Layer 2 (Data Link Layer)/DTP, VTP.md",
+    "Notes/Layer 4 (Transport Layer)",
+    "Notes/Layer 3 (Network Layer)",
+    "Notes/Layer 2 (Data Link Layer)/VLANs.md",
+    "Notes/Layer 2 (Data Link Layer)/MAC address.md",
+    "Notes/Layer 2 (Data Link Layer)/Ethernet LAN Switching.md",
+    "Notes/Layer 2 (Data Link Layer)/CDP & LLDP.md",
+    "Notes/Layer 1 (Physical Layer)/Speed, Duplex Autonegotiation.md",
+    "Notes/Layer 1 (Physical Layer)/Hubs, Full & Half Duplex.md",
+    "Notes/Layer 1 (Physical Layer)",
+    "Notes/Layer 2 (Data Link Layer)",
+    "Notes/CLI Commands/Router CLI Commands.md",
+    "Notes/CLI Commands/PC Commands.md",
     "Other/Labs",
     "Images/Pasted image 20240903205809.png",
     "Images/Pasted image 20240903205739.png",
@@ -173,41 +204,22 @@
     "Images/Pasted image 20240903181555.png",
     "Images/Pasted image 20240903180253.png",
     "Images/Pasted image 20240903175723.png",
-    "Notes/CLI Commands/PC Commands.md",
-    "Notes/Subnetting.md",
-    "Notes/Speed, Duplex Autonegotiation.md",
-    "Notes/OSI Model.md",
-    "Notes/MAC address.md",
-    "Notes/Hubs, Full & Half Duplex.md",
-    "Notes/Life of a Packet.md",
-    "Notes/Hexadecimal.md",
-    "Notes/First Hop Redundancy Protocols.md",
-    "Notes/Ethernet LAN Switching.md",
-    "Notes/EtherChannel.md",
-    "Notes/Routing/Static Routing.md",
-    "Notes/Routing/Routing Fundamentals.md",
-    "Notes/Routing/RIP & EIGRP.md",
-    "Notes/Routing/OSPF.md",
-    "Notes/Routing/Dynamic Routing.md",
-    "Notes/VLANs.md",
-    "Notes/TCP & UDP.md",
-    "Notes/CLI Commands/Router CLI Commands.md",
-    "Notes/IPv4/IPv4 Header.md",
-    "Notes/IPv4/IPv4 Addressing.md",
-    "Notes/CLI Commands/Switch CLI Commands.md",
+    "Notes/Layer 3 (Network Layer)/Subnetting.md",
+    "Notes/Layer 3 (Network Layer)/First Hop Redundancy Protocols.md",
+    "Notes/Layer 2 (Data Link Layer)/EtherChannel.md",
+    "Notes/Layer 3 (Network Layer)/Routing/Static Routing.md",
+    "Notes/Layer 3 (Network Layer)/Routing/Routing Fundamentals.md",
+    "Notes/Layer 3 (Network Layer)/Routing/RIP & EIGRP.md",
+    "Notes/Layer 3 (Network Layer)/Routing/OSPF.md",
+    "Notes/Layer 3 (Network Layer)/Routing/Dynamic Routing.md",
+    "Notes/Layer 4 (Transport Layer)/TCP & UDP.md",
+    "Notes/Layer 3 (Network Layer)/IPv4/IPv4 Header.md",
+    "Notes/Layer 3 (Network Layer)/IPv4/IPv4 Addressing.md",
     "Notes/Access Control Lists",
-    "Notes/ACLs.md",
-    "Notes/Access Control Lists/Standard ACLs-STAFF-LAP-15.md",
-    "Notes/DTP, VTP.md",
-    "Notes/IPv4",
-    "Notes/IPv6",
-    "Notes/STP",
+    "Notes/Layer 3 (Network Layer)/IPv4",
+    "Notes/Layer 3 (Network Layer)/IPv6",
+    "Notes/Layer 2 (Data Link Layer)/STP",
     "Notes/CLI Commands",
-    "Notes/Routing",
-    "Notes",
-    "New folder",
-    "cleanup_images.py",
-    "cleanup",
     "Untitled.canvas"
   ]
 }

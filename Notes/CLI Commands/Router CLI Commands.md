@@ -183,7 +183,7 @@ Link local addresses use the same interface ID as the global unicast address tha
 - Used in interface configuration mode.
 - Configure the address without entering the prefix.
 - The device uses NDP to learn the prefix used in the local link.
-- Refer to [SLAAC (Stateless Address Auto-configuration)](<NDP (Neighbour Discovery Protocol)#SLAAC (Stateless Address Auto-configuration)>)
+- Refer to [SLAAC (Stateless Address Auto-configuration)](NDP%20(Neighbour%20Discovery%20Protocol).md#SLAAC%20(Stateless%20Address%20Auto-configuration) (Neighbour Discovery Protocol)#SLAAC (Stateless Address Auto-configuration)>)
 Configuration on a router
 ![[Pasted image 20240903110208.png]]
 Configuration on a PC (Tick `Automatic` in the global settings tab)
