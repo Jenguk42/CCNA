@@ -1,4 +1,5 @@
 {
+  "graph:open": [],
   "obsidian-git:commit-specified-message": [
     {
       "modifiers": [
@@ -6,5 +7,14 @@
       ],
       "key": "G"
     }
-  ]
+  ],
+  "obsidian-git:push2": [
+    {
+      "modifiers": [
+        "Mod"
+      ],
+      "key": "P"
+    }
+  ],
+  "command-palette:open": []
 }
