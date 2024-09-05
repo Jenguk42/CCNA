@@ -11,4 +11,15 @@ Two main types of devices:
 	- E.g., network devices like routers and switches
 2. Network Management Station (NMS)
 	- Device/Devices managing the managed devices
-	- SNMP 'server'
+	- The SNMP 'server'
+## SNMP Operations
+![[Pasted image 20240905150249.png]]
+Three main operations used in SNMP:
+1. Managed devices can notify the NMS of events.
+	- E.g. SW1 to SRV1: "My Interfaces is going up!"
+2. The NMS can ask the managed devices for information about their current status. (The devices will reply.)
+	- E.g. SRV1 to R1: "What's your current CPU usage?"
+3. The NMS can tell the managed devices to change aspects of their configuration. (The devices will comply and report.)
+	- E.g., SRV1 to R1: "Change your IP address of G0/1 to `203.0.113.5/30`."
+## How does It Work?
+6:25 https://www.youtube.com/watch?v=HXu0Ifj0oWU&list=PLxbwE86jKRgMpuZuLBivzlM8s2Dk5lXBQ&index=77
