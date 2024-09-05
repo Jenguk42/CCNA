@@ -32,6 +32,18 @@
             }
           },
           {
+            "id": "be193a888b81568a",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Notes/SNMP.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
             "id": "e4aa17277adbe1ef",
             "type": "leaf",
             "state": {
@@ -44,7 +56,7 @@
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -111,7 +123,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Notes/Layer 4 (Transport Layer)/DHCP.md",
+                "file": "Notes/SNMP.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -128,7 +140,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Notes/Layer 4 (Transport Layer)/DHCP.md",
+                "file": "Notes/SNMP.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -151,7 +163,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Notes/Layer 4 (Transport Layer)/DHCP.md"
+                "file": "Notes/SNMP.md"
               }
             }
           }
@@ -172,8 +184,10 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "6e30037215473685",
+  "active": "be193a888b81568a",
   "lastOpenFiles": [
+    "Notes/Layer 4 (Transport Layer)/DHCP.md",
+    "Notes/SNMP.md",
     "Images/Pasted image 20240905141111.png",
     "Images/Pasted image 20240905141047.png",
     "Images/Pasted image 20240905140552.png",
@@ -184,9 +198,7 @@
     "Images/Pasted image 20240905135126.png",
     "Images/Pasted image 20240905134205.png",
     "Images/Pasted image 20240905134143.png",
-    "Images/Pasted image 20240905134126.png",
     "Notes/Layer 4 (Transport Layer)/DNS.md",
-    "Notes/Layer 4 (Transport Layer)/DHCP.md",
     "Notes/Layer 2 (Data Link Layer)/STP/Classic STP (Spanning Tree Protocol), IEEE 802.1D.md",
     "Notes/Layer 2 (Data Link Layer)/STP/STP (Spanning Tree Protocol) Fundamentals.md",
     "Notes/CLI Commands/PC Commands.md",
