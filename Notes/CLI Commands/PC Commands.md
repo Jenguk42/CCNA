@@ -13,6 +13,7 @@
 	- `CNAME` = canonical name, another kind of DNS record that maps the DNS to another name.
 - `ipconfig /flushdns`
 	- Clears the DNS cache.
+	
 - `tracert IP_ADDRESS`
 	- The command is `traceroute IP_ADDRESS` in Cisco IOS
 	- Sends a ping, and every Layer 3 'hop' along the route to the destination sends a message back to the source.

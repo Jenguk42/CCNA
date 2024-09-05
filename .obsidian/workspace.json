@@ -13,7 +13,19 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Notes/DNS.md",
+                "file": "Notes/Layer 4 (Transport Layer)/DNS.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "6e30037215473685",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Notes/Layer 4 (Transport Layer)/DHCP.md",
                 "mode": "source",
                 "source": false
               }
@@ -31,7 +43,8 @@
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -60,7 +73,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "stp",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -98,7 +111,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Notes/DNS.md",
+                "file": "Notes/Layer 4 (Transport Layer)/DHCP.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -115,7 +128,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Notes/DNS.md",
+                "file": "Notes/Layer 4 (Transport Layer)/DHCP.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -138,7 +151,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Notes/DNS.md"
+                "file": "Notes/Layer 4 (Transport Layer)/DHCP.md"
               }
             }
           }
@@ -159,12 +172,16 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "a1c194c8d1994a30",
+  "active": "6e30037215473685",
   "lastOpenFiles": [
+    "Notes/Layer 4 (Transport Layer)/DNS.md",
+    "Notes/Layer 4 (Transport Layer)/DHCP.md",
+    "Notes/Layer 2 (Data Link Layer)/STP/Classic STP (Spanning Tree Protocol), IEEE 802.1D.md",
+    "Notes/Layer 2 (Data Link Layer)/STP/STP (Spanning Tree Protocol) Fundamentals.md",
+    "Notes/CLI Commands/PC Commands.md",
+    "Notes/CLI Commands/Router CLI Commands.md",
     "Images/Pasted image 20240905102248.png",
     "Images/Pasted image 20240905101811.png",
-    "Notes/CLI Commands/PC Commands.md",
-    "Notes/DNS.md",
     "Images/Pasted image 20240905100953.png",
     "Images/Pasted image 20240905100817.png",
     "Images/Pasted image 20240905100549.png",
@@ -173,8 +190,6 @@
     "Images/Pasted image 20240905094832.png",
     "Images/Pasted image 20240905094233.png",
     "Images/Pasted image 20240905093920.png",
-    "Images/Pasted image 20240905093827.png",
-    "Notes/CLI Commands/Router CLI Commands.md",
     "Notes/Layer 2 (Data Link Layer)/CDP & LLDP.md",
     "Notes/Device Settings/NTP (Network Time Protocol).md",
     "Notes/Layer 2 (Data Link Layer)/DTP, VTP.md",
@@ -183,7 +198,6 @@
     "Notes/Layer 2 (Data Link Layer)/Ethernet LAN Switching.md",
     "Notes/Layer 2 (Data Link Layer)/MAC address.md",
     "Notes/Device Settings",
-    "Notes/Layer 2 (Data Link Layer)/STP/Classic STP (Spanning Tree Protocol), IEEE 802.1D.md",
     "Notes/OSI Model.md",
     "Notes/Life of a Packet.md",
     "Notes/Hexadecimal.md",
@@ -202,7 +216,6 @@
     "Notes/Layer 3 (Network Layer)/Routing/RIP & EIGRP.md",
     "Notes/Layer 3 (Network Layer)/Routing/OSPF.md",
     "Notes/Layer 3 (Network Layer)/Routing/Dynamic Routing.md",
-    "Notes/Layer 4 (Transport Layer)/TCP & UDP.md",
     "Notes/Access Control Lists",
     "Notes/Layer 3 (Network Layer)/IPv4",
     "Notes/Layer 3 (Network Layer)/IPv6",

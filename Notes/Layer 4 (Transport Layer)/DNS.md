@@ -1,4 +1,5 @@
-Domain Name System, allows easier access to websites
+Domain Name System, allows easier access to websites.
+- uses UDP and TCP transport to query other distributed DNS servers to answer client questions like "what IP addresses are associated with the name google.com?".
 - Domain Name: Defines an area of administrative control in the internet.
 	- E.g., Gmail at 'mail.google.com', NTP servers at 'time.google.com', etc. fall under Google's administration and control.
 ## Purpose of DNS
@@ -7,6 +8,7 @@ Used to *resolve* (convert) human-readable names (google.com) to IP address.
 - Names are much easier for humans to use and remember than IP addresses!
 	- E.g., When you type "youtube.com" into a web browser, your device will ask a DNS server for the IP address of youtube.com.
 - DNS server(s) your device uses can be manually configured or learned via DHCP (Dynamic Host Configuration Protocol).
+- Examples of DNS servers: `8.8.8.8` from Google, `1.1.1.1` from Cloudflare 
 ## How it Works
 ![[Pasted image 20240905093231.png]]
 - From PC1 (Windows PC):
