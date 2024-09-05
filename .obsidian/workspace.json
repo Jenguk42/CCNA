@@ -8,54 +8,6 @@
         "type": "tabs",
         "children": [
           {
-            "id": "13b778c0f6b4416f",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Notes/CLI Commands/PC Commands.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "a2319bdaa9cd0dbd",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Notes/CLI Commands/Router CLI Commands.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "4c15d7f284f6d6ca",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Notes/Layer 2 (Data Link Layer)/CDP & LLDP.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "ca62ebff2c3534ee",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Notes/Device Settings/NTP (Network Time Protocol).md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
             "id": "a1c194c8d1994a30",
             "type": "leaf",
             "state": {
@@ -66,9 +18,20 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "e4aa17277adbe1ef",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Notes/CLI Commands/PC Commands.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
-        ],
-        "currentTab": 4
+        ]
       }
     ],
     "direction": "vertical"
@@ -118,7 +81,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "25fa439111d25ab5",
@@ -197,25 +161,28 @@
   },
   "active": "a1c194c8d1994a30",
   "lastOpenFiles": [
+    "Images/Pasted image 20240905102248.png",
+    "Images/Pasted image 20240905101811.png",
+    "Notes/CLI Commands/PC Commands.md",
+    "Notes/DNS.md",
+    "Images/Pasted image 20240905100953.png",
+    "Images/Pasted image 20240905100817.png",
+    "Images/Pasted image 20240905100549.png",
+    "Images/Pasted image 20240905100320.png",
+    "Images/Pasted image 20240905095411.png",
+    "Images/Pasted image 20240905094832.png",
+    "Images/Pasted image 20240905094233.png",
+    "Images/Pasted image 20240905093920.png",
+    "Images/Pasted image 20240905093827.png",
+    "Notes/CLI Commands/Router CLI Commands.md",
+    "Notes/Layer 2 (Data Link Layer)/CDP & LLDP.md",
     "Notes/Device Settings/NTP (Network Time Protocol).md",
     "Notes/Layer 2 (Data Link Layer)/DTP, VTP.md",
     "Notes/Layer 2 (Data Link Layer)/EtherChannel.md",
     "Notes/Layer 2 (Data Link Layer)/VLANs.md",
     "Notes/Layer 2 (Data Link Layer)/Ethernet LAN Switching.md",
     "Notes/Layer 2 (Data Link Layer)/MAC address.md",
-    "Notes/DNS.md",
-    "Images/Pasted image 20240904160202.png",
-    "Images/Pasted image 20240904155827.png",
-    "Images/Pasted image 20240904155727.png",
-    "Images/Pasted image 20240904155558.png",
-    "Images/Pasted image 20240904155545.png",
-    "Images/Pasted image 20240904155349.png",
-    "Images/Pasted image 20240904153959.png",
-    "Images/Pasted image 20240904153218.png",
-    "Images/Pasted image 20240904152633.png",
-    "Images/Pasted image 20240904145217.png",
     "Notes/Device Settings",
-    "Notes/Layer 2 (Data Link Layer)/CDP & LLDP.md",
     "Notes/Layer 2 (Data Link Layer)/STP/Classic STP (Spanning Tree Protocol), IEEE 802.1D.md",
     "Notes/OSI Model.md",
     "Notes/Life of a Packet.md",
@@ -227,8 +194,6 @@
     "Notes/Layer 1 (Physical Layer)/Hubs, Full & Half Duplex.md",
     "Notes/Layer 1 (Physical Layer)",
     "Notes/Layer 2 (Data Link Layer)",
-    "Notes/CLI Commands/Router CLI Commands.md",
-    "Notes/CLI Commands/PC Commands.md",
     "Notes/Other/Labs",
     "Notes/Layer 3 (Network Layer)/Subnetting.md",
     "Notes/Layer 3 (Network Layer)/First Hop Redundancy Protocols.md",
@@ -238,7 +203,6 @@
     "Notes/Layer 3 (Network Layer)/Routing/OSPF.md",
     "Notes/Layer 3 (Network Layer)/Routing/Dynamic Routing.md",
     "Notes/Layer 4 (Transport Layer)/TCP & UDP.md",
-    "Notes/Layer 3 (Network Layer)/IPv4/IPv4 Header.md",
     "Notes/Access Control Lists",
     "Notes/Layer 3 (Network Layer)/IPv4",
     "Notes/Layer 3 (Network Layer)/IPv6",
