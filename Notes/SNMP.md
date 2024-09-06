@@ -78,3 +78,5 @@ Many versions of SNMP have been proposed/developed, but only the following three
 		- Originally used for communications between managers, but later updates allow agents to send Inform messages to managers, too.
 ## SNMPv2c Configuration
 16:51 https://www.youtube.com/watch?v=HXu0Ifj0oWU&list=PLxbwE86jKRgMpuZuLBivzlM8s2Dk5lXBQ&index=78
+
+

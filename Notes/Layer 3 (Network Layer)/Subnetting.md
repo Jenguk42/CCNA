@@ -34,7 +34,7 @@
 	- Broadcast: `203.0.113.127` (host bits are `111 1111`)
 ### VLSM (Variable-Length Subnet Masks)
 - Process of creating subnets of different sizes, to make use of network addresses more efficiently
-	- DIfferent subnets use different prefix lengths
+	- Different subnets use different prefix lengths
 - Steps are as follows:
 	1. Assign the largest subnet at the start of the address.
 	2. Assign the second-largest subnet after it.
