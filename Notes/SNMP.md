@@ -6,10 +6,10 @@ Simple Network Management Protocol (SNMP) is a framework and protocol originally
 ## Purpose and Basics
 Used to monitor the status of devices, make configuration changes, etc.
 Two main types of devices:
-1.  Managed Devices
+1.  **Managed Devices**
 	- Devices being managed using SNMP
 	- E.g., network devices like routers and switches
-2. Network Management Station (NMS)
+2. **Network Management Station (NMS)**
 	- Device/Devices managing the managed devices
 	- The SNMP 'server'
 ## SNMP Operations
