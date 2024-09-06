@@ -55,6 +55,8 @@ Many versions of SNMP have been proposed/developed, but only the following three
 - **SNMPv3**
 	- Best version so far. Use this version whenever possible!
 	- A much more secure version of SNMP that supports strong encryption and authentication.
+		- There is no encryption in SNMPv1 and SNMPv2c, so the community and message contents are sent in plain-text. 
+		- This is not secure, as the packets can easily be captured and read.
 ## SNMP Message Types
 ![[Pasted image 20240905155923.png]]
 - Read Class
@@ -77,6 +79,24 @@ Many versions of SNMP have been proposed/developed, but only the following three
 		- Sent with UDP, but there is reliability built into the message itself.
 		- Originally used for communications between managers, but later updates allow agents to send Inform messages to managers, too.
 ## SNMPv2c Configuration
-16:51 https://www.youtube.com/watch?v=HXu0Ifj0oWU&list=PLxbwE86jKRgMpuZuLBivzlM8s2Dk5lXBQ&index=78
-
-
+![[Pasted image 20240906110135.png]]
+- `snmp-server contact`, `snmp-server location`: Add optional information
+- `snmp-server community COMMUNITY_STRING [ro | rw]`: Configure the SNMP community strings (passwords)
+	- `ro` = read only
+		- Public 
+		- NMS using this password can only use Get messages to read information from R1.
+		- It can't use Set messages to make changes.
+	- `rw` = read/write
+		- Private
+		- NMS using this password will be able to read using Get and make changes using Set.
+	- Configure the community strings and don't use the defaults, since they are less secure.
+	- E.g., `snmp-server community Jeremy2 rw`
+- `snmp-server host NMS_IP_ADDRESS version VERSION COMMUNITY_STRING`
+	- Specify the address of the NMS, version, and community
+	- E.g., `snmp-server host 192.168.1.1 version 2c Jeremy1`
+		- PC1 is able to read information from R1, but it will not be able to use Set messages to make changes to R1.
+- `snmp-server enable traps snmp TRAP_TYPES`
+	- E.g., `snmp-server enable traps snmp linkdown linkup`
+		- If an interface goes up or down, Traps will be sent.
+	- E.g., `snmp-server enable traps config`
+		- If configuration changes are made, Traps will be sent.
