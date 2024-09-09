@@ -37,7 +37,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Notes/Layer 3 (Network Layer)/Routing/RIP & EIGRP.md",
+                "file": "Notes/Layer 2 (Data Link Layer)/DTP, VTP.md",
                 "mode": "source",
                 "source": false
               }
@@ -97,7 +97,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "stp",
+                "query": "vtp",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -114,7 +114,8 @@
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -235,6 +236,7 @@
   },
   "active": "6cc604f404990107",
   "lastOpenFiles": [
+    "Notes/Layer 2 (Data Link Layer)/DTP, VTP.md",
     "Notes/Layer 3 (Network Layer)/Routing/RIP & EIGRP.md",
     "Assessment Questions.md",
     "Assessment Questions",
@@ -264,7 +266,6 @@
     "Notes/Layer 2 (Data Link Layer)/STP/Classic STP (Spanning Tree Protocol), IEEE 802.1D.md",
     "Notes/Layer 2 (Data Link Layer)/STP/STP (Spanning Tree Protocol) Fundamentals.md",
     "Notes/Layer 2 (Data Link Layer)/CDP & LLDP.md",
-    "Notes/Layer 2 (Data Link Layer)/DTP, VTP.md",
     "Notes/Layer 2 (Data Link Layer)/EtherChannel.md",
     "Notes/Layer 2 (Data Link Layer)/VLANs.md",
     "Notes/Layer 2 (Data Link Layer)/Ethernet LAN Switching.md",

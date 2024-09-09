@@ -94,3 +94,9 @@ Other Options
 - Use ping and the `show ip route` command to confirm the timers for each default network reset to 0.
 	- These are not reliable indicators of load balancing. Ping just sends packets, and the `show ip route` command displays the routing table, but it won’t show which next hop is being used for each individual ping.
 	- Load balancing does not reset any timers in the routing table entries. The **timers** are associated with the uptime of the route, and they do not get reset by load balancing activity.
+## Switch Configuration
+Look into no.3 VTP https://www.youtube.com/watch?v=JtQV_0Sjszg
+
+
+
+

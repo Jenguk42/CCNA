@@ -1,4 +1,3 @@
-INCOMPLETE! https://youtu.be/JtQV_0Sjszg?si=mkFt8JU8LFKfk62Q
 ## DTP
 ### What is DTP?
 Cisco proprietary protocol that allows Cisco switches to dynamically determine their interface status (`access` or `trunk`) without manual configuration
