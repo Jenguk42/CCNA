@@ -438,13 +438,13 @@ HSRP is configured directly on the interface.
 	- Adding `no` in front of the commands will not work as usual, as it will delete the entire ACL! ![[Pasted image 20240903175104.png]]
 ### Standard Numbered ACL Configuration
 Configured directly in global config mode:
-- `access-list NUMBER {deny | permit} IP WILDCARD_MASK`
+- `access-list ACL_NUMBER {deny | permit} IP WILDCARD_MASK`
 	- Basic command to configure a standard numbered ACL.
 	- Wildcard mask is not required if you specify a /32 mask. 
 	- E.g., The following three commands deny a single host `1.1.1.1/32`. ![[Pasted image 20240903135710.png]]
 - `access-list 1 permit any`
 	- Used to add the entry to permit traffic. ![[Pasted image 20240903140053.png]]
-- `access-list NUMBER remark REMARK`
+- `access-list ACL_NUMBER remark REMARK`
 	- Adds a comment that helps you remember the purpose of the ACL.
 	- E.g., `access-list 1 remark ## BLOCK BOB FROM ACCOUTING ##`
 - Example Configuration:

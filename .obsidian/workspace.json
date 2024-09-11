@@ -37,7 +37,43 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Notes/Layer 2 (Data Link Layer)/DTP, VTP.md",
+                "file": "Notes/OSI Model.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "e692449e67989b24",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Notes/Layer 3 (Network Layer)/IPv6/NDP (Neighbour Discovery Protocol).md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "d5d9c9dfb22542b6",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Notes/CLI Commands/Router CLI Commands.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "c3fff0c89e2a0019",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Assessment Questions.md",
                 "mode": "source",
                 "source": false
               }
@@ -97,7 +133,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "vtp",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -114,8 +150,7 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -136,7 +171,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Assessment Questions.md",
+                "file": "Notes/OSI Model.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -153,7 +188,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Assessment Questions.md",
+                "file": "Notes/OSI Model.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -176,11 +211,12 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Assessment Questions.md"
+                "file": "Notes/OSI Model.md"
               }
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -197,60 +233,35 @@
       "command-palette:Open command palette": false
     }
   },
-  "floating": {
-    "id": "5ff53a3eacb369a3",
-    "type": "floating",
-    "children": [
-      {
-        "id": "b8ed78578494a35a",
-        "type": "window",
-        "children": [
-          {
-            "id": "cf91391bf34d752d",
-            "type": "tabs",
-            "children": [
-              {
-                "id": "6cc604f404990107",
-                "type": "leaf",
-                "state": {
-                  "type": "markdown",
-                  "state": {
-                    "file": "Assessment Questions.md",
-                    "mode": "source",
-                    "source": false
-                  }
-                }
-              }
-            ]
-          }
-        ],
-        "direction": "vertical",
-        "x": 768,
-        "y": 0,
-        "width": 768,
-        "height": 816,
-        "maximize": false,
-        "zoom": 0
-      }
-    ]
-  },
-  "active": "6cc604f404990107",
+  "active": "0aa4fd9a5b31a925",
   "lastOpenFiles": [
+    "Notes/Life of a Packet.md",
+    "Notes/Hexadecimal.md",
+    "Notes/Incomplete.md",
+    "Incomplete",
+    "Incomplete/Syslog.md",
+    "Notes/SNMP.md",
+    "Notes/OSI Model.md",
+    "Notes/Layer 4 (Transport Layer)/DHCP.md",
+    "Notes/Layer 4 (Transport Layer)/DNS.md",
+    "Notes/Layer 4 (Transport Layer)/TCP & UDP.md",
+    "Assessment Questions.md",
+    "Notes/Layer 3 (Network Layer)/ACLs.md",
+    "Notes/Other/Angel/Install, Operate, and Troubleshoot Medium Enterprise Routers.md",
+    "Notes/Layer 3 (Network Layer)/Routing/OSPF.md",
+    "Notes/Layer 3 (Network Layer)/Routing/Dynamic Routing.md",
+    "Notes/Layer 3 (Network Layer)/IPv6/NDP (Neighbour Discovery Protocol).md",
+    "Notes/Layer 3 (Network Layer)/IPv4/IPv4 Header.md",
+    "Notes/CLI Commands/Router CLI Commands.md",
+    "Notes/Other/Angel/Basic Networking and Cisco Packet Tracer.pdf",
     "Notes/Layer 2 (Data Link Layer)/DTP, VTP.md",
     "Notes/Layer 3 (Network Layer)/Routing/RIP & EIGRP.md",
-    "Assessment Questions.md",
     "Assessment Questions",
-    "Notes/Layer 3 (Network Layer)/Routing/Dynamic Routing.md",
     "Notes/Layer 3 (Network Layer)/Routing/Routing Fundamentals.md",
-    "Notes/Layer 4 (Transport Layer)/DNS.md",
-    "Notes/SNMP.md",
-    "Notes/Syslog.md",
-    "Notes/Layer 4 (Transport Layer)/DHCP.md",
     "Notes/Layer 3 (Network Layer)/Subnetting.md",
     "Images/Pasted image 20240906110135.png",
     "Notes/Device Settings/NTP (Network Time Protocol).md",
     "Notes/CLI Commands/Switch CLI Commands.md",
-    "Notes/CLI Commands/Router CLI Commands.md",
     "Notes/CLI Commands/PC Commands.md",
     "Images/Pasted image 20240905160630.png",
     "Images/Pasted image 20240905160325.png",
@@ -263,25 +274,13 @@
     "Images/Pasted image 20240905154006.png",
     "Images/Pasted image 20240905150249.png",
     "Images/Pasted image 20240905141111.png",
-    "Notes/Layer 2 (Data Link Layer)/STP/Classic STP (Spanning Tree Protocol), IEEE 802.1D.md",
-    "Notes/Layer 2 (Data Link Layer)/STP/STP (Spanning Tree Protocol) Fundamentals.md",
-    "Notes/Layer 2 (Data Link Layer)/CDP & LLDP.md",
-    "Notes/Layer 2 (Data Link Layer)/EtherChannel.md",
-    "Notes/Layer 2 (Data Link Layer)/VLANs.md",
-    "Notes/Layer 2 (Data Link Layer)/Ethernet LAN Switching.md",
-    "Notes/Layer 2 (Data Link Layer)/MAC address.md",
     "Notes/Device Settings",
-    "Notes/OSI Model.md",
-    "Notes/Life of a Packet.md",
-    "Notes/Hexadecimal.md",
     "Notes/Layer 4 (Transport Layer)",
     "Notes/Layer 3 (Network Layer)",
     "Notes/Layer 1 (Physical Layer)",
     "Notes/Layer 2 (Data Link Layer)",
     "Notes/Other/Labs",
     "Notes/Access Control Lists",
-    "Notes/Layer 3 (Network Layer)/IPv4",
-    "Notes/Layer 3 (Network Layer)/IPv6",
     "Untitled.canvas"
   ]
 }
